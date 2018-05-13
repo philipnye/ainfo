@@ -7,6 +7,8 @@ import re
 import json
 import unicodedata
 from shutil import copy
+from bs4 import BeautifulSoup
+
 
 # Create trust_list - a list of dictionaries, with one per trust. Add trusts that don't already feature in the list, and iterate the number of schools where they do
 trust_list=[]
@@ -23,8 +25,8 @@ with open('grouplinks_edubaseallacademiesandfree20161216.csv', 'rb') as infile:
 			trust_name=row['Group Name']
 			trust_name=trust_name.replace('\xa0', ' ')		# replace characters that will prevent saving as JSON
 			trust_name=trust_name.replace('\x92', '\'')
-			# trust_name=trust_name.decode("windows-1252")
-			# trust_name=trust_name.decode("windows-1252").encode('utf-8', 'ignore')
+			# trust_name=trust_name.decode('windows-1252')
+			# trust_name=trust_name.decode('windows-1252').encode('utf-8', 'ignore')
 			# print trust_name
 			trust_type=row['Group Type']
 			companies_house_number=row['Companies House Number']
@@ -54,4 +56,17 @@ for trust in trust_list:
 	file_name=trust['trust_name_simple']+'.html'
 	if not os.path.exists(path):
 		os.makedirs(path)
-	copy('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/template.html', os.path.join(path, file_name))		# done outside the if not statement, as we want a fresh copy of the template in each case
+	file_path=os.path.join(path, file_name)		# done outside the if not statement, as we want a fresh copy of the template in each case
+	copy('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/template.html', file_path)
+	with open(file_path) as read_file:
+		html=read_file.read()
+		print html
+		soup=BeautifulSoup(html, 'html.parser')
+		print soup
+	new_h1=soup.new_tag('h1')
+	new_h1.string=trust['trust_name']
+	print new_h1
+	soup.body.append(new_h1)
+	print soup
+	with open(file_path, 'w') as write_file:
+	    write_file.write(str(soup))
