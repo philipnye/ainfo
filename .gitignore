@@ -1,6 +1,7 @@
+data/
+later/
 project_files/
-project/
 web/
-grouplinks_edubaseallacademiesandfree20161216.xlsx
-edubasealldata20161202.xlsx
-trusts.json
+1_create database.py
+2_copy_data_from_csvs.py
+3_query_database.py
