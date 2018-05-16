@@ -53,20 +53,39 @@ path_stub='C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/web/'
 
 for trust in trust_list:
 	path=path_stub+trust['trust_code']
-	file_name=trust['trust_name_simple']+'.html'
+	file_name=trust['trust_name_simple'].lower()+'.html'
 	if not os.path.exists(path):
 		os.makedirs(path)
 	file_path=os.path.join(path, file_name)		# done outside the if not statement, as we want a fresh copy of the template in each case
 	copy('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/template.html', file_path)
 	with open(file_path) as read_file:
 		html=read_file.read()
-		print html
-		soup=BeautifulSoup(html, 'html.parser')
-		print soup
+	soup=BeautifulSoup(html, 'html.parser')
 	new_h1=soup.new_tag('h1')
 	new_h1.string=trust['trust_name']
-	print new_h1
 	soup.body.append(new_h1)
-	print soup
 	with open(file_path, 'w') as write_file:
 	    write_file.write(str(soup))
+
+
+# Generate ainfo index.html
+dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo')
+os.chdir(dir)
+
+base_url='https://philipnye.github.io/ainfo/web/'
+
+with open('index.html') as read_file:
+	html=read_file.read()
+soup=BeautifulSoup(html, 'html.parser')
+for trust in trust_list:
+	trust_page_url=base_url+trust['trust_code']+'/'+trust['trust_name_simple'].lower()
+	new_tag=soup.new_tag('a', href=trust_page_url)
+	new_tag.string=trust['trust_name']
+	soup.body.append(new_tag)
+	line_break=soup.new_tag('br')
+	soup.body.append(line_break)
+with open('index.html', 'w') as write_file:
+    write_file.write(str(soup))
+
+
+# <a href=trust_page_url>trust['trust_name']</a>
