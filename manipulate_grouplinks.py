@@ -74,7 +74,7 @@ os.chdir(dir)
 
 base_url='https://philipnye.github.io/ainfo/web/'
 
-with open('index.html') as read_file:
+with open('template.html') as read_file:
 	html=read_file.read()
 soup=BeautifulSoup(html, 'html.parser')
 for trust in trust_list:
