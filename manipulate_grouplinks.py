@@ -16,8 +16,8 @@ from bs4 import NavigableString
 trust_list=[]
 companies_house_url_stub='https://beta.companieshouse.gov.uk/company/'
 
-github_url='https://github.com/philipnye/ainfo/tree/master/data'
-github_raw_url='https://raw.githubusercontent.com/philipnye/ainfo/master/data/'
+github_url='https://github.com/philipnye/gias/tree/master/data'
+github_raw_url='https://raw.githubusercontent.com/philipnye/gias/master/data/'
 
 estab_type_count={
 	'sponsored_academy_count':None,
@@ -29,10 +29,10 @@ estab_type_count={
 html=requests.get(github_url).text
 soup=BeautifulSoup(html, 'html.parser')
 for a in soup.find_all('a'):
-	if str(a.get('title')).endswith('csv'):	 # tag.get('attr') in Beautiful Soup acts like a Python dictionary, returning None where attr is undefined.
-		file_name=str(a.get('title'))
-		file_url=github_raw_url+file_name		# expectation is that there is one and only data file
-csv_file=requests.get(file_url)
+	if str(a.get('title')).endswith('csv') and str(a.get('title')).startswith('grouplinks'):
+		grouplinks_file_name=str(a.get('title'))
+		grouplinks_file_url=github_raw_url+grouplinks_file_name		# expectation is that there is one and only data file
+csv_file=requests.get(grouplinks_file_url)
 csv_file=csv_file.iter_lines()	  # is required in order for csv file to be read correctly, without errors caused by new-line characters
 reader=csv.DictReader(csv_file)
 for row in reader:
