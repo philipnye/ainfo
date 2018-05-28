@@ -9,14 +9,15 @@ import requests
 import unicodedata
 from shutil import copy
 from bs4 import BeautifulSoup
+from bs4 import NavigableString
 
 
 # Create trust_list - a list of dictionaries, with one per trust. Add trusts that don't already feature in the list, and iterate the number of schools where they do
 trust_list=[]
 companies_house_url_stub='https://beta.companieshouse.gov.uk/company/'
 
-github_url="https://github.com/philipnye/ainfo/tree/master/data"
-github_raw_url="https://raw.githubusercontent.com/philipnye/ainfo/master/data/"
+github_url='https://github.com/philipnye/ainfo/tree/master/data'
+github_raw_url='https://raw.githubusercontent.com/philipnye/ainfo/master/data/'
 
 estab_type_count={
 	'sponsored_academy_count':None,
@@ -98,7 +99,7 @@ for row in reader:
 
 
 # Sort trust_list
-trust_list=sorted(trust_list, key=lambda k:k['trust_name'])
+trust_list=sorted(trust_list, key=lambda k:k['school_count'], reverse=True)
 
 
 # Create a folder for each trust with a copy of template page
@@ -111,7 +112,7 @@ for trust in trust_list:
 		if not os.path.exists(path):
 			os.makedirs(path)
 		file_path=os.path.join(path, file_name)		# done outside the if not statement, as we want a fresh copy of the template in each case
-		copy('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/template.html', file_path)
+		copy('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/trust_page_template.html', file_path)
 		with open(file_path) as read_file:
 			html=read_file.read()
 		soup=BeautifulSoup(html, 'html.parser')
@@ -128,16 +129,32 @@ os.chdir(dir)
 
 base_url='https://philipnye.github.io/ainfo/web/'
 
-with open('template.html') as read_file:
+with open('index_template.html') as read_file:
 	html=read_file.read()
 soup=BeautifulSoup(html, 'html.parser')
+headers=['Trust name', 'Number of schools', 'Number of sponsored academies', 'Number of converter academies', 'Number of free schools', 'Number of UTCs/studio schools']
+table=soup.new_tag('table')
+tr=soup.new_tag('tr')
+soup.div.append(table)
+table.append(tr)
+for header in headers:
+	th=soup.new_tag('th')
+	tr.append(th)
+	th.append(header)
 for trust in trust_list:
-	if trust['trust_name'].lower()[0]=='a':
-		trust_page_url=base_url+trust['trust_code']+'/'+trust['trust_name_simple'].lower()
-		new_tag=soup.new_tag('a', href=trust_page_url)
-		new_tag.string=trust['trust_name']
-		soup.body.append(new_tag)
-		line_break=soup.new_tag('br')
-		soup.body.append(line_break)
+	trust_page_url=base_url+trust['trust_code']+'/'+trust['trust_name_simple'].lower()
+	tr=soup.new_tag('tr')
+	table.append(tr)
+	data=[trust['trust_name'],str(trust['school_count']),str(trust['estab_type_count']['sponsored_academy_count']),str(trust['estab_type_count']['converter_academy_count']),str(trust['estab_type_count']['free_school_count']),str(trust['estab_type_count']['utc_studio_school_count'])]
+	for d in data:
+		td=soup.new_tag('td')
+		tr.append(td)
+		if d==trust['trust_name'] and d.lower()[0]=='a':
+			trust_name_tag=soup.new_tag('a', href=trust_page_url)
+			trust_name_tag.string=trust['trust_name']
+			td.append(trust_name_tag)
+		else:
+			td.append(d)
+soup=soup.prettify()
 with open('index.html', 'w') as write_file:
 	 write_file.write(str(soup))
