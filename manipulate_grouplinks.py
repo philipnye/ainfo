@@ -4,6 +4,7 @@
 import os
 import csv
 import re
+import datetime
 import json
 import requests
 import unicodedata
@@ -19,11 +20,20 @@ companies_house_url_stub='https://beta.companieshouse.gov.uk/company/'
 github_url='https://github.com/philipnye/gias/tree/master/data'
 github_raw_url='https://raw.githubusercontent.com/philipnye/gias/master/data/'
 
+estab_phase_count={
+	'primary':None,
+	'secondary':None,
+	'all_through':None,
+	'alternative_provision':None,
+	'special':None,
+	'16_plus':None
+}
+
 estab_type_count={
-	'sponsored_academy_count':None,
-	'converter_academy_count':None,
-	'free_school_count':None,
-	'utc_studio_school_count':None
+	'sponsored_academy':None,
+	'converter_academy':None,
+	'free_school':None,
+	'utc_studio_school':None
 }
 
 html=requests.get(github_url).text
@@ -31,6 +41,8 @@ soup=BeautifulSoup(html, 'html.parser')
 for a in soup.find_all('a'):
 	if str(a.get('title')).endswith('csv') and str(a.get('title')).startswith('grouplinks'):
 		grouplinks_file_name=str(a.get('title'))
+		grouplinks_file_name_date=re.search('[0-9]+', grouplinks_file_name).group()
+		grouplinks_file_name_date=datetime.datetime.strptime(grouplinks_file_name_date, '%Y%m%d').strftime('%d %B %Y').lstrip("0")
 		grouplinks_file_url=github_raw_url+grouplinks_file_name		# expectation is that there is one and only data file
 csv_file=requests.get(grouplinks_file_url)
 csv_file=csv_file.iter_lines()	  # is required in order for csv file to be read correctly, without errors caused by new-line characters
@@ -47,34 +59,41 @@ for row in reader:
 		trust_type=row['Group Type']
 		companies_house_number=row['Companies House Number']
 		estab_type_count=dict.fromkeys(estab_type_count, 0)
-		if row['TypeOfEstablishment (name)'] in ('Academy sponsor led','Academy alternative provision sponsor led','Academy special sponsor led','Academy 16 to 19 sponsor led'):
-			 estab_type_count['sponsored_academy_count']=1
-		elif row['TypeOfEstablishment (name)'] in ('Academy converter','Academy alternative provision converter','Academy special converter','Academy 16-19 converter'):
-			 estab_type_count['converter_academy_count']=1
-		elif row['TypeOfEstablishment (name)'] in ('Free schools','Free schools alternative provision','Free schools special','Free schools 16 to 19'):
-			 estab_type_count['free_school_count']=1
-		elif row['TypeOfEstablishment (name)'] in ('University technical college','Studio schools'):
-			 estab_type_count['utc_studio_school_count']=1
+		estab_phase_count=dict.fromkeys(estab_phase_count, 0)
 		if row['PhaseOfEducation (name)'] in ('Primary','Middle deemed primary'):
-			 estab_phase='Primary'
+			estab_phase_count['primary']=1
 		elif row['PhaseOfEducation (name)'] in ('Secondary','Middle deemed secondary'):
-			 estab_phase='Secondary'
+			estab_phase_count['secondary']=1
 		elif row['PhaseOfEducation (name)'] in ('All through'):
-			 estab_phase='All-through'
-		elif row['PhaseOfEducation (name)'] in ('Not applicable') and row['TypeOfEstablishment (name)'] in ('Academy alternative provision converter','Academy alternative provision sponsor led'):
-			 estab_phase='Alternative provision'
-		elif row['PhaseOfEducation (name)'] in ('Not applicable') and row['TypeOfEstablishment (name)'] in ('Academy special converter','Academy special sponsor led'):
-			 estab_phase='Special'
+			estab_phase_count['all_through']=1
+		elif row['PhaseOfEducation (name)']==('Not applicable') and row['TypeOfEstablishment (name)'] in ('Academy alternative provision converter','Academy alternative provision sponsor led','Free schools alternative provision'):
+			estab_phase_count['alternative_provision']=1
+		elif row['PhaseOfEducation (name)']==('Not applicable') and row['TypeOfEstablishment (name)'] in ('Academy special converter','Academy special sponsor led','Free schools special'):
+			estab_phase_count['special']=1
 		elif row['PhaseOfEducation (name)'] in ('16 plus'):
-			 estab_phase='16-plus'
+			estab_phase_count['16_plus']=1
+		if row['TypeOfEstablishment (name)'] in ('Academy sponsor led','Academy alternative provision sponsor led','Academy special sponsor led','Academy 16 to 19 sponsor led'):
+			estab_type_count['sponsored_academy']=1
+		elif row['TypeOfEstablishment (name)'] in ('Academy converter','Academy alternative provision converter','Academy special converter','Academy 16-19 converter'):
+			estab_type_count['converter_academy']=1
+		elif row['TypeOfEstablishment (name)'] in ('Free schools','Free schools alternative provision','Free schools special','Free schools 16 to 19'):
+			estab_type_count['free_school']=1
+		elif row['TypeOfEstablishment (name)'] in ('University technical college','Studio schools'):
+			estab_type_count['utc_studio_school_count']=1
 		if any(trust['trust_code']==trust_code for trust in trust_list)==True:
 			for trust in trust_list:
 				if trust['trust_code']==trust_code:
-					trust['school_count']=trust['school_count']+1
-					trust['estab_type_count']['sponsored_academy_count']=trust['estab_type_count']['sponsored_academy_count']+estab_type_count['sponsored_academy_count']
-					trust['estab_type_count']['converter_academy_count']=trust['estab_type_count']['converter_academy_count']+estab_type_count['converter_academy_count']
-					trust['estab_type_count']['free_school_count']=trust['estab_type_count']['free_school_count']+estab_type_count['free_school_count']
-					trust['estab_type_count']['utc_studio_school_count']=trust['estab_type_count']['utc_studio_school_count']+estab_type_count['utc_studio_school_count']
+					trust['school_count']+=1
+					trust['estab_phase_count']['primary']+=estab_phase_count['primary']
+					trust['estab_phase_count']['secondary']+=estab_phase_count['secondary']
+					trust['estab_phase_count']['all_through']+=estab_phase_count['all_through']
+					trust['estab_phase_count']['alternative_provision']+=estab_phase_count['alternative_provision']
+					trust['estab_phase_count']['special']+=estab_phase_count['special']
+					trust['estab_phase_count']['16_plus']+=estab_phase_count['16_plus']
+					trust['estab_type_count']['sponsored_academy']+=estab_type_count['sponsored_academy']
+					trust['estab_type_count']['converter_academy']+=estab_type_count['converter_academy']
+					trust['estab_type_count']['free_school']+=estab_type_count['free_school']
+					trust['estab_type_count']['utc_studio_school']+=estab_type_count['utc_studio_school']
 					break
 		else:
 			 trust_name_simple=re.sub('[^a-zA-Z0-9 \-\.@]', '', trust_name)
@@ -88,7 +107,9 @@ for row in reader:
 				'companies_house_number':companies_house_number,
 				'companies_house_url':companies_house_url_stub+companies_house_number,
 				'school_count':1,
-				'estab_type_count':estab_type_count})
+				'estab_type_count':estab_type_count,
+				'estab_phase_count':estab_phase_count
+			})
 
 
 # dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/data')
@@ -132,10 +153,24 @@ base_url='https://philipnye.github.io/ainfo/web/'
 with open('index_template.html') as read_file:
 	html=read_file.read()
 soup=BeautifulSoup(html, 'html.parser')
-headers=['Trust name', 'Number of schools', 'Number of sponsored academies', 'Number of converter academies', 'Number of free schools', 'Number of UTCs/studio schools']
+headers=[
+	'Trust name',
+	'Number of academies',
+	'Number of primary academies',
+	'Number of secondary academies',
+	'Number of all_through academies',
+	'Number of alternative provision academies',
+	'Number of special academies',
+	'Number of 16-plus academies',
+	'Number of sponsored academies',
+	'Number of converter academies',
+	'Number of free schools',
+	'Number of UTCs/studio schools'
+]
 table=soup.new_tag('table')
 tr=soup.new_tag('tr')
-soup.div.append(table)
+soup.find(id='gias_date').append(grouplinks_file_name_date)		# specifying a particular div, rather than using soup.div.append(table)
+soup.find(id='container').append(table)		# specifying a particular div, rather than using soup.div.append(table)
 table.append(tr)
 for header in headers:
 	th=soup.new_tag('th')
@@ -145,7 +180,20 @@ for trust in trust_list:
 	trust_page_url=base_url+trust['trust_code']+'/'+trust['trust_name_simple'].lower()
 	tr=soup.new_tag('tr')
 	table.append(tr)
-	data=[trust['trust_name'],str(trust['school_count']),str(trust['estab_type_count']['sponsored_academy_count']),str(trust['estab_type_count']['converter_academy_count']),str(trust['estab_type_count']['free_school_count']),str(trust['estab_type_count']['utc_studio_school_count'])]
+	data=[
+		trust['trust_name'],
+		str(trust['school_count']),
+		str(trust['estab_phase_count']['primary']),
+		str(trust['estab_phase_count']['secondary']),
+		str(trust['estab_phase_count']['all_through']),
+		str(trust['estab_phase_count']['alternative_provision']),
+		str(trust['estab_phase_count']['special']),
+		str(trust['estab_phase_count']['16_plus']),
+		str(trust['estab_type_count']['sponsored_academy']),
+		str(trust['estab_type_count']['converter_academy']),
+		str(trust['estab_type_count']['free_school']),
+		str(trust['estab_type_count']['utc_studio_school'])
+]
 	for d in data:
 		td=soup.new_tag('td')
 		tr.append(td)
