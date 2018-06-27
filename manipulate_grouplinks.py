@@ -38,16 +38,51 @@ estab_type_count={
 
 html=requests.get(github_url).text
 soup=BeautifulSoup(html, 'html.parser')
+
 for a in soup.find_all('a'):
 	if str(a.get('title')).endswith('csv') and str(a.get('title')).startswith('grouplinks'):
 		grouplinks_file_name=str(a.get('title'))
 		grouplinks_file_name_date=re.search('[0-9]+', grouplinks_file_name).group()
 		grouplinks_file_name_date=datetime.datetime.strptime(grouplinks_file_name_date, '%Y%m%d').strftime('%d %B %Y').lstrip("0")
 		grouplinks_file_url=github_raw_url+grouplinks_file_name		# expectation is that there is one and only data file
-csv_file=requests.get(grouplinks_file_url)
-csv_file=csv_file.iter_lines()	  # is required in order for csv file to be read correctly, without errors caused by new-line characters
-reader=csv.DictReader(csv_file)
-for row in reader:
+	if str(a.get('title')).endswith('csv') and str(a.get('title')).startswith('edubasealldata'):
+		edubasealldata_file_name=str(a.get('title'))
+		edubasealldata_file_name_date=re.search('[0-9]+', edubasealldata_file_name).group()
+		edubasealldata_file_name_date=datetime.datetime.strptime(edubasealldata_file_name_date, '%Y%m%d').strftime('%d %B %Y').lstrip("0")
+		edubasealldata_file_url=github_raw_url+edubasealldata_file_name		# expectation is that there is one and only data file
+
+grouplinks_file=requests.get(grouplinks_file_url)
+grouplinks_file=grouplinks_file.iter_lines()	  # is required in order for csv file to be read correctly, without errors caused by new-line characters
+grouplinks_reader=csv.DictReader(grouplinks_file)
+
+edubasealldata_file=requests.get(edubasealldata_file_url)
+edubasealldata_file=edubasealldata_file.iter_lines()	  # is required in order for csv file to be read correctly, without errors caused by new-line characters
+edubasealldata_reader=csv.DictReader(edubasealldata_file)
+
+# for row in edubasealldata_reader:
+# 	trust_code=row['Trusts (code)']
+# 	trust_name=row['Trusts (name)']
+# 	trust_name=trust_name.replace('\xa0', ' ')		# replace characters that will prevent saving as JSON
+# 	trust_name=trust_name.replace('\x92', '\'')
+# 	trust_name=trust_name.replace('\xc9', 'E')
+# 	trust_pupil_numbers=row['NumberOfPupils']
+# 	if any(trust['trust_code']==trust_code for trust in trust_list)==True:
+# 		for trust in trust_list:
+# 			if trust['trust_code']==trust_code:
+# 				trust['pupil_numbers']=trust_pupil_numbers
+# 				break
+# 	else:
+# 		 trust_name_simple=re.sub('[^a-zA-Z0-9 \-\.@]', '', trust_name)
+# 		 trust_name_simple=trust_name_simple.replace (' ', '-')
+# 		 trust_name_simple=trust_name_simple.replace ('--', '-')
+# 		 trust_list.append({
+# 		 	'trust_code':trust_code,
+# 			'trust_name':trust_name,
+# 			'trust_name_simple':trust_name_simple,
+# 			'pupil_numbers':trust_pupil_numbers,
+# 		})
+
+for row in grouplinks_reader:
 	if row['Group Type'] in ('Multi-academy trust','Single-academy trust'):
 		trust_code=row['Linked UID']
 		trust_name=row['Group Name']
@@ -79,7 +114,7 @@ for row in reader:
 		elif row['TypeOfEstablishment (name)'] in ('Free schools','Free schools alternative provision','Free schools special','Free schools 16 to 19'):
 			estab_type_count['free_school']=1
 		elif row['TypeOfEstablishment (name)'] in ('University technical college','Studio schools'):
-			estab_type_count['utc_studio_school_count']=1
+			estab_type_count['utc_studio_school']=1
 		if any(trust['trust_code']==trust_code for trust in trust_list)==True:
 			for trust in trust_list:
 				if trust['trust_code']==trust_code:
@@ -155,17 +190,17 @@ with open('index_template.html') as read_file:
 soup=BeautifulSoup(html, 'html.parser')
 headers=[
 	'Trust name',
-	'Number of academies',
-	'Number of primary academies',
-	'Number of secondary academies',
-	'Number of all_through academies',
-	'Number of alternative provision academies',
-	'Number of special academies',
-	'Number of 16-plus academies',
-	'Number of sponsored academies',
-	'Number of converter academies',
-	'Number of free schools',
-	'Number of UTCs/studio schools'
+	'Academies',
+	'Primary',
+	'Secondary',
+	'All-through',
+	'Alternative provision',
+	'Special',
+	'16-plus',
+	'Sponsored academies',
+	'Converter academies',
+	'Free schools',
+	'UTCs/studio schools'
 ]
 table=soup.new_tag('table')
 tr=soup.new_tag('tr')
