@@ -26,7 +26,7 @@ estab_phase_count={
 	'all_through':None,
 	'alternative_provision':None,
 	'special':None,
-	'16_plus':None
+	'post_16':None
 }
 
 estab_type_count={
@@ -106,7 +106,7 @@ for row in grouplinks_reader:
 		elif row['PhaseOfEducation (name)']==('Not applicable') and row['TypeOfEstablishment (name)'] in ('Academy special converter','Academy special sponsor led','Free schools special'):
 			estab_phase_count['special']=1
 		elif row['PhaseOfEducation (name)'] in ('16 plus'):
-			estab_phase_count['16_plus']=1
+			estab_phase_count['post_16']=1
 		if row['TypeOfEstablishment (name)'] in ('Academy sponsor led','Academy alternative provision sponsor led','Academy special sponsor led','Academy 16 to 19 sponsor led'):
 			estab_type_count['sponsored_academy']=1
 		elif row['TypeOfEstablishment (name)'] in ('Academy converter','Academy alternative provision converter','Academy special converter','Academy 16-19 converter'):
@@ -124,7 +124,7 @@ for row in grouplinks_reader:
 					trust['estab_phase_count']['all_through']+=estab_phase_count['all_through']
 					trust['estab_phase_count']['alternative_provision']+=estab_phase_count['alternative_provision']
 					trust['estab_phase_count']['special']+=estab_phase_count['special']
-					trust['estab_phase_count']['16_plus']+=estab_phase_count['16_plus']
+					trust['estab_phase_count']['post_16']+=estab_phase_count['post_16']
 					trust['estab_type_count']['sponsored_academy']+=estab_type_count['sponsored_academy']
 					trust['estab_type_count']['converter_academy']+=estab_type_count['converter_academy']
 					trust['estab_type_count']['free_school']+=estab_type_count['free_school']
@@ -188,33 +188,31 @@ base_url='https://philipnye.github.io/ainfo/web/'
 with open('index_template.html') as read_file:
 	html=read_file.read()
 soup=BeautifulSoup(html, 'html.parser')
+soup.find(id='gias_date').append(grouplinks_file_name_date)		# specifying a particular div, rather than using soup.div.append(grouplinks_file_name_date)
 headers=[
-	'Trust name',
+	'Trust',
 	'Academies',
 	'Primary',
 	'Secondary',
 	'All-through',
 	'Alternative provision',
 	'Special',
-	'16-plus',
+	'Post-16',
 	'Sponsored academies',
 	'Converter academies',
 	'Free schools',
 	'UTCs/studio schools'
 ]
-table=soup.new_tag('table')
 tr=soup.new_tag('tr')
-soup.find(id='gias_date').append(grouplinks_file_name_date)		# specifying a particular div, rather than using soup.div.append(table)
-soup.find(id='container').append(table)		# specifying a particular div, rather than using soup.div.append(table)
-table.append(tr)
+soup.find(id='tableContainer').find('thead').append(tr)
 for header in headers:
-	th=soup.new_tag('th')
+	th=soup.new_tag('th', scope="col")
 	tr.append(th)
 	th.append(header)
 for trust in trust_list:
 	trust_page_url=base_url+trust['trust_code']+'/'+trust['trust_name_simple'].lower()
 	tr=soup.new_tag('tr')
-	table.append(tr)
+	soup.find(id='tableContainer').find('tbody').append(tr)
 	data=[
 		trust['trust_name'],
 		str(trust['school_count']),
@@ -223,19 +221,19 @@ for trust in trust_list:
 		str(trust['estab_phase_count']['all_through']),
 		str(trust['estab_phase_count']['alternative_provision']),
 		str(trust['estab_phase_count']['special']),
-		str(trust['estab_phase_count']['16_plus']),
+		str(trust['estab_phase_count']['post_16']),
 		str(trust['estab_type_count']['sponsored_academy']),
 		str(trust['estab_type_count']['converter_academy']),
 		str(trust['estab_type_count']['free_school']),
 		str(trust['estab_type_count']['utc_studio_school'])
-]
+	]
 	for d in data:
 		td=soup.new_tag('td')
 		tr.append(td)
 		if d==trust['trust_name'] and d.lower()[0]=='a':
-			trust_name_tag=soup.new_tag('a', href=trust_page_url)
-			trust_name_tag.string=trust['trust_name']
-			td.append(trust_name_tag)
+			trust_link=soup.new_tag('a', href=trust_page_url)
+			trust_link.string=trust['trust_name']
+			td.append(trust_link)
 		else:
 			td.append(d)
 soup=soup.prettify()
