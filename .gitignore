@@ -4,6 +4,5 @@ project_files/
 2_copy_data_from_csvs.py
 3_query_database.py
 ai.db
-trusts.json
 edubasealldata20161202.xlsx
 grouplinks_edubaseallacademiesandfree20161216.xlsx

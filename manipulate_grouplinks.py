@@ -147,11 +147,11 @@ for row in grouplinks_reader:
 			})
 
 
-# dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/data')
-# os.chdir(dir)
-#
-# with open('trusts.json', 'w') as out_file:
-#	 json.dump(trust_list, out_file)
+dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/data')
+os.chdir(dir)
+
+with open('trusts.json', 'w') as out_file:
+	 json.dump(trust_list, out_file)
 
 
 # Sort trust_list
@@ -189,53 +189,53 @@ with open('index_template.html') as read_file:
 	html=read_file.read()
 soup=BeautifulSoup(html, 'html.parser')
 soup.find(id='gias_date').append(grouplinks_file_name_date)		# specifying a particular div, rather than using soup.div.append(grouplinks_file_name_date)
-headers=[
-	'Trust',
-	'Academies',
-	'Primary',
-	'Secondary',
-	'All-through',
-	'Alternative provision',
-	'Special',
-	'Post-16',
-	'Sponsored academies',
-	'Converter academies',
-	'Free schools',
-	'UTCs/studio schools'
-]
-tr=soup.new_tag('tr')
-soup.find(id='tableContainer').find('thead').append(tr)
-for header in headers:
-	th=soup.new_tag('th', scope="col")
-	tr.append(th)
-	th.append(header)
-for trust in trust_list:
-	trust_page_url=base_url+trust['trust_code']+'/'+trust['trust_name_simple'].lower()
-	tr=soup.new_tag('tr')
-	soup.find(id='tableContainer').find('tbody').append(tr)
-	data=[
-		trust['trust_name'],
-		str(trust['school_count']),
-		str(trust['estab_phase_count']['primary']),
-		str(trust['estab_phase_count']['secondary']),
-		str(trust['estab_phase_count']['all_through']),
-		str(trust['estab_phase_count']['alternative_provision']),
-		str(trust['estab_phase_count']['special']),
-		str(trust['estab_phase_count']['post_16']),
-		str(trust['estab_type_count']['sponsored_academy']),
-		str(trust['estab_type_count']['converter_academy']),
-		str(trust['estab_type_count']['free_school']),
-		str(trust['estab_type_count']['utc_studio_school'])
-	]
-	for d in data:
-		td=soup.new_tag('td')
-		tr.append(td)
-		if d==trust['trust_name'] and d.lower()[0]=='a':
-			trust_link=soup.new_tag('a', href=trust_page_url)
-			trust_link.string=trust['trust_name']
-			td.append(trust_link)
-		else:
-			td.append(d)
+# headers=[
+# 	'Trust',
+# 	'Academies',
+# 	'Primary',
+# 	'Secondary',
+# 	'All-through',
+# 	'Alternative provision',
+# 	'Special',
+# 	'Post-16',
+# 	'Sponsored academies',
+# 	'Converter academies',
+# 	'Free schools',
+# 	'UTCs/studio schools'
+# ]
+# tr=soup.new_tag('tr')
+# soup.find(id='tableContainer').find('thead').append(tr)
+# for header in headers:
+# 	th=soup.new_tag('th', scope="col")
+# 	tr.append(th)
+# 	th.append(header)
+# for trust in trust_list:
+# 	trust_page_url=base_url+trust['trust_code']+'/'+trust['trust_name_simple'].lower()
+# 	tr=soup.new_tag('tr')
+# 	soup.find(id='tableContainer').find('tbody').append(tr)
+# 	data=[
+# 		trust['trust_name'],
+# 		str(trust['school_count']),
+# 		str(trust['estab_phase_count']['primary']),
+# 		str(trust['estab_phase_count']['secondary']),
+# 		str(trust['estab_phase_count']['all_through']),
+# 		str(trust['estab_phase_count']['alternative_provision']),
+# 		str(trust['estab_phase_count']['special']),
+# 		str(trust['estab_phase_count']['post_16']),
+# 		str(trust['estab_type_count']['sponsored_academy']),
+# 		str(trust['estab_type_count']['converter_academy']),
+# 		str(trust['estab_type_count']['free_school']),
+# 		str(trust['estab_type_count']['utc_studio_school'])
+# 	]
+# 	for d in data:
+# 		td=soup.new_tag('td')
+# 		tr.append(td)
+# 		if d==trust['trust_name'] and d.lower()[0]=='a':
+# 			trust_link=soup.new_tag('a', href=trust_page_url)
+# 			trust_link.string=trust['trust_name']
+# 			td.append(trust_link)
+# 		else:
+# 			td.append(d)
 soup=soup.prettify()
 with open('index.html', 'w') as write_file:
 	 write_file.write(str(soup))
