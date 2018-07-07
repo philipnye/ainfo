@@ -17,19 +17,27 @@
                 "dataSrc": ""   // handle the fact we're passing in a JSON array rather than a JSON object i.e. not {"data": [{...},...]}
               },
               "columns": [
-                { "data": "trust_name" },
-                { "data": "school_count" },
-                { "data": "estab_phase_count.primary" },
-                { "data": "estab_phase_count.secondary" },
-                { "data": "estab_phase_count.all_through" },
-                { "data": "estab_phase_count.alternative_provision" },
-                { "data": "estab_phase_count.special" },
-                { "data": "estab_phase_count.post_16" },
-                { "data": "estab_type_count.sponsored_academy" },
-                { "data": "estab_type_count.converter_academy" },
-                { "data": "estab_type_count.free_school" },
-                { "data": "estab_type_count.utc_studio_school" }
-              ]
+                { "data": "trust_name", "orderSequence": [ "asc", "desc" ] },
+                { "data": "school_count", "orderSequence": [ "desc", "asc" ] },
+                { "data": "estab_phase_count.primary", "orderSequence": [ "desc", "asc" ] },
+                { "data": "estab_phase_count.secondary", "orderSequence": [ "desc", "asc" ] },
+                { "data": "estab_phase_count.all_through", "orderSequence": [ "desc", "asc" ] },
+                { "data": "estab_phase_count.alternative_provision", "orderSequence": [ "desc", "asc" ] },
+                { "data": "estab_phase_count.special", "orderSequence": [ "desc", "asc" ] },
+                { "data": "estab_phase_count.post_16", "orderSequence": [ "desc", "asc" ] },
+                { "data": "estab_type_count.sponsored_academy", "orderSequence": [ "desc", "asc" ] },
+                { "data": "estab_type_count.converter_academy", "orderSequence": [ "desc", "asc" ] },
+                { "data": "estab_type_count.free_school", "orderSequence": [ "desc", "asc" ] },
+                { "data": "estab_type_count.utc_studio_school", "orderSequence": [ "desc", "asc" ] }
+              ],
+              "order": [ 1, 'desc' ],
+              "columnDefs": [ {
+                "targets": 0,
+                "data": "download_link",
+                "render": function (data, type, row, meta) {
+                  return '<a href="'+ row.trust_page_url + '">' + data + '</a>';
+                }
+              } ]
           } );
       } );
     </script>

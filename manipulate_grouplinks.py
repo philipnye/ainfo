@@ -131,13 +131,15 @@ for row in grouplinks_reader:
 					trust['estab_type_count']['utc_studio_school']+=estab_type_count['utc_studio_school']
 					break
 		else:
-			 trust_name_simple=re.sub('[^a-zA-Z0-9 \-\.@]', '', trust_name)
+			 trust_name_simple=re.sub('[^a-zA-Z0-9 \-\.@]', '', trust_name).lower()
 			 trust_name_simple=trust_name_simple.replace (' ', '-')
 			 trust_name_simple=trust_name_simple.replace ('--', '-')
+			 trust_page_url='/web/'+trust_code+'/'+trust_name_simple+'.html'
 			 trust_list.append({
 			 	'trust_code':trust_code,
 				'trust_name':trust_name,
 				'trust_name_simple':trust_name_simple,
+				'trust_page_url':trust_page_url,
 				'trust_type':trust_type,
 				'companies_house_number':companies_house_number,
 				'companies_house_url':companies_house_url_stub+companies_house_number,
@@ -183,8 +185,6 @@ for trust in trust_list:
 dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo')
 os.chdir(dir)
 
-base_url='https://philipnye.github.io/ainfo/web/'
-
 with open('index_template.html') as read_file:
 	html=read_file.read()
 soup=BeautifulSoup(html, 'html.parser')
@@ -210,7 +210,6 @@ soup.find(id='gias_date').append(grouplinks_file_name_date)		# specifying a part
 # 	tr.append(th)
 # 	th.append(header)
 # for trust in trust_list:
-# 	trust_page_url=base_url+trust['trust_code']+'/'+trust['trust_name_simple'].lower()
 # 	tr=soup.new_tag('tr')
 # 	soup.find(id='tableContainer').find('tbody').append(tr)
 # 	data=[
