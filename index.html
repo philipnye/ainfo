@@ -14,35 +14,82 @@
        </script>
        <script>
         $(document).ready(function() {
-          $('#trustsTable').DataTable( {
-              "ajax": {
-                "url":'data/trusts.json',
-                "dataSrc": ""   // handle the fact we're passing in a JSON array rather than a JSON object i.e. not {"data": [{...},...]}
-              },
-              "columns": [
-                { "data": "trust_name", "orderSequence": [ "asc", "desc" ] },
-                { "data": "school_count", "orderSequence": [ "desc", "asc" ] },
-                { "data": "estab_phase_count.primary", "orderSequence": [ "desc", "asc" ] },
-                { "data": "estab_phase_count.secondary", "orderSequence": [ "desc", "asc" ] },
-                { "data": "estab_phase_count.all_through", "orderSequence": [ "desc", "asc" ] },
-                { "data": "estab_phase_count.alternative_provision", "orderSequence": [ "desc", "asc" ] },
-                { "data": "estab_phase_count.special", "orderSequence": [ "desc", "asc" ] },
-                { "data": "estab_phase_count.post_16", "orderSequence": [ "desc", "asc" ] },
-                { "data": "estab_type_count.sponsored_academy", "orderSequence": [ "desc", "asc" ] },
-                { "data": "estab_type_count.converter_academy", "orderSequence": [ "desc", "asc" ] },
-                { "data": "estab_type_count.free_school", "orderSequence": [ "desc", "asc" ] },
-                { "data": "estab_type_count.utc_studio_school", "orderSequence": [ "desc", "asc" ] }
-              ],
-              "order": [ 1, 'desc' ],
-              "columnDefs": [ {
-                "targets": 0,
-                "data": "download_link",
-                "render": function (data, type, row, meta) {
-                  return '<a href="'+ row.trust_page_url + '">' + data + '</a>';
-                }
-              } ]
-          } );
-      } );
+      $('#trustsTable').DataTable({
+        "ajax": {
+          "url": 'data/trusts.json',
+          "dataSrc": "" // handle the fact we're passing in a JSON array rather than a JSON object i.e. not {"data": [{...},...]}
+        },
+        "deferRender": true,
+        "columns": [{
+            "data": "trust_name",
+            "orderSequence": ["asc", "desc"]
+          },
+          {
+            "data": "school_count",
+            "orderSequence": ["desc", "asc"]
+          },
+          {
+            "data": "pupil_numbers",
+            "orderSequence": ["desc", "asc"]
+          },
+          {
+            "data": "pupil_numbers_schools",
+            "orderSequence": ["desc", "asc"]
+          },
+          {
+            "data": "no_pupil_numbers_schools",
+            "orderSequence": ["desc", "asc"]
+          },
+          {
+            "data": "estab_phase_count.primary",
+            "orderSequence": ["desc", "asc"]
+          },
+          {
+            "data": "estab_phase_count.secondary",
+            "orderSequence": ["desc", "asc"]
+          },
+          {
+            "data": "estab_phase_count.all_through",
+            "orderSequence": ["desc", "asc"]
+          },
+          {
+            "data": "estab_phase_count.alternative_provision",
+            "orderSequence": ["desc", "asc"]
+          },
+          {
+            "data": "estab_phase_count.special",
+            "orderSequence": ["desc", "asc"]
+          },
+          {
+            "data": "estab_phase_count.post_16",
+            "orderSequence": ["desc", "asc"]
+          },
+          {
+            "data": "estab_type_count.sponsored_academy",
+            "orderSequence": ["desc", "asc"]
+          },
+          {
+            "data": "estab_type_count.converter_academy",
+            "orderSequence": ["desc", "asc"]
+          },
+          {
+            "data": "estab_type_count.free_school",
+            "orderSequence": ["desc", "asc"]
+          },
+          {
+            "data": "estab_type_count.utc_studio_school",
+            "orderSequence": ["desc", "asc"]
+          }
+        ],
+        "order": [1, 'desc'],
+        "columnDefs": [{
+          "targets": 0,
+          "render": function(data, type, row, meta) {
+            return '<a href="' + row.trust_page_url + '">' + data + '</a>';
+          }
+        }]
+      });
+    });
        </script>
        <title>
         ainfo
@@ -174,6 +221,15 @@
        </th>
        <th>
         Academies
+       </th>
+       <th>
+        Pupils
+       </th>
+       <th>
+        Pupil numbers schools
+       </th>
+       <th>
+        No pupil numbers schools
        </th>
        <th>
         Primary
