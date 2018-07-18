@@ -15,6 +15,8 @@ from bs4 import NavigableString
 
 # Create trust_list - a list of dictionaries, with one per trust. Add trusts that don't already feature in the list, and iterate the number of schools where they do
 trust_list=[]
+school_list=[]
+gias_url_stub='https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/'
 companies_house_url_stub='https://beta.companieshouse.gov.uk/company/'
 
 github_url='https://github.com/philipnye/gias/tree/master/data'
@@ -40,25 +42,24 @@ html=requests.get(github_url).text
 soup=BeautifulSoup(html, 'html.parser')
 
 for a in soup.find_all('a'):
-	if str(a.get('title')).endswith('csv') and str(a.get('title')).startswith('edubasealldata'):
-		edubasealldata_file_name=str(a.get('title'))
-		edubasealldata_file_name_date=re.search('[0-9]+', edubasealldata_file_name).group()
-		edubasealldata_file_name_date=datetime.datetime.strptime(edubasealldata_file_name_date, '%Y%m%d').strftime('%d %B %Y').lstrip("0")
-		edubasealldata_file_url=github_raw_url+edubasealldata_file_name		# expectation is that there is one and only data file
 	if str(a.get('title')).endswith('csv') and str(a.get('title')).startswith('grouplinks'):
 		grouplinks_file_name=str(a.get('title'))
-		grouplinks_file_name_date=re.search('[0-9]+', grouplinks_file_name).group()
-		grouplinks_file_name_date=datetime.datetime.strptime(grouplinks_file_name_date, '%Y%m%d').strftime('%d %B %Y').lstrip("0")
+		grouplinks_file_date=re.search('[0-9]+', grouplinks_file_name).group()
+		grouplinks_file_date=datetime.datetime.strptime(grouplinks_file_date, '%Y%m%d').strftime('%d %B %Y').lstrip("0")
 		grouplinks_file_url=github_raw_url+grouplinks_file_name		# expectation is that there is one and only data file
-
-edubasealldata_file=requests.get(edubasealldata_file_url)
-edubasealldata_file=edubasealldata_file.iter_lines()	  # is required in order for csv file to be read correctly, without errors caused by new-line characters
-edubasealldata_reader=csv.DictReader(edubasealldata_file)
+	if str(a.get('title')).endswith('csv') and str(a.get('title')).startswith('edubasealldata'):
+		edubasealldata_file_name=str(a.get('title'))
+		edubasealldata_file_date=re.search('[0-9]+', edubasealldata_file_name).group()
+		edubasealldata_file_date=datetime.datetime.strptime(edubasealldata_file_date, '%Y%m%d').strftime('%d %B %Y').lstrip("0")
+		edubasealldata_file_url=github_raw_url+edubasealldata_file_name		# expectation is that there is one and only data file
 
 grouplinks_file=requests.get(grouplinks_file_url)
 grouplinks_file=grouplinks_file.iter_lines()	  # is required in order for csv file to be read correctly, without errors caused by new-line characters
 grouplinks_reader=csv.DictReader(grouplinks_file)
 
+edubasealldata_file=requests.get(edubasealldata_file_url)
+edubasealldata_file=edubasealldata_file.iter_lines()	  # is required in order for csv file to be read correctly, without errors caused by new-line characters
+edubasealldata_reader=csv.DictReader(edubasealldata_file)
 
 for row in grouplinks_reader:
 	if row['Group Type'].lower() in ('multi-academy trust','single-academy trust'):
@@ -131,29 +132,86 @@ for row in grouplinks_reader:
 
 for row in edubasealldata_reader:
 	if row['EstablishmentTypeGroup (name)'].lower() in ('academies','free schools') and row['EstablishmentStatus (name)'].lower() in ('open', 'open, but proposed to close'):
+		pupils=row['NumberOfPupils']
+		urn=row['URN']
+		laestab=row['LA (code)']+row['EstablishmentNumber']
+		la=row['LA (name)']
+		region=row['GOR (name)']
+		estab_name=row['EstablishmentName']
+		estab_name=estab_name.replace('\xa0', ' ')		# replace characters that will prevent saving as JSON
+		estab_name=estab_name.replace('\x92', '\'')
+		estab_name=estab_name.replace('\xc9', 'E')
+		estab_name=estab_name.replace('\xE0', 'a')
+		estab_name=estab_name.replace('\x96', '-')
+		type_of_estab=row['TypeOfEstablishment (name)']
+		estab_status=row['EstablishmentStatus (name)']
+		open_date=row['OpenDate']
+		phase=row['PhaseOfEducation (name)']
+		gender=row['Gender (name)']
+		religious_character=row['ReligiousCharacter (name)']
+		admissions_policy=row['AdmissionsPolicy (name)']
+		capacity=row['SchoolCapacity']
+		percentage_fsm=row['PercentageFSM']
+		trust_school_flag=row['TrustSchoolFlag (name)']
+		trust_name=row['Trusts (name)']
+		trust_name=trust_name.replace('\xa0', ' ')		# replace characters that will prevent saving as JSON
+		trust_name=trust_name.replace('\x92', '\'')
+		trust_name=trust_name.replace('\xc9', 'E')
 		trust_code=row['Trusts (code)']
-		school_pupil_numbers=row['NumberOfPupils']
+		school_sponsor_flag=row['SchoolSponsorFlag (name)']
+		school_sponsor_name=row['SchoolSponsors (name)']
+		school_sponsor_name=school_sponsor_name.replace('\xa0', ' ')		# replace characters that will prevent saving as JSON
+		school_sponsor_name=school_sponsor_name.replace('\x92', '\'')
+		school_sponsor_name=school_sponsor_name.replace('\xc9', 'E')
+		federation_flag=row['FederationFlag (name)']
+		federation_name=row['Federations (name)']
+		easting=row['Easting']
+		northing=row['Northing']
+		gias_page_url=gias_url_stub + urn
+		school_list.append({
+			'urn':urn,
+			'laestab':laestab,
+			'estab_name':estab_name,
+			'pupils':pupils,
+			# 'capacity':capacity,
+			'percentage_fsm':percentage_fsm,
+			'la':la,
+			'region':region,
+			'phase':phase,
+			'type_of_estab':type_of_estab,
+			# 'estab_status':estab_status,
+			'open_date':open_date,
+			# 'trust_school_flag':trust_school_flag,
+			'trust_name':trust_name,
+			'trust_code':trust_code,
+			# 'school_sponsor_flag':school_sponsor_flag,
+			'school_sponsor_name':school_sponsor_name
+			# 'federation_flag':federation_flag,
+			# 'federation_name':federation_name,
+			# 'gender':gender,
+			# 'religious_character':religious_character,
+			# 'admissions_policy':admissions_policy,
+			# 'easting':easting,
+			# 'northing':northing,
+			# 'gias_page_url':gias_page_url
+		})
 		for trust in trust_list:
 			if trust['trust_code']==trust_code:
-				if school_pupil_numbers=='':
+				if pupils=='':
 					trust['no_pupil_numbers_schools']+=1
 				else:
-					trust['pupil_numbers']+=int(school_pupil_numbers)
+					trust['pupil_numbers']+=int(pupils)
 					trust['pupil_numbers_schools']+=1
-				break
-
-for trust in trust_list:
-	if trust['no_pupil_numbers_schools']+trust['pupil_numbers_schools']!=trust['school_count']:
-		print trust
+					break
 
 dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/data')
 os.chdir(dir)
 
-# with open('schools.json', 'w') as out_file:
-# 	 json.dump(schools_list, out_file)
-
 with open('trusts.json', 'w') as out_file:
 	 json.dump(trust_list, out_file)
+
+with open('schools.json', 'w') as out_file:
+	 json.dump(school_list, out_file)
 
 
 # Create a folder for each trust with a copy of template page
@@ -172,7 +230,9 @@ for trust in trust_list:
 		soup=BeautifulSoup(html, 'html.parser')
 		new_h1=soup.new_tag('h1')
 		new_h1.string=trust['trust_name']
-		soup.body.append(new_h1)
+		soup.find(id='trust_name').append(new_h1)		# specifying a particular div, rather than using soup.div.append(grouplinks_file_date)
+		soup.find(id='gias_date').append(grouplinks_file_date)		# specifying a particular div, rather than using soup.div.append(grouplinks_file_date)
+		soup=soup.prettify()
 		with open(file_path, 'w') as write_file:
 			write_file.write(str(soup))
 
@@ -184,7 +244,7 @@ os.chdir(dir)
 with open('index_template.html') as read_file:
 	html=read_file.read()
 soup=BeautifulSoup(html, 'html.parser')
-soup.find(id='gias_date').append(grouplinks_file_name_date)		# specifying a particular div, rather than using soup.div.append(grouplinks_file_name_date)
+soup.find(id='gias_date').append(grouplinks_file_date)		# specifying a particular div, rather than using soup.div.append(grouplinks_file_date)
 soup=soup.prettify()
 with open('index.html', 'w') as write_file:
 	 write_file.write(str(soup))
