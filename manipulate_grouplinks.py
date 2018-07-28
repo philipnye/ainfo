@@ -12,7 +12,6 @@ from shutil import copy
 from bs4 import BeautifulSoup
 from bs4 import NavigableString
 
-
 # Create trust_list - a list of dictionaries, with one per trust. Add trusts that don't already feature in the list, and iterate the number of schools where they do
 trust_list=[]
 school_list=[]
@@ -113,7 +112,7 @@ for row in grouplinks_reader:
 			 trust_name_simple=re.sub('[^a-zA-Z0-9 \-\.@]', '', trust_name).lower()
 			 trust_name_simple=trust_name_simple.replace (' ', '-')
 			 trust_name_simple=trust_name_simple.replace ('--', '-')
-			 trust_page_url='/web/'+trust_code+'/'+trust_name_simple+'.html'
+			 trust_page_url='web/'+trust_code+'/'+trust_name_simple+'.html'
 			 trust_list.append({
 			 	'trust_code':trust_code,
 				'trust_name':trust_name,
@@ -173,27 +172,15 @@ for row in edubasealldata_reader:
 			'laestab':laestab,
 			'estab_name':estab_name,
 			'pupils':pupils,
-			# 'capacity':capacity,
 			'percentage_fsm':percentage_fsm,
 			'la':la,
 			'region':region,
 			'phase':phase,
 			'type_of_estab':type_of_estab,
-			# 'estab_status':estab_status,
 			'open_date':open_date,
-			# 'trust_school_flag':trust_school_flag,
 			'trust_name':trust_name,
 			'trust_code':trust_code,
-			# 'school_sponsor_flag':school_sponsor_flag,
 			'school_sponsor_name':school_sponsor_name
-			# 'federation_flag':federation_flag,
-			# 'federation_name':federation_name,
-			# 'gender':gender,
-			# 'religious_character':religious_character,
-			# 'admissions_policy':admissions_policy,
-			# 'easting':easting,
-			# 'northing':northing,
-			# 'gias_page_url':gias_page_url
 		})
 		for trust in trust_list:
 			if trust['trust_code']==trust_code:
@@ -202,7 +189,7 @@ for row in edubasealldata_reader:
 				else:
 					trust['pupil_numbers']+=int(pupils)
 					trust['pupil_numbers_schools']+=1
-					break
+				break
 
 dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/data')
 os.chdir(dir)
@@ -212,7 +199,6 @@ with open('trusts.json', 'w') as out_file:
 
 with open('schools.json', 'w') as out_file:
 	 json.dump(school_list, out_file)
-
 
 # Create a folder for each trust with a copy of template page
 path_stub='C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/web/'
@@ -228,14 +214,16 @@ for trust in trust_list:
 		with open(file_path) as read_file:
 			html=read_file.read()
 		soup=BeautifulSoup(html, 'html.parser')
+		new_script=soup.new_tag('script')
+		new_script.string='var trust_code='+trust['trust_code']
+		soup.head.append(new_script)
 		new_h1=soup.new_tag('h1')
 		new_h1.string=trust['trust_name']
-		soup.find(id='trust_name').append(new_h1)		# specifying a particular div, rather than using soup.div.append(grouplinks_file_date)
-		soup.find(id='gias_date').append(grouplinks_file_date)		# specifying a particular div, rather than using soup.div.append(grouplinks_file_date)
+		soup.find(id='trust_name').append(new_h1)
+		soup.find(id='gias_date').append(grouplinks_file_date)
 		soup=soup.prettify()
 		with open(file_path, 'w') as write_file:
 			write_file.write(str(soup))
-
 
 # Generate ainfo index.html
 dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo')
@@ -244,7 +232,7 @@ os.chdir(dir)
 with open('index_template.html') as read_file:
 	html=read_file.read()
 soup=BeautifulSoup(html, 'html.parser')
-soup.find(id='gias_date').append(grouplinks_file_date)		# specifying a particular div, rather than using soup.div.append(grouplinks_file_date)
+soup.find(id='gias_date').append(grouplinks_file_date)
 soup=soup.prettify()
 with open('index.html', 'w') as write_file:
 	 write_file.write(str(soup))

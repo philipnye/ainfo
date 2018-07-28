@@ -1,4 +1,4 @@
-<!DOCTYPE doctype html>
+<!DOCTYPE html>
 <html lang="en">
  <head>
   <meta charset="utf-8">
@@ -17,7 +17,19 @@
       $('#schoolsTable').DataTable({
         "ajax": {
           "url": '../../data/schools.json',
-          "dataSrc": "" // handle the fact we're passing in a JSON array rather than a JSON object i.e. not {"data": [{...},...]}
+          "dataSrc": function (json) {
+            let data=[]
+            let len=json.length
+            if(len>0){
+              for(let i=0; i<len; i++){
+                var line=json.shift()
+                if (line.trust_code==trust_code){
+                  data.push(line)
+                }
+              }
+	          }
+          return data;
+          }
         },
         "deferRender": true,
         "columns": [{
@@ -87,6 +99,9 @@
     </link>
    </meta>
   </meta>
+  <script>
+   var trust_code=16600
+  </script>
  </head>
  <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">

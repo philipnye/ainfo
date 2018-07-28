@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -14,7 +14,19 @@
       $('#schoolsTable').DataTable({
         "ajax": {
           "url": '../../data/schools.json',
-          "dataSrc": "" // handle the fact we're passing in a JSON array rather than a JSON object i.e. not {"data": [{...},...]}
+          "dataSrc": function (json) {
+            let data=[]
+            let len=json.length
+            if(len>0){
+              for(let i=0; i<len; i++){
+                var line=json.shift()
+                if (line.trust_code==trust_code){
+                  data.push(line)
+                }
+              }
+	          }
+          return data;
+          }
         },
         "deferRender": true,
         "columns": [{
@@ -142,35 +154,63 @@
         </ul>
       </div>
     </div> -->
-    <div class="table-responsive" id="tableContainer">
-      <table class="table table-hover table-sm" id=schoolsTable>
-        <thead>
-          <tr>
-            <th>URN</th>
-            <th>LAEstab</th>
-            <th>School</th>
-            <th>Pupils</th>
-            <th>Free school meals %</th>
-            <th>Local authority</th>
-            <th>Region</th>
-            <th>Phase</th>
-            <th>School type</th>
-            <th>Opened</th>
-            <th>Trust</th>
-            <th>Sponsor</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </div>
+   <div class="table-responsive" id="tableContainer">
+    <table class="table table-hover table-sm" id="schoolsTable">
+     <thead>
+      <tr>
+       <th>
+        URN
+       </th>
+       <th>
+        LAEstab
+       </th>
+       <th>
+        School
+       </th>
+       <th>
+        Pupils
+       </th>
+       <th>
+        Free school meals %
+       </th>
+       <th>
+        Local authority
+       </th>
+       <th>
+        Region
+       </th>
+       <th>
+        Phase
+       </th>
+       <th>
+        School type
+       </th>
+       <th>
+        Opened
+       </th>
+       <th>
+        Trust
+       </th>
+       <th>
+        Sponsor
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+     </tbody>
+    </table>
+   </div>
   </main>
   <footer class="footer">
-    <div class="container">
-      <span class="text-muted">Place sticky footer content here.</span>
-    </div>
+   <div class="container">
+    <span class="text-muted">
+     Place sticky footer content here.
+    </span>
+   </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-</body>
+  <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">
+  </script>
+ </body>
 </html>
