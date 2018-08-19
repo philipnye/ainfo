@@ -13,6 +13,7 @@ from bs4 import BeautifulSoup
 from bs4 import NavigableString
 
 # Create trust_list - a list of dictionaries, with one per trust. Add trusts that don't already feature in the list, and iterate the number of schools where they do
+total_list=[]
 trust_list=[]
 school_list=[]
 gias_url_stub='https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/'
@@ -62,7 +63,7 @@ edubasealldata_reader=csv.DictReader(edubasealldata_file)
 
 for row in grouplinks_reader:
 	if row['Group Type'].lower() in ('multi-academy trust','single-academy trust'):
-		trust_code=row['Linked UID']
+		trust_code=int(row['Linked UID'])
 		trust_name=row['Group Name']
 		trust_name=trust_name.replace('\xa0', ' ')		# replace characters that will prevent saving as JSON
 		trust_name=trust_name.replace('\x92', '\'')
@@ -109,12 +110,12 @@ for row in grouplinks_reader:
 					trust['estab_type_count']['utc_studio_school']+=estab_type_count['utc_studio_school']
 					break
 		else:
-			 trust_name_simple=re.sub('[^a-zA-Z0-9 \-\.@]', '', trust_name).lower()
-			 trust_name_simple=trust_name_simple.replace (' ', '-')
-			 trust_name_simple=trust_name_simple.replace ('--', '-')
-			 trust_page_url='web/'+trust_code+'/'+trust_name_simple+'.html'
-			 trust_list.append({
-			 	'trust_code':trust_code,
+			trust_name_simple=re.sub('[^a-zA-Z0-9 \-\.@]', '', trust_name).lower()
+			trust_name_simple=trust_name_simple.replace (' ', '-')
+			trust_name_simple=trust_name_simple.replace ('--', '-')
+			trust_page_url='web/'+str(trust_code)+'/'+trust_name_simple+'.html'
+			trust_list.append({
+				'trust_code':trust_code,
 				'trust_name':trust_name,
 				'trust_name_simple':trust_name_simple,
 				'trust_page_url':trust_page_url,
@@ -128,6 +129,48 @@ for row in grouplinks_reader:
 				'pupil_numbers_schools':0,
 				'no_pupil_numbers_schools':0
 			})
+
+school_count=0
+trust_count=0
+sat_count=0
+mat_count=0
+estab_phase_count['primary']=0
+estab_phase_count['secondary']=0
+estab_phase_count['all_through']=0
+estab_phase_count['alternative_provision']=0
+estab_phase_count['special']=0
+estab_phase_count['post_16']=0
+estab_type_count['sponsored_academy']=0
+estab_type_count['converter_academy']=0
+estab_type_count['free_school']=0
+estab_type_count['utc_studio_school']=0
+
+for trust in trust_list:		# XXX: in creating totals using grouplinks file, misses out a small number of academies - those in GIAS data with no trust and TrustSchoolFlag (name) status of 'Not supported by a trust'
+	school_count+=trust['school_count']
+	trust_count+=1
+	if trust['trust_type']=='Single-academy trust':
+		sat_count+=1
+	elif trust['trust_type']=='Multi-academy trust':
+		mat_count+=1
+	estab_phase_count['primary']+=trust['estab_phase_count']['primary']
+	estab_phase_count['secondary']+=trust['estab_phase_count']['secondary']
+	estab_phase_count['all_through']+=trust['estab_phase_count']['all_through']
+	estab_phase_count['alternative_provision']+=trust['estab_phase_count']['alternative_provision']
+	estab_phase_count['special']+=trust['estab_phase_count']['special']
+	estab_phase_count['post_16']+=trust['estab_phase_count']['post_16']
+	estab_type_count['sponsored_academy']+=trust['estab_type_count']['sponsored_academy']
+	estab_type_count['converter_academy']+=trust['estab_type_count']['converter_academy']
+	estab_type_count['free_school']+=trust['estab_type_count']['free_school']
+	estab_type_count['utc_studio_school']+=trust['estab_type_count']['utc_studio_school']
+
+total_list.append({
+	'school_count':school_count,
+	'trust_count': trust_count,
+	'sat_count': sat_count,
+	'mat_count': mat_count,
+	'estab_type_count':estab_type_count,
+	'estab_phase_count':estab_phase_count
+})
 
 for row in edubasealldata_reader:
 	if row['EstablishmentTypeGroup (name)'].lower() in ('academies','free schools') and row['EstablishmentStatus (name)'].lower() in ('open', 'open, but proposed to close'):
@@ -156,7 +199,10 @@ for row in edubasealldata_reader:
 		trust_name=trust_name.replace('\xa0', ' ')		# replace characters that will prevent saving as JSON
 		trust_name=trust_name.replace('\x92', '\'')
 		trust_name=trust_name.replace('\xc9', 'E')
-		trust_code=row['Trusts (code)']
+		if row['Trusts (code)']!='':		# handle the small number of academies in GIAS data with no trust and TrustSchoolFlag (name) status of 'Not supported by a trust'
+			trust_code=int(row['Trusts (code)'])
+		else:
+			trust_code=None
 		school_sponsor_flag=row['SchoolSponsorFlag (name)']
 		school_sponsor_name=row['SchoolSponsors (name)']
 		school_sponsor_name=school_sponsor_name.replace('\xa0', ' ')		# replace characters that will prevent saving as JSON
@@ -194,18 +240,21 @@ for row in edubasealldata_reader:
 dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/data')
 os.chdir(dir)
 
+with open('totals.json', 'w') as out_file:
+	json.dump(total_list, out_file, indent=4, separators=(',', ': '))
+
 with open('trusts.json', 'w') as out_file:
-	 json.dump(trust_list, out_file)
+	json.dump(trust_list, out_file, indent=4, separators=(',', ': '))
 
 with open('schools.json', 'w') as out_file:
-	 json.dump(school_list, out_file)
+	json.dump(school_list, out_file, indent=4, separators=(',', ': '))
 
 # Create a folder for each trust with a copy of template page
 path_stub='C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/web/'
 
 for trust in trust_list:
 	if trust['trust_name'].lower()[0]=='a':
-		path=path_stub+trust['trust_code']
+		path=path_stub+str(trust['trust_code'])
 		file_name=trust['trust_name_simple'].lower()+'.html'
 		if not os.path.exists(path):
 			os.makedirs(path)
@@ -215,7 +264,7 @@ for trust in trust_list:
 			html=read_file.read()
 		soup=BeautifulSoup(html, 'html.parser')
 		new_script=soup.new_tag('script')
-		new_script.string='var trust_code='+trust['trust_code']
+		new_script.string='var trust_code='+str(trust['trust_code'])
 		soup.head.append(new_script)
 		new_h1=soup.new_tag('h1')
 		new_h1.string=trust['trust_name']
