@@ -5,91 +5,12 @@
    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" rel="stylesheet">
      <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-      <link href="../../styles.css" rel="stylesheet">
+      <link href="/styles.css" rel="stylesheet">
        <script crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" src="https://code.jquery.com/jquery-3.3.1.min.js">
        </script>
        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js">
        </script>
        <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js">
-       </script>
-       <script>
-        $(document).ready(function() {
-      $('#schoolsTable').DataTable({
-        "ajax": {
-          "url": '../../data/schools.json',
-          "dataSrc": function (json) {
-            let data=[]
-            let len=json.length
-            if(len>0){
-              for(let i=0; i<len; i++){
-                var line=json.shift()
-                if (line.trust_code==trust_code){
-                  data.push(line)
-                }
-              }
-	          }
-          return data;
-          }
-        },
-        "deferRender": true,
-        "columns": [{
-            "data": "urn",
-            "orderSequence": ["asc", "desc"]
-          },
-          {
-            "data": "laestab",
-            "orderSequence": ["desc", "asc"]
-          },
-          {
-            "data": "estab_name",
-            "orderSequence": ["desc", "asc"]
-          },
-          {
-            "data": "pupils",
-            "orderSequence": ["desc", "asc"]
-          },
-          {
-            "data": "percentage_fsm",
-            "orderSequence": ["desc", "asc"]
-          },
-          {
-            "data": "la",
-            "orderSequence": ["desc", "asc"]
-          },
-          {
-            "data": "region",
-            "orderSequence": ["desc", "asc"]
-          },
-          {
-            "data": "phase",
-            "orderSequence": ["desc", "asc"]
-          },
-          {
-            "data": "type_of_estab",
-            "orderSequence": ["desc", "asc"]
-          },
-          {
-            "data": "open_date",
-            "orderSequence": ["desc", "asc"]
-          },
-          {
-            "data": "trust_name",
-            "orderSequence": ["desc", "asc"]
-          },
-          {
-            "data": "school_sponsor_name",
-            "orderSequence": ["desc", "asc"]
-          }
-        ],
-        "order": [2, 'asc']
-        // "columnDefs": [{
-        //   "targets": 0,
-        //   "render": function(data, type, row, meta) {
-        //     return '<a href="' + row.trust_page_url + '">' + data + '</a>';
-        //   }
-        // }]
-      });
-    });
        </script>
        <title>
         ainfo
@@ -142,6 +63,12 @@
   </nav>
   <main class="container" role="main">
    <div class="container">
+    <div class="row" id="gias_date">
+     GIAS date:
+     1 August 2018
+    </div>
+   </div>
+   <div class="container">
     <div class="row" id="trust_name">
      <h1>
       ACES ACADEMIES TRUST
@@ -149,42 +76,55 @@
     </div>
    </div>
    <div class="container">
-    <div class="row" id="gias_date">
-     GIAS date:
-     1 July 2018
+    <div class="row">
+     <ul>
+      <li id="acadCount">
+       academies
+      </li>
+      <ul>
+       <li id="sponAcadCount">
+        sponsored academies
+       </li>
+       <li id="convAcadCount">
+        converter academies
+       </li>
+       <li id="fsCount">
+        free schools
+       </li>
+       <li id="utcssCount">
+        university technical colleges/studio schools
+       </li>
+      </ul>
+     </ul>
+     <ul>
+      <li id="primCount">
+       primary
+      </li>
+      <li id="secCount">
+       secondary
+      </li>
+      <li id="thruCount">
+       all-through
+      </li>
+      <li id="apCount">
+       alternative provision
+      </li>
+      <li id="specCount">
+       special
+      </li>
+      <li id="post16Count">
+       post-16
+      </li>
+     </ul>
+    </div>
+    <div class="row">
+     <ul>
+      <li id="pupsCount">
+       pupils
+      </li>
+     </ul>
     </div>
    </div>
-   <!-- <div class="container">
-      <div class="row">
-        <ul>
-          <li>academies</li>
-          <ul>
-            <li>sponsored academies</li>
-            <li>converter academies</li>
-            <li>free schools</li>
-            <li>university technical colleges</li>
-            <li>studio schools</li>
-          </ul>
-        </ul>
-        <ul>
-          <li>primary</li>
-          <li>secondary</li>
-          <li>all-through</li>
-          <li>alternative provision</li>
-          <li>special</li>
-          <li>post-16</li>
-        </ul>
-      </div>
-      <div class="row">
-        <ul>
-          <li>trusts</li>
-          <ul>
-            <li>single academy trusts</li>
-            <li>multi-academy trusts</li>
-          </ul>
-        </ul>
-      </div>
-    </div> -->
    <div class="table-responsive" id="tableContainer">
     <table class="table table-hover table-sm" id="schoolsTable">
      <thead>
@@ -239,6 +179,8 @@
     </span>
    </div>
   </footer>
+  <script src="/js/trusts.js">
+  </script>
   <script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
   </script>
   <script crossorigin="anonymous" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">

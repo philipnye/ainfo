@@ -1,0 +1,22 @@
+[
+    {
+        "estab_phase_count": {
+            "alternative_provision": 121,
+            "post_16": 46,
+            "all_through": 125,
+            "primary": 4977,
+            "special": 301,
+            "secondary": 2341
+        },
+        "trust_count": 2880,
+        "estab_type_count": {
+            "converter_academy": 5314,
+            "utc_studio_school": 79,
+            "free_school": 393,
+            "sponsored_academy": 2125
+        },
+        "sat_count": 1481,
+        "mat_count": 1399,
+        "school_count": 7911
+    }
+]
