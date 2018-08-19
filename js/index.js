@@ -1,5 +1,5 @@
 $(function () {
-	$.getJSON('/data/totals.json', function(json) {
+	$.getJSON('data/totals.json', function(json) {
     let len=json.length
     if(len>0){
 			var line=json.shift()

@@ -1,5 +1,5 @@
 $(function () {
-	$.getJSON('/data/trusts.json', function(json) {
+	$.getJSON('../../data/trusts.json', function(json) {
     let len=json.length
     if(len>0){
       for(let i=0; i<len; i++){
@@ -23,7 +23,7 @@ $(function () {
 	});
   $('#schoolsTable').DataTable({
     "ajax": {
-      "url": '/data/schools.json',
+      "url": '../../data/schools.json',
       "dataSrc": function (json) {
         let data=[]
         let len=json.length
