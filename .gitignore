@@ -4,5 +4,4 @@ project_files/
 2_copy_data_from_csvs.py
 3_query_database.py
 ainfo.db
-edubasealldata20161202.xlsx
-grouplinks_edubaseallacademiesandfree20161216.xlsx
+*.csv*

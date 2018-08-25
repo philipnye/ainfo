@@ -1,9 +1,9 @@
 [
     {
         "estab_phase_count": {
-            "alternative_provision": 121,
-            "post_16": 46,
             "all_through": 125,
+            "post_16": 46,
+            "alternative_provision": 121,
             "primary": 4977,
             "special": 301,
             "secondary": 2341

@@ -16,6 +16,7 @@ from bs4 import NavigableString
 total_list=[]
 trust_list=[]
 school_list=[]
+sponsor_list=[]
 gias_url_stub='https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/'
 companies_house_url_stub='https://beta.companieshouse.gov.uk/company/'
 
@@ -61,6 +62,7 @@ edubasealldata_file=requests.get(edubasealldata_file_url)
 edubasealldata_file=edubasealldata_file.iter_lines()	  # is required in order for csv file to be read correctly, without errors caused by new-line characters
 edubasealldata_reader=csv.DictReader(edubasealldata_file)
 
+# Create trust-level data
 for row in grouplinks_reader:
 	if row['Group Type'].lower() in ('multi-academy trust','single-academy trust'):
 		trust_code=int(row['Linked UID'])
@@ -130,21 +132,11 @@ for row in grouplinks_reader:
 				'no_pupil_numbers_schools':0
 			})
 
-school_count=0
-trust_count=0
-sat_count=0
-mat_count=0
-estab_phase_count['primary']=0
-estab_phase_count['secondary']=0
-estab_phase_count['all_through']=0
-estab_phase_count['alternative_provision']=0
-estab_phase_count['special']=0
-estab_phase_count['post_16']=0
-estab_type_count['sponsored_academy']=0
-estab_type_count['converter_academy']=0
-estab_type_count['free_school']=0
-estab_type_count['utc_studio_school']=0
+school_count=trust_count=sat_count=mat_count=0
+estab_phase_count = dict.fromkeys(estab_phase_count, 0)
+estab_type_count = dict.fromkeys(estab_type_count, 0)
 
+# Create overall totals
 for trust in trust_list:		# XXX: in creating totals using grouplinks file, misses out a small number of academies - those in GIAS data with no trust and TrustSchoolFlag (name) status of 'Not supported by a trust'
 	school_count+=trust['school_count']
 	trust_count+=1
@@ -172,6 +164,7 @@ total_list.append({
 	'estab_phase_count':estab_phase_count
 })
 
+# Create school-level data
 for row in edubasealldata_reader:
 	if row['EstablishmentTypeGroup (name)'].lower() in ('academies','free schools') and row['EstablishmentStatus (name)'].lower() in ('open', 'open, but proposed to close'):
 		pupils=row['NumberOfPupils']
@@ -199,7 +192,7 @@ for row in edubasealldata_reader:
 		trust_name=trust_name.replace('\xa0', ' ')		# replace characters that will prevent saving as JSON
 		trust_name=trust_name.replace('\x92', '\'')
 		trust_name=trust_name.replace('\xc9', 'E')
-		if row['Trusts (code)']!='':		# handle the small number of academies in GIAS data with no trust and TrustSchoolFlag (name) status of 'Not supported by a trust'
+		if row['Trusts (code)']!='':		# XXX handle the small number of academies in GIAS data with no trust and TrustSchoolFlag (name) status of 'Not supported by a trust'
 			trust_code=int(row['Trusts (code)'])
 		else:
 			trust_code=None
@@ -228,6 +221,24 @@ for row in edubasealldata_reader:
 			'trust_code':trust_code,
 			'school_sponsor_name':school_sponsor_name
 		})
+		if any(sponsor['school_sponsor_name']==school_sponsor_name for sponsor in sponsor_list)==True:
+			for sponsor in sponsor_list:
+				if sponsor['school_sponsor_name']==school_sponsor_name:
+					if any(trust['trust_code']==trust_code for trust in sponsor['trusts'])==False:
+						sponsor['trusts'].append({
+							'trust_name':trust_name,
+							'trust_code':trust_code
+						})
+					break
+		else:
+			trust_name_simple=re.sub('[^a-zA-Z0-9 \-\.@]', '', trust_name).lower()
+			sponsor_list.append({
+				'school_sponsor_name':school_sponsor_name,
+				'trusts':[{
+					'trust_name':trust_name,
+					'trust_code':trust_code
+				}]
+			})
 		for trust in trust_list:
 			if trust['trust_code']==trust_code:
 				if pupils=='':
@@ -237,6 +248,15 @@ for row in edubasealldata_reader:
 					trust['pupil_numbers_schools']+=1
 				break
 
+sponsor_list=[sponsor for sponsor in sponsor_list if len(sponsor['trusts'])>1]
+
+for trust in trust_list:
+	for sponsor in sponsor_list:
+		if any(sponsor_trust['trust_code']==trust['trust_code'] for sponsor_trust in sponsor['trusts'])==True:
+			trust['trust_name_loose']=sponsor['school_sponsor_name']
+			break
+
+# Save data to json files
 dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/data')
 os.chdir(dir)
 
@@ -249,7 +269,7 @@ with open('trusts.json', 'w') as out_file:
 with open('schools.json', 'w') as out_file:
 	json.dump(school_list, out_file, indent=4, separators=(',', ': '))
 
-# Create a folder for each trust with a copy of template page
+# Create trust pages
 path_stub='C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/web/'
 
 for trust in trust_list:
@@ -278,7 +298,7 @@ for trust in trust_list:
 dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo')
 os.chdir(dir)
 
-with open('index_template.html') as read_file:
+with open('index.html') as read_file:
 	html=read_file.read()
 soup=BeautifulSoup(html, 'html.parser')
 soup.find(id='gias_date').append(grouplinks_file_date)
