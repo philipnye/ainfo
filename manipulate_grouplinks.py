@@ -257,8 +257,8 @@ for trust in trust_list:
 			break
 
 # Save data to json files
-dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/data')
-os.chdir(dir)
+os.chdir(os.path.dirname( __file__ ))
+os.chdir('data')
 
 with open('totals.json', 'w') as out_file:
 	json.dump(total_list, out_file, indent=4, separators=(',', ': '))
@@ -270,16 +270,19 @@ with open('schools.json', 'w') as out_file:
 	json.dump(school_list, out_file, indent=4, separators=(',', ': '))
 
 # Create trust pages
-path_stub='C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/web/'
+os.chdir(os.path.dirname( __file__ ))
+trust_page_path_stub=os.getcwd()+'\\web\\'
+os.chdir(os.path.dirname( __file__ ))
+template_path=os.getcwd()+'\\templates\\trust_page_template.html'
 
 for trust in trust_list:
 	if trust['trust_name'].lower()[0]=='a':
-		path=path_stub+str(trust['trust_code'])
+		trust_page_path=trust_page_path_stub+str(trust['trust_code'])
 		file_name=trust['trust_name_simple'].lower()+'.html'
-		if not os.path.exists(path):
-			os.makedirs(path)
-		file_path=os.path.join(path, file_name)		# done outside the if not statement, as we want a fresh copy of the template in each case
-		copy('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/trust_page_template.html', file_path)
+		if not os.path.exists(trust_page_path):
+			os.makedirs(trust_page_path)
+		file_path=os.path.join(trust_page_path, file_name)		# done outside the if not statement, as we want a fresh copy of the template in each case
+		copy(template_path, file_path)
 		with open(file_path) as read_file:
 			html=read_file.read()
 		soup=BeautifulSoup(html, 'html.parser')
@@ -295,13 +298,12 @@ for trust in trust_list:
 			write_file.write(str(soup))
 
 # Generate ainfo index.html
-dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo')
-os.chdir(dir)
+os.chdir(os.path.dirname( __file__ ))
 
 with open('index.html') as read_file:
 	html=read_file.read()
 soup=BeautifulSoup(html, 'html.parser')
-soup.find(id='gias_date').append(grouplinks_file_date)
+soup.find(id='gias_date').string='GIAS date: '+grouplinks_file_date
 soup=soup.prettify()
 with open('index.html', 'w') as write_file:
 	 write_file.write(str(soup))
