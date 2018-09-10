@@ -17,6 +17,8 @@ $(function () {
 					document.getElementById('specCount').innerHTML=line.estab_phase_count.special.toLocaleString('en', {useGrouping:true})+document.getElementById('specCount').innerHTML
 					document.getElementById('post16Count').innerHTML=line.estab_phase_count.post_16.toLocaleString('en', {useGrouping:true})+document.getElementById('post16Count').innerHTML
 					document.getElementById('pupsCount').innerHTML=line.pupil_numbers.toLocaleString('en', {useGrouping:true})+document.getElementById('pupsCount').innerHTML
+					document.getElementById('pupsSchoolsCount').innerHTML=line.pupil_numbers_schools.toLocaleString('en', {useGrouping:true})+document.getElementById('pupsSchoolsCount').innerHTML
+					document.getElementById('noPupsSchoolsCount').innerHTML=line.no_pupil_numbers_schools.toLocaleString('en', {useGrouping:true})+document.getElementById('noPupsSchoolsCount').innerHTML
 				}
 			}
 		}
