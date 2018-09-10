@@ -69,11 +69,11 @@ $(function () {
         "orderSequence": ["desc", "asc"]
       },
       {
-        "data": "phase",
+        "data": "estab_phase",
         "orderSequence": ["desc", "asc"]
       },
       {
-        "data": "type_of_estab",
+        "data": "estab_type",
         "orderSequence": ["desc", "asc"]
       },
       {

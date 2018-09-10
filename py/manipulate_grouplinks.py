@@ -63,6 +63,45 @@ edubasealldata_file=requests.get(edubasealldata_file_url)
 edubasealldata_file=edubasealldata_file.iter_lines()	  # is required in order for csv file to be read correctly, without errors caused by new-line characters
 edubasealldata_reader=csv.DictReader(edubasealldata_file)
 
+def group_estab_phases(estab_phase,estab_type):
+	if estab_phase in ('Primary','Middle deemed primary'):
+		estab_phase='Primary'
+	elif estab_phase in ('Secondary','Middle deemed secondary'):
+		estab_phase='Secondary'
+	elif estab_phase in ('All through'):
+		estab_phase='All through'
+	elif estab_phase==('Not applicable') and estab_type in ('Academy alternative provision converter','Academy alternative provision sponsor led','Free schools alternative provision'):
+		estab_phase='Alternative provision'
+	elif estab_phase==('Not applicable') and estab_type in ('Academy special converter','Academy special sponsor led','Free schools special'):
+		estab_phase='Special'
+	elif estab_phase in ('16 plus'):
+		estab_phase='Post_16'
+	return estab_phase
+
+def count_grouped_estab_phases(estab_phase):
+	estab_phase_string=estab_phase.lower()
+	estab_phase_string=re.sub(' ', '_', estab_phase_string)
+	estab_phase_count[estab_phase_string]=1
+	return estab_phase_count
+
+def group_estab_types(estab_type):
+	if estab_type in ('Academy sponsor led','Academy alternative provision sponsor led','Academy special sponsor led','Academy 16 to 19 sponsor led'):
+		estab_type='Sponsored academy'
+	elif estab_type in ('Academy converter','Academy alternative provision converter','Academy special converter','Academy 16-19 converter'):
+		estab_type='Converter academy'
+	elif estab_type in ('Free schools','Free schools alternative provision','Free schools special','Free schools 16 to 19'):
+		estab_type='Free school'
+	elif estab_type in ('University technical college','Studio schools'):
+		estab_type='UTC/studio school'
+	return estab_type
+
+def count_grouped_estab_types(estab_type):
+	estab_type_string=estab_type.lower()
+	estab_type_string=re.sub(' ', '_', estab_type_string)
+	estab_type_string=re.sub('/', '_', estab_type_string)
+	estab_type_count[estab_type_string]=1
+	return estab_type_count
+
 # Create trust-level data
 for row in grouplinks_reader:
 	if row['Group Type'].lower() in ('multi-academy trust','single-academy trust'):
@@ -75,28 +114,12 @@ for row in grouplinks_reader:
 		trust_name_url=re.sub('-$', '', trust_name_url)
 		trust_type=row['Group Type']
 		companies_house_number=row['Companies House Number']
-		estab_type_count=dict.fromkeys(estab_type_count, 0)
+		estab_phase=group_estab_phases(row['PhaseOfEducation (name)'],row['TypeOfEstablishment (name)'])
 		estab_phase_count=dict.fromkeys(estab_phase_count, 0)
-		if row['PhaseOfEducation (name)'] in ('Primary','Middle deemed primary'):
-			estab_phase_count['primary']=1
-		elif row['PhaseOfEducation (name)'] in ('Secondary','Middle deemed secondary'):
-			estab_phase_count['secondary']=1
-		elif row['PhaseOfEducation (name)'] in ('All through'):
-			estab_phase_count['all_through']=1
-		elif row['PhaseOfEducation (name)']==('Not applicable') and row['TypeOfEstablishment (name)'] in ('Academy alternative provision converter','Academy alternative provision sponsor led','Free schools alternative provision'):
-			estab_phase_count['alternative_provision']=1
-		elif row['PhaseOfEducation (name)']==('Not applicable') and row['TypeOfEstablishment (name)'] in ('Academy special converter','Academy special sponsor led','Free schools special'):
-			estab_phase_count['special']=1
-		elif row['PhaseOfEducation (name)'] in ('16 plus'):
-			estab_phase_count['post_16']=1
-		if row['TypeOfEstablishment (name)'] in ('Academy sponsor led','Academy alternative provision sponsor led','Academy special sponsor led','Academy 16 to 19 sponsor led'):
-			estab_type_count['sponsored_academy']=1
-		elif row['TypeOfEstablishment (name)'] in ('Academy converter','Academy alternative provision converter','Academy special converter','Academy 16-19 converter'):
-			estab_type_count['converter_academy']=1
-		elif row['TypeOfEstablishment (name)'] in ('Free schools','Free schools alternative provision','Free schools special','Free schools 16 to 19'):
-			estab_type_count['free_school']=1
-		elif row['TypeOfEstablishment (name)'] in ('University technical college','Studio schools'):
-			estab_type_count['utc_studio_school']=1
+		count_grouped_estab_phases(estab_phase)
+		estab_type=group_estab_types(row['TypeOfEstablishment (name)'])
+		estab_type_count=dict.fromkeys(estab_type_count, 0)
+		count_grouped_estab_types(estab_type)
 		if any(trust['trust_code']==trust_code for trust in trust_list)==True:
 			for trust in trust_list:
 				if trust['trust_code']==trust_code:
@@ -172,10 +195,10 @@ for row in edubasealldata_reader:
 		la=row['LA (name)']
 		region=row['GOR (name)']
 		estab_name=row['EstablishmentName'].decode('windows-1252').encode('utf-8')
-		type_of_estab=row['TypeOfEstablishment (name)']
+		estab_phase=group_estab_phases(row['PhaseOfEducation (name)'],row['TypeOfEstablishment (name)'])
+		estab_type=group_estab_types(row['TypeOfEstablishment (name)'])
 		estab_status=row['EstablishmentStatus (name)']
 		open_date=row['OpenDate']
-		phase=row['PhaseOfEducation (name)']
 		gender=row['Gender (name)']
 		religious_character=row['ReligiousCharacter (name)']
 		admissions_policy=row['AdmissionsPolicy (name)']
@@ -202,8 +225,8 @@ for row in edubasealldata_reader:
 			'percentage_fsm':percentage_fsm,
 			'la':la,
 			'region':region,
-			'phase':phase,
-			'type_of_estab':type_of_estab,
+			'estab_phase':estab_phase,
+			'estab_type':estab_type,
 			'open_date':open_date,
 			'trust_name':trust_name,
 			'trust_code':trust_code,
@@ -275,10 +298,7 @@ for trust in trust_list:
 		if os.path.exists(trust_page_path):
 			for existing_file in os.listdir(trust_page_path):
 				existing_file_path=os.path.join(trust_page_path, existing_file)
-				try:
-					os.unlink(existing_file_path)
-				except Exception as e:
-					print(e)
+				os.unlink(existing_file_path)
 		else:
 			os.makedirs(trust_page_path)
 		file_path=os.path.join(trust_page_path, file_name)		# done outside the if not statement, as we want a fresh copy of the template in each case
