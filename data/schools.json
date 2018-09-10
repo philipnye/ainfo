@@ -4375,7 +4375,7 @@
         "la": "Torbay",
         "region": "South West",
         "trust_name": "TORQUAY BOYS' GRAMMAR SCHOOL",
-        "school_sponsor_name": "Torquay Boys' Grammar School Multi-Academy Trust",
+        "school_sponsor_name": "Torquay Boys\u2019 Grammar School Multi-Academy Trust",
         "open_date": "01-11-2010",
         "urn": "136321"
     },
@@ -9489,7 +9489,7 @@
         "pupils": "270",
         "la": "Staffordshire",
         "region": "West Midlands",
-        "trust_name": "FIERTE MULTI-ACADEMY TRUST",
+        "trust_name": "FIERT\u00c9 MULTI-ACADEMY TRUST",
         "school_sponsor_name": "",
         "open_date": "01-06-2011",
         "urn": "136762"
@@ -19794,7 +19794,7 @@
         "pupils": "338",
         "la": "Herefordshire",
         "region": "West Midlands",
-        "trust_name": "LADY HAWKINS' SCHOOL",
+        "trust_name": "LADY HAWKINS\u2019 SCHOOL",
         "school_sponsor_name": "",
         "open_date": "01-11-2011",
         "urn": "137608"
@@ -21025,7 +21025,7 @@
         "la": "Durham",
         "region": "North East",
         "trust_name": "ROMERO CATHOLIC EDUCATION TRUST",
-        "school_sponsor_name": "St John's School & Sixth Form College",
+        "school_sponsor_name": "St John\u2019s School & Sixth Form College",
         "open_date": "01-12-2011",
         "urn": "137702"
     },
@@ -22720,7 +22720,7 @@
         "la": "Barnsley",
         "region": "Yorkshire and the Humber",
         "trust_name": "ST MARY'S ACADEMY TRUST",
-        "school_sponsor_name": "St Mary's Academy Trust",
+        "school_sponsor_name": "St Mary\u2019s Academy Trust",
         "open_date": "01-02-2012",
         "urn": "137870"
     },
@@ -23799,7 +23799,7 @@
         "pupils": "214",
         "la": "Bromley",
         "region": "London",
-        "trust_name": "ST. JAMES' R.C. PRIMARY SCHOOL",
+        "trust_name": "ST. JAMES\u2019 R.C. PRIMARY SCHOOL",
         "school_sponsor_name": "",
         "open_date": "01-04-2012",
         "urn": "137958"
@@ -27280,7 +27280,7 @@
         "la": "Barnsley",
         "region": "Yorkshire and the Humber",
         "trust_name": "ST MARY'S ACADEMY TRUST",
-        "school_sponsor_name": "St Mary's Academy Trust",
+        "school_sponsor_name": "St Mary\u2019s Academy Trust",
         "open_date": "01-09-2012",
         "urn": "138234"
     },
@@ -29050,7 +29050,7 @@
         "la": "Torbay",
         "region": "South West",
         "trust_name": "TORQUAY BOYS' GRAMMAR SCHOOL",
-        "school_sponsor_name": "Torquay Boys' Grammar School Multi-Academy Trust",
+        "school_sponsor_name": "Torquay Boys\u2019 Grammar School Multi-Academy Trust",
         "open_date": "01-09-2012",
         "urn": "138370"
     },
@@ -30820,7 +30820,7 @@
         "la": "Sunderland",
         "region": "North East",
         "trust_name": "THE ASCENT ACADEMIES' TRUST",
-        "school_sponsor_name": "Ascent Academies' Trust",
+        "school_sponsor_name": "Ascent Academies\u2019 Trust",
         "open_date": "01-08-2012",
         "urn": "138526"
     },
@@ -30880,7 +30880,7 @@
         "la": "Sunderland",
         "region": "North East",
         "trust_name": "THE ASCENT ACADEMIES' TRUST",
-        "school_sponsor_name": "Ascent Academies' Trust",
+        "school_sponsor_name": "Ascent Academies\u2019 Trust",
         "open_date": "01-08-2012",
         "urn": "138530"
     },
@@ -33235,7 +33235,7 @@
         "la": "Durham",
         "region": "North East",
         "trust_name": "THE ASCENT ACADEMIES' TRUST",
-        "school_sponsor_name": "Ascent Academies' Trust",
+        "school_sponsor_name": "Ascent Academies\u2019 Trust",
         "open_date": "01-09-2012",
         "urn": "138718"
     },
@@ -36002,7 +36002,7 @@
     {
         "trust_code": 2332,
         "laestab": "3844800",
-        "estab_name": "St Thomas a Becket Catholic Secondary School, A Voluntary Academy",
+        "estab_name": "St Thomas \u00e0 Becket Catholic Secondary School, A Voluntary Academy",
         "percentage_fsm": "11.9",
         "phase": "Secondary",
         "type_of_estab": "Academy converter",
@@ -39370,7 +39370,7 @@
         "la": "Barnsley",
         "region": "Yorkshire and the Humber",
         "trust_name": "ST MARY'S ACADEMY TRUST",
-        "school_sponsor_name": "St Mary's Academy Trust",
+        "school_sponsor_name": "St Mary\u2019s Academy Trust",
         "open_date": "01-09-2013",
         "urn": "139230"
     },
@@ -54610,7 +54610,7 @@
         "la": "Barnsley",
         "region": "Yorkshire and the Humber",
         "trust_name": "ST MARY'S ACADEMY TRUST",
-        "school_sponsor_name": "St Mary's Academy Trust",
+        "school_sponsor_name": "St Mary\u2019s Academy Trust",
         "open_date": "01-12-2013",
         "urn": "140460"
     },
@@ -56395,7 +56395,7 @@
         "la": "Barnsley",
         "region": "Yorkshire and the Humber",
         "trust_name": "ST MARY'S ACADEMY TRUST",
-        "school_sponsor_name": "St Mary's Academy Trust",
+        "school_sponsor_name": "St Mary\u2019s Academy Trust",
         "open_date": "01-02-2014",
         "urn": "140602"
     },
@@ -62710,7 +62710,7 @@
         "la": "Barnsley",
         "region": "Yorkshire and the Humber",
         "trust_name": "ST MARY'S ACADEMY TRUST",
-        "school_sponsor_name": "St Mary's Academy Trust",
+        "school_sponsor_name": "St Mary\u2019s Academy Trust",
         "open_date": "01-09-2014",
         "urn": "141097"
     },
@@ -65740,7 +65740,7 @@
         "la": "Stockton-on-Tees",
         "region": "North East",
         "trust_name": "THE ASCENT ACADEMIES' TRUST",
-        "school_sponsor_name": "Ascent Academies' Trust",
+        "school_sponsor_name": "Ascent Academies\u2019 Trust",
         "open_date": "01-11-2014",
         "urn": "141345"
     },
@@ -66789,7 +66789,7 @@
         "pupils": "255",
         "la": "Staffordshire",
         "region": "West Midlands",
-        "trust_name": "FIERTE MULTI-ACADEMY TRUST",
+        "trust_name": "FIERT\u00c9 MULTI-ACADEMY TRUST",
         "school_sponsor_name": "",
         "open_date": "01-10-2014",
         "urn": "141450"
@@ -70915,7 +70915,7 @@
         "la": "Wolverhampton",
         "region": "West Midlands",
         "trust_name": "ST MARTIN'S MULTI ACADEMY TRUST",
-        "school_sponsor_name": "St Martin's Multi Academy Trust",
+        "school_sponsor_name": "St Martin\u2019s Multi Academy Trust",
         "open_date": "01-03-2015",
         "urn": "141775"
     },
@@ -71605,7 +71605,7 @@
         "la": "Wolverhampton",
         "region": "West Midlands",
         "trust_name": "ST MARTIN'S MULTI ACADEMY TRUST",
-        "school_sponsor_name": "St Martin's Multi Academy Trust",
+        "school_sponsor_name": "St Martin\u2019s Multi Academy Trust",
         "open_date": "01-03-2015",
         "urn": "141825"
     },
@@ -72849,7 +72849,7 @@
         "pupils": "1172",
         "la": "North Yorkshire",
         "region": "Yorkshire and the Humber",
-        "trust_name": "ARETE LEARNING TRUST",
+        "trust_name": "ARET\u00c9 LEARNING TRUST",
         "school_sponsor_name": "",
         "open_date": "01-04-2015",
         "urn": "141930"
@@ -77890,7 +77890,7 @@
         "la": "Sunderland",
         "region": "North East",
         "trust_name": "THE ASCENT ACADEMIES' TRUST",
-        "school_sponsor_name": "Ascent Academies' Trust",
+        "school_sponsor_name": "Ascent Academies\u2019 Trust",
         "open_date": "01-09-2015",
         "urn": "142331"
     },
@@ -77979,7 +77979,7 @@
         "pupils": "275",
         "la": "Middlesbrough",
         "region": "North East",
-        "trust_name": "ST HILDA'S CATHOLIC ACADEMY TRUST",
+        "trust_name": "ST HILDA\u2019S CATHOLIC ACADEMY TRUST",
         "school_sponsor_name": "Diocese of Middlesbrough",
         "open_date": "01-11-2015",
         "urn": "142344"
@@ -78294,7 +78294,7 @@
         "pupils": "333",
         "la": "Middlesbrough",
         "region": "North East",
-        "trust_name": "ST HILDA'S CATHOLIC ACADEMY TRUST",
+        "trust_name": "ST HILDA\u2019S CATHOLIC ACADEMY TRUST",
         "school_sponsor_name": "Diocese of Middlesbrough",
         "open_date": "01-11-2015",
         "urn": "142365"
@@ -78324,7 +78324,7 @@
         "pupils": "228",
         "la": "Middlesbrough",
         "region": "North East",
-        "trust_name": "ST HILDA'S CATHOLIC ACADEMY TRUST",
+        "trust_name": "ST HILDA\u2019S CATHOLIC ACADEMY TRUST",
         "school_sponsor_name": "Diocese of Middlesbrough",
         "open_date": "01-11-2015",
         "urn": "142367"
@@ -78339,7 +78339,7 @@
         "pupils": "249",
         "la": "Middlesbrough",
         "region": "North East",
-        "trust_name": "ST HILDA'S CATHOLIC ACADEMY TRUST",
+        "trust_name": "ST HILDA\u2019S CATHOLIC ACADEMY TRUST",
         "school_sponsor_name": "Diocese of Middlesbrough",
         "open_date": "01-11-2015",
         "urn": "142368"
@@ -78354,7 +78354,7 @@
         "pupils": "245",
         "la": "Middlesbrough",
         "region": "North East",
-        "trust_name": "ST HILDA'S CATHOLIC ACADEMY TRUST",
+        "trust_name": "ST HILDA\u2019S CATHOLIC ACADEMY TRUST",
         "school_sponsor_name": "Diocese of Middlesbrough",
         "open_date": "01-11-2015",
         "urn": "142369"
@@ -78369,7 +78369,7 @@
         "pupils": "251",
         "la": "Middlesbrough",
         "region": "North East",
-        "trust_name": "ST HILDA'S CATHOLIC ACADEMY TRUST",
+        "trust_name": "ST HILDA\u2019S CATHOLIC ACADEMY TRUST",
         "school_sponsor_name": "Diocese of Middlesbrough",
         "open_date": "01-11-2015",
         "urn": "142370"
@@ -78384,7 +78384,7 @@
         "pupils": "408",
         "la": "Middlesbrough",
         "region": "North East",
-        "trust_name": "ST HILDA'S CATHOLIC ACADEMY TRUST",
+        "trust_name": "ST HILDA\u2019S CATHOLIC ACADEMY TRUST",
         "school_sponsor_name": "Diocese of Middlesbrough",
         "open_date": "01-11-2015",
         "urn": "142371"
@@ -78414,7 +78414,7 @@
         "pupils": "188",
         "la": "Middlesbrough",
         "region": "North East",
-        "trust_name": "ST HILDA'S CATHOLIC ACADEMY TRUST",
+        "trust_name": "ST HILDA\u2019S CATHOLIC ACADEMY TRUST",
         "school_sponsor_name": "Diocese of Middlesbrough",
         "open_date": "01-11-2015",
         "urn": "142373"
@@ -78429,7 +78429,7 @@
         "pupils": "350",
         "la": "Middlesbrough",
         "region": "North East",
-        "trust_name": "ST HILDA'S CATHOLIC ACADEMY TRUST",
+        "trust_name": "ST HILDA\u2019S CATHOLIC ACADEMY TRUST",
         "school_sponsor_name": "Diocese of Middlesbrough",
         "open_date": "01-11-2015",
         "urn": "142374"
@@ -78459,7 +78459,7 @@
         "pupils": "213",
         "la": "Middlesbrough",
         "region": "North East",
-        "trust_name": "ST HILDA'S CATHOLIC ACADEMY TRUST",
+        "trust_name": "ST HILDA\u2019S CATHOLIC ACADEMY TRUST",
         "school_sponsor_name": "Diocese of Middlesbrough",
         "open_date": "01-11-2015",
         "urn": "142376"
@@ -78549,7 +78549,7 @@
         "pupils": "1391",
         "la": "Middlesbrough",
         "region": "North East",
-        "trust_name": "ST HILDA'S CATHOLIC ACADEMY TRUST",
+        "trust_name": "ST HILDA\u2019S CATHOLIC ACADEMY TRUST",
         "school_sponsor_name": "Diocese of Middlesbrough",
         "open_date": "01-11-2015",
         "urn": "142382"
@@ -80320,7 +80320,7 @@
         "la": "Barnsley",
         "region": "Yorkshire and the Humber",
         "trust_name": "ST MARY'S ACADEMY TRUST",
-        "school_sponsor_name": "St Mary's Academy Trust",
+        "school_sponsor_name": "St Mary\u2019s Academy Trust",
         "open_date": "01-02-2016",
         "urn": "142556"
     },
@@ -81595,7 +81595,7 @@
         "la": "Wolverhampton",
         "region": "West Midlands",
         "trust_name": "ST MARTIN'S MULTI ACADEMY TRUST",
-        "school_sponsor_name": "St Martin's Multi Academy Trust",
+        "school_sponsor_name": "St Martin\u2019s Multi Academy Trust",
         "open_date": "01-04-2016",
         "urn": "142680"
     },
@@ -90715,7 +90715,7 @@
         "la": "Wolverhampton",
         "region": "West Midlands",
         "trust_name": "ST BARTHOLOMEW'S CE MULTI ACADEMY TRUST",
-        "school_sponsor_name": "St. Bartholomew's CE Multi Academy Trust",
+        "school_sponsor_name": "St. Bartholomew\u2019s CE Multi Academy Trust",
         "open_date": "01-09-2016",
         "urn": "143393"
     },
@@ -91869,7 +91869,7 @@
         "pupils": "147",
         "la": "Staffordshire",
         "region": "West Midlands",
-        "trust_name": "FIERTE MULTI-ACADEMY TRUST",
+        "trust_name": "FIERT\u00c9 MULTI-ACADEMY TRUST",
         "school_sponsor_name": "",
         "open_date": "01-10-2016",
         "urn": "143483"
@@ -92320,7 +92320,7 @@
         "la": "Durham",
         "region": "North East",
         "trust_name": "ROMERO CATHOLIC EDUCATION TRUST",
-        "school_sponsor_name": "St John's School & Sixth Form College",
+        "school_sponsor_name": "St John\u2019s School & Sixth Form College",
         "open_date": "01-04-2018",
         "urn": "143515"
     },
@@ -92650,7 +92650,7 @@
         "la": "Shropshire",
         "region": "West Midlands",
         "trust_name": "BRIDGNORTH AREA SCHOOLS' TRUST",
-        "school_sponsor_name": "Bridgnorth Area Schools' Trust",
+        "school_sponsor_name": "Bridgnorth Area Schools\u2019 Trust",
         "open_date": "01-11-2016",
         "urn": "143548"
     },
@@ -95080,7 +95080,7 @@
         "la": "Staffordshire",
         "region": "West Midlands",
         "trust_name": "ST BARTHOLOMEW'S CE MULTI ACADEMY TRUST",
-        "school_sponsor_name": "St. Bartholomew's CE Multi Academy Trust",
+        "school_sponsor_name": "St. Bartholomew\u2019s CE Multi Academy Trust",
         "open_date": "01-12-2016",
         "urn": "143829"
     },
@@ -98289,7 +98289,7 @@
         "pupils": "",
         "la": "Kent",
         "region": "South East",
-        "trust_name": "THE ARETE TRUST",
+        "trust_name": "THE ARET\u00c9 TRUST",
         "school_sponsor_name": "",
         "open_date": "01-06-2017",
         "urn": "144100"
@@ -108655,7 +108655,7 @@
         "la": "Wolverhampton",
         "region": "West Midlands",
         "trust_name": "ST BARTHOLOMEW'S CE MULTI ACADEMY TRUST",
-        "school_sponsor_name": "St. Bartholomew's CE Multi Academy Trust",
+        "school_sponsor_name": "St. Bartholomew\u2019s CE Multi Academy Trust",
         "open_date": "01-09-2017",
         "urn": "144996"
     },
@@ -108670,7 +108670,7 @@
         "la": "Wolverhampton",
         "region": "West Midlands",
         "trust_name": "ST BARTHOLOMEW'S CE MULTI ACADEMY TRUST",
-        "school_sponsor_name": "St. Bartholomew's CE Multi Academy Trust",
+        "school_sponsor_name": "St. Bartholomew\u2019s CE Multi Academy Trust",
         "open_date": "01-09-2017",
         "urn": "144997"
     },
@@ -109794,7 +109794,7 @@
         "pupils": "",
         "la": "North Yorkshire",
         "region": "Yorkshire and the Humber",
-        "trust_name": "ARETE LEARNING TRUST",
+        "trust_name": "ARET\u00c9 LEARNING TRUST",
         "school_sponsor_name": "",
         "open_date": "01-12-2017",
         "urn": "145090"
@@ -110537,7 +110537,7 @@
     {
         "trust_code": 2922,
         "laestab": "8652036",
-        "estab_name": "St. Peter's CE Primary Academy",
+        "estab_name": "St. Peter\u2019s CE Primary Academy",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Free schools",
@@ -110800,7 +110800,7 @@
         "la": "Shropshire",
         "region": "West Midlands",
         "trust_name": "BRIDGNORTH AREA SCHOOLS' TRUST",
-        "school_sponsor_name": "Bridgnorth Area Schools' Trust",
+        "school_sponsor_name": "Bridgnorth Area Schools\u2019 Trust",
         "open_date": "01-11-2017",
         "urn": "145202"
     },
@@ -111085,7 +111085,7 @@
         "la": "Shropshire",
         "region": "West Midlands",
         "trust_name": "BRIDGNORTH AREA SCHOOLS' TRUST",
-        "school_sponsor_name": "Bridgnorth Area Schools' Trust",
+        "school_sponsor_name": "Bridgnorth Area Schools\u2019 Trust",
         "open_date": "01-11-2017",
         "urn": "145221"
     },
@@ -112082,7 +112082,7 @@
     {
         "trust_code": 16888,
         "laestab": "3504003",
-        "estab_name": "Bolton St Catherine's Academy",
+        "estab_name": "Bolton St Catherine\u2019s Academy",
         "percentage_fsm": "",
         "phase": "All through",
         "type_of_estab": "Academy converter",
@@ -113469,7 +113469,7 @@
         "pupils": "",
         "la": "Staffordshire",
         "region": "West Midlands",
-        "trust_name": "FIERTE MULTI-ACADEMY TRUST",
+        "trust_name": "FIERT\u00c9 MULTI-ACADEMY TRUST",
         "school_sponsor_name": "The Violet Way Academy",
         "open_date": "01-01-2018",
         "urn": "145414"
@@ -117692,7 +117692,7 @@
     {
         "trust_code": 5526,
         "laestab": "8354034",
-        "estab_name": "Lockyer's Middle School",
+        "estab_name": "Lockyer\u2019s Middle School",
         "percentage_fsm": "",
         "phase": "Middle deemed secondary",
         "type_of_estab": "Academy converter",
@@ -117857,7 +117857,7 @@
     {
         "trust_code": 4813,
         "laestab": "8603053",
-        "estab_name": "St Luke's Primary School Endon",
+        "estab_name": "St Luke\u2019s Primary School Endon",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Academy converter",
@@ -118007,7 +118007,7 @@
     {
         "trust_code": 5315,
         "laestab": "8667002",
-        "estab_name": "St Luke's Academy",
+        "estab_name": "St Luke\u2019s Academy",
         "percentage_fsm": "",
         "phase": "Not applicable",
         "type_of_estab": "Academy special sponsor led",
@@ -118712,7 +118712,7 @@
     {
         "trust_code": 15750,
         "laestab": "8862098",
-        "estab_name": "Pilgrims' Way Primary School and Nursery",
+        "estab_name": "Pilgrims\u2019 Way Primary School and Nursery",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Academy sponsor led",
@@ -119252,7 +119252,7 @@
     {
         "trust_code": 17019,
         "laestab": "8813467",
-        "estab_name": "St Teresa's Catholic Primary School",
+        "estab_name": "St Teresa\u2019s Catholic Primary School",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Academy converter",
@@ -119987,7 +119987,7 @@
     {
         "trust_code": 2192,
         "laestab": "9082047",
-        "estab_name": "Bude Primary Academy - Juniors",
+        "estab_name": "Bude Primary Academy \u2013 Juniors",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Academy sponsor led",
@@ -120212,7 +120212,7 @@
     {
         "trust_code": 4442,
         "laestab": "8313542",
-        "estab_name": "St Joseph's Catholic Voluntary Academy",
+        "estab_name": "St Joseph\u2019s Catholic Voluntary Academy",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Academy converter",
@@ -120272,7 +120272,7 @@
     {
         "trust_code": 4442,
         "laestab": "8303501",
-        "estab_name": "St Anne's Catholic Voluntary Academy",
+        "estab_name": "St Anne\u2019s Catholic Voluntary Academy",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Academy converter",
@@ -120317,7 +120317,7 @@
     {
         "trust_code": 4442,
         "laestab": "8303521",
-        "estab_name": "St Margaret's Catholic Voluntary Academy",
+        "estab_name": "St Margaret\u2019s Catholic Voluntary Academy",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Academy converter",
@@ -120377,7 +120377,7 @@
     {
         "trust_code": 4442,
         "laestab": "8303513",
-        "estab_name": "St Elizabeth's Catholic Voluntary Academy",
+        "estab_name": "St Elizabeth\u2019s Catholic Voluntary Academy",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Academy converter",
@@ -120617,7 +120617,7 @@
     {
         "trust_code": 4442,
         "laestab": "8313528",
-        "estab_name": "St Mary's Catholic Voluntary Academy",
+        "estab_name": "St Mary\u2019s Catholic Voluntary Academy",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Academy converter",
@@ -120992,7 +120992,7 @@
     {
         "trust_code": 4442,
         "laestab": "3563516",
-        "estab_name": "St Mary's Catholic Voluntary Academy",
+        "estab_name": "St Mary\u2019s Catholic Voluntary Academy",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Academy converter",
@@ -121067,7 +121067,7 @@
     {
         "trust_code": 2354,
         "laestab": "8564721",
-        "estab_name": "English Martyr's Catholic School, A Voluntary Academy",
+        "estab_name": "English Martyr\u2019s Catholic School, A Voluntary Academy",
         "percentage_fsm": "",
         "phase": "Secondary",
         "type_of_estab": "Academy converter",
@@ -121337,7 +121337,7 @@
     {
         "trust_code": 2354,
         "laestab": "8564723",
-        "estab_name": "St Paul's Catholic School, a Voluntary Academy",
+        "estab_name": "St Paul\u2019s Catholic School, a Voluntary Academy",
         "percentage_fsm": "",
         "phase": "Secondary",
         "type_of_estab": "Academy converter",
@@ -121562,7 +121562,7 @@
     {
         "trust_code": 4442,
         "laestab": "8313543",
-        "estab_name": "St Alban's Catholic Voluntary Academy",
+        "estab_name": "St Alban\u2019s Catholic Voluntary Academy",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Academy converter",
@@ -121622,7 +121622,7 @@
     {
         "trust_code": 4442,
         "laestab": "8303509",
-        "estab_name": "St Mary's Catholic Voluntary Academy",
+        "estab_name": "St Mary\u2019s Catholic Voluntary Academy",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Academy converter",
@@ -122147,7 +122147,7 @@
     {
         "trust_code": 5315,
         "laestab": "8652049",
-        "estab_name": "St George's Church of England Primary School",
+        "estab_name": "St George\u2019s Church of England Primary School",
         "percentage_fsm": "",
         "phase": "Primary",
         "type_of_estab": "Academy converter",

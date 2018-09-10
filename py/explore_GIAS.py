@@ -19,9 +19,8 @@ school_list=[]
 gias_url_stub='https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/'
 companies_house_url_stub='https://beta.companieshouse.gov.uk/company/'
 
-
-dir=('C:/Users/pn/Documents/Work/Coding/GitHub/ainfo/data')
 os.chdir(os.path.dirname( __file__ ))
+os.chdir('..')
 os.chdir('data')
 
 for source_file in os.listdir('.'):

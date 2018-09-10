@@ -11,6 +11,7 @@ import unicodedata
 from shutil import copy
 from bs4 import BeautifulSoup
 from bs4 import NavigableString
+from unidecode import unidecode
 
 # Create trust_list - a list of dictionaries, with one per trust. Add trusts that don't already feature in the list, and iterate the number of schools where they do
 total_list=[]
@@ -66,12 +67,12 @@ edubasealldata_reader=csv.DictReader(edubasealldata_file)
 for row in grouplinks_reader:
 	if row['Group Type'].lower() in ('multi-academy trust','single-academy trust'):
 		trust_code=int(row['Linked UID'])
-		trust_name=row['Group Name']
-		trust_name=trust_name.replace('\xa0', ' ')		# replace characters that will prevent saving as JSON
-		trust_name=trust_name.replace('\x92', '\'')
-		trust_name=trust_name.replace('\xc9', 'E')
-		# trust_name=trust_name.decode('windows-1252')
-		# trust_name=trust_name.decode('windows-1252').encode('utf-8', 'ignore')
+		trust_name=row['Group Name'].decode('windows-1252').encode('utf-8')		# decode, so that non-utf-8 characters don't prevent saving to json files
+		trust_name_simple=unidecode(row['Group Name'].decode('windows-1252'))		# replace accented characters with unaccented version
+		trust_name_url=re.sub('[^a-zA-Z0-9\']', '-', trust_name_simple.lower())
+		trust_name_url=re.sub('\'', '', trust_name_url)
+		trust_name_url=re.sub('-+', '-', trust_name_url)
+		trust_name_url=re.sub('-$', '', trust_name_url)
 		trust_type=row['Group Type']
 		companies_house_number=row['Companies House Number']
 		estab_type_count=dict.fromkeys(estab_type_count, 0)
@@ -112,14 +113,12 @@ for row in grouplinks_reader:
 					trust['estab_type_count']['utc_studio_school']+=estab_type_count['utc_studio_school']
 					break
 		else:
-			trust_name_simple=re.sub('[^a-zA-Z0-9 \-\.@]', '', trust_name).lower()
-			trust_name_simple=trust_name_simple.replace (' ', '-')
-			trust_name_simple=trust_name_simple.replace ('--', '-')
-			trust_page_url='web/'+str(trust_code)+'/'+trust_name_simple+'.html'
+			trust_page_url='web/'+str(trust_code)+'/'+trust_name_url+'.html'
 			trust_list.append({
 				'trust_code':trust_code,
 				'trust_name':trust_name,
 				'trust_name_simple':trust_name_simple,
+				'trust_name_url':trust_name_url,
 				'trust_page_url':trust_page_url,
 				'trust_type':trust_type,
 				'companies_house_number':companies_house_number,
@@ -172,12 +171,7 @@ for row in edubasealldata_reader:
 		laestab=row['LA (code)']+row['EstablishmentNumber']
 		la=row['LA (name)']
 		region=row['GOR (name)']
-		estab_name=row['EstablishmentName']
-		estab_name=estab_name.replace('\xa0', ' ')		# replace characters that will prevent saving as JSON
-		estab_name=estab_name.replace('\x92', '\'')
-		estab_name=estab_name.replace('\xc9', 'E')
-		estab_name=estab_name.replace('\xE0', 'a')
-		estab_name=estab_name.replace('\x96', '-')
+		estab_name=row['EstablishmentName'].decode('windows-1252').encode('utf-8')
 		type_of_estab=row['TypeOfEstablishment (name)']
 		estab_status=row['EstablishmentStatus (name)']
 		open_date=row['OpenDate']
@@ -188,19 +182,13 @@ for row in edubasealldata_reader:
 		capacity=row['SchoolCapacity']
 		percentage_fsm=row['PercentageFSM']
 		trust_school_flag=row['TrustSchoolFlag (name)']
-		trust_name=row['Trusts (name)']
-		trust_name=trust_name.replace('\xa0', ' ')		# replace characters that will prevent saving as JSON
-		trust_name=trust_name.replace('\x92', '\'')
-		trust_name=trust_name.replace('\xc9', 'E')
+		trust_name=row['Trusts (name)'].decode('windows-1252').encode('utf-8')
 		if row['Trusts (code)']!='':		# XXX handle the small number of academies in GIAS data with no trust and TrustSchoolFlag (name) status of 'Not supported by a trust'
 			trust_code=int(row['Trusts (code)'])
 		else:
 			trust_code=None
 		school_sponsor_flag=row['SchoolSponsorFlag (name)']
-		school_sponsor_name=row['SchoolSponsors (name)']
-		school_sponsor_name=school_sponsor_name.replace('\xa0', ' ')		# replace characters that will prevent saving as JSON
-		school_sponsor_name=school_sponsor_name.replace('\x92', '\'')
-		school_sponsor_name=school_sponsor_name.replace('\xc9', 'E')
+		school_sponsor_name=row['SchoolSponsors (name)'].decode('windows-1252').encode('utf-8')
 		federation_flag=row['FederationFlag (name)']
 		federation_name=row['Federations (name)']
 		easting=row['Easting']
@@ -231,7 +219,6 @@ for row in edubasealldata_reader:
 						})
 					break
 		else:
-			trust_name_simple=re.sub('[^a-zA-Z0-9 \-\.@]', '', trust_name).lower()
 			sponsor_list.append({
 				'school_sponsor_name':school_sponsor_name,
 				'trusts':[{
@@ -258,6 +245,7 @@ for trust in trust_list:
 
 # Save data to json files
 os.chdir(os.path.dirname( __file__ ))
+os.chdir('..')
 os.chdir('data')
 
 with open('totals.json', 'w') as out_file:
@@ -271,26 +259,36 @@ with open('schools.json', 'w') as out_file:
 
 # Create trust pages
 os.chdir(os.path.dirname( __file__ ))
+os.chdir('..')
 trust_page_path_stub=os.getcwd()+'\\web\\'
 os.chdir(os.path.dirname( __file__ ))
+os.chdir('..')
 template_path=os.getcwd()+'\\templates\\trust_page_template.html'
+
+with open(template_path) as read_file:
+	html=read_file.read()
 
 for trust in trust_list:
 	if trust['trust_name'].lower()[0]=='a':
 		trust_page_path=trust_page_path_stub+str(trust['trust_code'])
-		file_name=trust['trust_name_simple'].lower()+'.html'
-		if not os.path.exists(trust_page_path):
+		file_name=trust['trust_name_url']+'.html'
+		if os.path.exists(trust_page_path):
+			for existing_file in os.listdir(trust_page_path):
+				existing_file_path=os.path.join(trust_page_path, existing_file)
+				try:
+					os.unlink(existing_file_path)
+				except Exception as e:
+					print(e)
+		else:
 			os.makedirs(trust_page_path)
 		file_path=os.path.join(trust_page_path, file_name)		# done outside the if not statement, as we want a fresh copy of the template in each case
 		copy(template_path, file_path)
-		with open(file_path) as read_file:
-			html=read_file.read()
 		soup=BeautifulSoup(html, 'html.parser')
 		new_script=soup.new_tag('script')
 		new_script.string='var trust_code='+str(trust['trust_code'])
 		soup.head.append(new_script)
 		new_h1=soup.new_tag('h1')
-		new_h1.string=trust['trust_name']
+		new_h1.string=trust['trust_name_simple']
 		soup.find(id='trust_name').append(new_h1)
 		soup.find(id='gias_date').append(grouplinks_file_date)
 		soup=soup.prettify()
@@ -299,6 +297,7 @@ for trust in trust_list:
 
 # Generate ainfo index.html
 os.chdir(os.path.dirname( __file__ ))
+os.chdir('..')
 
 with open('index.html') as read_file:
 	html=read_file.read()
