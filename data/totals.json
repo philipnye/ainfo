@@ -1,22 +1,20 @@
 [
     {
+        "estab_type_count": {
+            "converter_academy": 5473,
+            "utc_studio_school": 84,
+            "free_school": 427,
+            "sponsored_academy": 2162
+        },
         "estab_phase_count": {
-            "alternative_provision": 126,
-            "post_16": 48,
             "all_through": 128,
+            "post_16": 48,
+            "alternative_provision": 126,
             "primary": 5149,
             "special": 321,
             "secondary": 2368
         },
-        "trust_count": 2878,
-        "estab_type_count": {
-            "converter_academy": 5473,
-            "utc_studio_school": 78,
-            "free_school": 427,
-            "sponsored_academy": 2162
-        },
-        "sat_count": 1468,
-        "mat_count": 1410,
-        "school_count": 8140
+        "group_count": 2823,
+        "school_count": 11292
     }
 ]

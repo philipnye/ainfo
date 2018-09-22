@@ -1,10 +1,12 @@
+var group_code=window.location.href.split('/')[4]
+
 $(function () {
-	$.getJSON('../../data/trusts.json', function(json) {
+	$.getJSON('../../data/groups.json', function(json) {
     let len=json.length
     if(len>0){
       for(let i=0; i<len; i++){
         var line=json.shift()
-        if (line.trust_code==trust_code){
+        if (line.group_code==group_code){
 					document.getElementById('acadCount').innerHTML=line.school_count.toLocaleString('en', {useGrouping:true})+document.getElementById('acadCount').innerHTML
 					document.getElementById('sponAcadCount').innerHTML=line.estab_type_count.sponsored_academy.toLocaleString('en', {useGrouping:true})+document.getElementById('sponAcadCount').innerHTML
 					document.getElementById('convAcadCount').innerHTML=line.estab_type_count.converter_academy.toLocaleString('en', {useGrouping:true})+document.getElementById('convAcadCount').innerHTML
@@ -32,12 +34,12 @@ $(function () {
         if(len>0){
           for(let i=0; i<len; i++){
             var line=json.shift()
-            if (line.trust_code==trust_code){
+            if (line.group_code==group_code){
               data.push(line)
             }
           }
         }
-      return data;
+      	return data;
       }
     },
     "deferRender": true,

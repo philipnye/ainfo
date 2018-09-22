@@ -14,19 +14,17 @@ $(function () {
 			document.getElementById('apCount').innerHTML=line.estab_phase_count.alternative_provision.toLocaleString('en', {useGrouping:true})+document.getElementById('apCount').innerHTML
 			document.getElementById('specCount').innerHTML=line.estab_phase_count.special.toLocaleString('en', {useGrouping:true})+document.getElementById('specCount').innerHTML
 			document.getElementById('post16Count').innerHTML=line.estab_phase_count.post_16.toLocaleString('en', {useGrouping:true})+document.getElementById('post16Count').innerHTML
-			document.getElementById('trustCount').innerHTML=line.trust_count.toLocaleString('en', {useGrouping:true})+document.getElementById('trustCount').innerHTML
-			document.getElementById('satCount').innerHTML=line.sat_count.toLocaleString('en', {useGrouping:true})+document.getElementById('satCount').innerHTML
-			document.getElementById('matCount').innerHTML=line.mat_count.toLocaleString('en', {useGrouping:true})+document.getElementById('matCount').innerHTML
+			document.getElementById('groupCount').innerHTML=line.group_count.toLocaleString('en', {useGrouping:true})+document.getElementById('groupCount').innerHTML
 		}
 	});
-	$('#trustsTable').DataTable({
+	$('#groupsTable').DataTable({
     "ajax": {
-      "url": 'data/trusts.json',
+      "url": 'data/groups.json',
       "dataSrc": "" // handle the fact we're passing in a JSON array rather than a JSON object i.e. not {"data": [{...},...]}
     },
     "deferRender": true,
     "columns": [{
-        "data": "trust_name",
+        "data": "group_name",
         "orderSequence": ["asc", "desc"]
       },
       {
@@ -103,7 +101,7 @@ $(function () {
     "columnDefs": [{
       "targets": 0,
       "render": function(data, type, row, meta) {
-        return '<a href="' + row.trust_page_url + '">' + data + '</a>';
+        return '<a href="' + row.group_page_url + '">' + data + '</a>';
       }
     }]
   });
