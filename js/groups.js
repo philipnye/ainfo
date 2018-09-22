@@ -1,4 +1,9 @@
-var group_code=window.location.href.split('/')[4]
+if (window.location.href.split('/')[2]=='127.0.0.1:8000'){
+	var group_code=window.location.href.split('/')[4]
+}
+else if (window.location.href.split('/')[2]=='philipnye.github.io') {		// XXX Will need updating if URL structure changes
+	var group_code=window.location.href.split('/')[5]
+}
 
 $(function () {
 	$.getJSON('../../data/groups.json', function(json) {
@@ -89,7 +94,7 @@ $(function () {
         "orderSequence": ["desc", "asc"]
       },
       {
-        "data": "school_sponsor_name",
+        "data": "sponsor_name",
         "orderSequence": ["desc", "asc"]
       }
     ],
