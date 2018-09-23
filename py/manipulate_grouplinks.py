@@ -111,6 +111,14 @@ def count_grouped_estab_types(estab_type):
 	estab_type_count[estab_type_string]=1
 	return estab_type_count
 
+def produce_group_page_url(object_name_simple,object_code):
+	group_name_url=re.sub('[^a-zA-Z0-9\']', '-', object_name_simple.lower())
+	group_name_url=re.sub('\'', '', group_name_url)
+	group_name_url=re.sub('-+', '-', group_name_url)
+	group_name_url=re.sub('-$', '', group_name_url)
+	group_page_url='web/'+str(object_code)+'/'+group_name_url+'.html'
+	return group_name_url, group_page_url
+
 # Build trust_list and sponsor_list
 for row in grouplinks_reader:
 	if row['Group Type'].lower() in ('multi-academy trust','single-academy trust'):
@@ -253,12 +261,9 @@ estab_type_count=dict.fromkeys(estab_type_count, 0)
 for sponsor in sponsor_list:
 	if len(sponsor['trusts'])>1:
 		group_list.append(sponsor.copy())		# done to ensure a separate dictionary is created for each group
-		group_name_url=re.sub('[^a-zA-Z0-9\']', '-', sponsor['sponsor_name_simple'].lower())
-		group_name_url=re.sub('\'', '', group_name_url)
-		group_name_url=re.sub('-+', '-', group_name_url)
-		group_name_url=re.sub('-$', '', group_name_url)
+		group_name_url, group_page_url=produce_group_page_url(sponsor['sponsor_name_simple'],sponsor['sponsor_code'])
 		group_list[-1]['group_name_url']=group_name_url
-		group_list[-1]['group_page_url']='web/'+str(sponsor['sponsor_code'])+'/'+group_name_url+'.html'
+		group_list[-1]['group_page_url']=group_page_url
 		group_list[-1]['school_count']=0
 		group_list[-1]['estab_phase_count']=estab_phase_count.copy()		#	"	"
 		group_list[-1]['estab_type_count']=estab_type_count.copy()		#	"	"
@@ -290,12 +295,9 @@ for trust in trust_list:		# group values are built in this way from trust-level 
 				break
 	if group_present==False:
 		group_list.append(trust.copy())		# done to ensure a separate dictionary is created for each group
-		group_name_url=re.sub('[^a-zA-Z0-9\']', '-', trust['trust_name_simple'].lower())
-		group_name_url=re.sub('\'', '', group_name_url)
-		group_name_url=re.sub('-+', '-', group_name_url)
-		group_name_url=re.sub('-$', '', group_name_url)
+		group_name_url, group_page_url=produce_group_page_url(trust['trust_name_simple'],trust['trust_code'])
 		group_list[-1]['group_name_url']=group_name_url
-		group_list[-1]['group_page_url']='web/'+str(trust['trust_code'])+'/'+group_name_url+'.html'
+		group_list[-1]['group_page_url']=group_page_url
 		group_list[-1]['trusts']=None
 
 for group in group_list:
