@@ -30,6 +30,7 @@ $(function () {
 			}
 		}
 	});
+
   $('#schoolsTable').DataTable({
     "ajax": {
       "url": '../../data/schools.json',
@@ -87,7 +88,8 @@ $(function () {
       },
       {
         "data": "open_date",
-        "orderSequence": ["desc", "asc"]
+				"render": $.fn.dataTable.render.moment('DD-MM-YYYY','D MMMM YYYY'),
+        "orderSequence": ["desc", "asc"],
       },
       {
         "data": "trust_name",
