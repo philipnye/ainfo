@@ -6,7 +6,11 @@ else if (window.location.href.split('/')[2]=='philipnye.github.io') {		// XXX Wi
 }
 
 $(function () {
-	$.getJSON('../../data/groups.json', function(json) {
+	function initialiseTooltips() {
+			$('[data-toggle="tooltip"]').tooltip()
+	}
+
+	function setValuesAndTooltips(json) {
     let len=json.length
     if(len>0){
       for(let i=0; i<len; i++){
@@ -24,12 +28,17 @@ $(function () {
 					document.getElementById('specCount').innerHTML=line.estab_phase_count.special.toLocaleString('en', {useGrouping:true})+document.getElementById('specCount').innerHTML
 					document.getElementById('post16Count').innerHTML=line.estab_phase_count.post_16.toLocaleString('en', {useGrouping:true})+document.getElementById('post16Count').innerHTML
 					document.getElementById('pupsCount').innerHTML=line.pupil_numbers.toLocaleString('en', {useGrouping:true})+document.getElementById('pupsCount').innerHTML
-					document.getElementById('pupsSchoolsCount').innerHTML=line.pupil_numbers_schools.toLocaleString('en', {useGrouping:true})+document.getElementById('pupsSchoolsCount').innerHTML
-					document.getElementById('noPupsSchoolsCount').innerHTML=line.no_pupil_numbers_schools.toLocaleString('en', {useGrouping:true})+document.getElementById('noPupsSchoolsCount').innerHTML
+					if (line.no_pupil_numbers_schools>0){
+						var tooltipText='Pupil numbers are only available for ' + line.pupil_numbers_schools + ' out of ' + line.school_count +' schools'
+						document.getElementById('pupsCount').innerHTML=document.getElementById('pupsCount').innerHTML + ' <sup><i class="fas fa-exclamation-circle" data-toggle="tooltip" title="' + tooltipText + '"></sup>'
+					}
 				}
 			}
 		}
-	});
+		initialiseTooltips()
+	}
+
+	$.getJSON('../../data/groups.json', setValuesAndTooltips)		// async callback
 
   $('#schoolsTable').DataTable({
     "ajax": {

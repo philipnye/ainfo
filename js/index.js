@@ -1,5 +1,9 @@
 $(function () {
-	$.getJSON('data/totals.json', function(json) {
+	function initialiseTooltips() {
+			$('[data-toggle="tooltip"]').tooltip()
+	}
+
+	function setValues(json) {
     let len=json.length
     if(len>0){
 			var line=json.shift()
@@ -16,7 +20,12 @@ $(function () {
 			document.getElementById('post16Count').innerHTML=line.estab_phase_count.post_16.toLocaleString('en', {useGrouping:true})+document.getElementById('post16Count').innerHTML
 			document.getElementById('groupCount').innerHTML=line.group_count.toLocaleString('en', {useGrouping:true})+document.getElementById('groupCount').innerHTML
 		}
-	});
+	};
+
+	$.getJSON('data/totals.json', setValues)		// async callback
+
+	function drawTable() {}
+
 	$('#groupsTable').DataTable({
     "ajax": {
       "url": 'data/groups.json',
@@ -25,6 +34,9 @@ $(function () {
     "deferRender": true,
     "columns": [{
         "data": "group_name",
+				"render": function(data, type, row, meta) {
+	        return '<a href="' + row.group_page_url + '">' + data + '</a>';
+	      },
         "orderSequence": ["asc", "desc"]
       },
       {
@@ -33,7 +45,16 @@ $(function () {
       },
       {
         "data": "pupil_numbers",
-				"render": $.fn.dataTable.render.number( ','),
+				// "render": $.fn.dataTable.render.number( ','),
+				"render": function(data, type, row, meta) {		// XXX
+					if (row.no_pupil_numbers_schools>0){
+						var tooltipText='Pupil numbers are only available for ' + row.pupil_numbers_schools + ' out of ' + row.school_count +' schools'
+						return data + ' <i class="fas fa-exclamation-circle" data-toggle="tooltip" title="' + tooltipText + '">';
+					}
+					else {
+						return data
+					}
+				},
         "orderSequence": ["desc", "asc"]
       },
       {
@@ -97,12 +118,6 @@ $(function () {
         "orderSequence": ["desc", "asc"]
       }
     ],
-    "order": [1, 'desc'],
-    "columnDefs": [{
-      "targets": 0,
-      "render": function(data, type, row, meta) {
-        return '<a href="' + row.group_page_url + '">' + data + '</a>';
-      }
-    }]
+    "order": [1, 'desc']
   });
 });
