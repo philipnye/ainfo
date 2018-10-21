@@ -30,7 +30,7 @@ $(function () {
 					document.getElementById('pupsCount').innerHTML=line.pupil_numbers.toLocaleString('en', {useGrouping:true})+document.getElementById('pupsCount').innerHTML
 					if (line.no_pupil_numbers_schools>0){
 						var tooltipText='Pupil numbers are only available for ' + line.pupil_numbers_schools + ' out of ' + line.school_count +' schools'
-						document.getElementById('pupsCount').innerHTML=document.getElementById('pupsCount').innerHTML + ' <sup><i class="fas fa-exclamation-circle" data-toggle="tooltip" title="' + tooltipText + '"></sup>'
+						document.getElementById('pupsCount').innerHTML=document.getElementById('pupsCount').innerHTML + '<sup><i class="fas fa-exclamation-circle" data-toggle="tooltip" title="' + tooltipText + '"></i></sup>'
 					}
 				}
 			}
@@ -41,9 +41,9 @@ $(function () {
 	$.getJSON('../../data/groups.json', setValuesAndTooltips)		// async callback
 
   $('#schoolsTable').DataTable({
-    "ajax": {
-      "url": '../../data/schools.json',
-      "dataSrc": function (json) {
+    ajax: {
+      url: '../../data/schools.json',
+      dataSrc: function (json) {
         let data=[]
         let len=json.length
         if(len>0){
@@ -57,58 +57,58 @@ $(function () {
       	return data;
       }
     },
-    "deferRender": true,
-    "columns": [{
-        "data": "urn",
-        "orderSequence": ["asc", "desc"]
+    deferRender: true,
+    columns: [{
+        data: "urn",
+        orderSequence: ["asc", "desc"]
       },
       {
-        "data": "laestab",
-        "orderSequence": ["desc", "asc"]
+        data: "laestab",
+        orderSequence: ["desc", "asc"]
       },
       {
-        "data": "estab_name",
-        "orderSequence": ["desc", "asc"]
+        data: "estab_name",
+        orderSequence: ["desc", "asc"]
       },
       {
-        "data": "pupils",
-				"render": $.fn.dataTable.render.number( ','),
-        "orderSequence": ["desc", "asc"]
+        data: "pupils",
+				render: $.fn.dataTable.render.number(','),
+        orderSequence: ["desc", "asc"]
       },
       {
-        "data": "percentage_fsm",
-        "orderSequence": ["desc", "asc"]
+        data: "percentage_fsm",
+        orderSequence: ["desc", "asc"]
       },
       {
-        "data": "la",
-        "orderSequence": ["desc", "asc"]
+        data: "la",
+        orderSequence: ["desc", "asc"]
       },
       {
-        "data": "region",
-        "orderSequence": ["desc", "asc"]
+        data: "region",
+        orderSequence: ["desc", "asc"]
       },
       {
-        "data": "estab_phase",
-        "orderSequence": ["desc", "asc"]
+        data: "estab_phase",
+        orderSequence: ["desc", "asc"]
       },
       {
-        "data": "estab_type",
-        "orderSequence": ["desc", "asc"]
+        data: "estab_type",
+        orderSequence: ["desc", "asc"]
       },
       {
-        "data": "open_date",
-				"render": $.fn.dataTable.render.moment('DD-MM-YYYY','D MMMM YYYY'),
-        "orderSequence": ["desc", "asc"],
+        data: "open_date",
+				render: $.fn.dataTable.render.moment('DD-MM-YYYY','D MMMM YYYY'),
+        orderSequence: ["desc", "asc"],
       },
       {
-        "data": "trust_name",
-        "orderSequence": ["desc", "asc"]
+        data: "trust_name",
+        orderSequence: ["desc", "asc"]
       },
       {
-        "data": "sponsor_name",
-        "orderSequence": ["desc", "asc"]
+        data: "sponsor_name",
+        orderSequence: ["desc", "asc"]
       }
     ],
-    "order": [2, 'asc']
+    order: [2, 'asc']
   });
 })
