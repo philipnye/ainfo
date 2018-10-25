@@ -29,7 +29,10 @@ $(function () {
       url: 'data/groups.json',
       dataSrc: "" // handle the fact we're passing in a JSON array rather than a JSON object i.e. not {data: [{...},...]}
     },
-    fixedHeader: true,
+		responsive: true,
+		fixedHeader: {
+        headerOffset: $('#mainNav').outerHeight()
+    },
 		deferRender: true,
 		drawCallback: function(settings) {
         initialiseTooltips()
@@ -56,7 +59,7 @@ $(function () {
 						return data
 					}
 				},
-        orderSequence: ["desc", "asc"]
+        orderSequence: ["desc", "asc"],
       },
       {
         data: "estab_phase_count.primary",
