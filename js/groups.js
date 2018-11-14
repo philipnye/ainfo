@@ -57,6 +57,7 @@ $(function () {
       	return data;
       }
     },
+		dom: '<"tableTop"f>t<"tableBottom"ilp>',
     deferRender: true,
     columns: [{
         data: "urn",

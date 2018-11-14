@@ -29,7 +29,7 @@ $(function () {
       url: 'data/groups.json',
       dataSrc: "" // handle the fact we're passing in a JSON array rather than a JSON object i.e. not {data: [{...},...]}
     },
-		responsive: true,
+		dom: '<"tableTop"f>t<"tableBottom"ilp>',
 		fixedHeader: {
         headerOffset: $('#mainNav').outerHeight()
     },
