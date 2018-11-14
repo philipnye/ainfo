@@ -224,8 +224,7 @@
             131065,
             138229,
             139588,
-            139589,
-            141131
+            139589
         ],
         "trusts": [
             {
@@ -975,7 +974,7 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "Ormiston Academies Trust",
+        "sponsor_name": "Ormiston Trust",
         "urns": [
             135234,
             135769,
@@ -1035,7 +1034,7 @@
                 "trust_name": "BIRMINGHAM ORMISTON ACADEMY"
             }
         ],
-        "sponsor_name_simple": "Ormiston Academies Trust",
+        "sponsor_name_simple": "Ormiston Trust",
         "sponsor_code": 4105,
         "group_type": "School sponsor"
     },
@@ -1156,7 +1155,6 @@
             135959,
             136708,
             137106,
-            138394,
             138789,
             138791,
             139694,
@@ -1379,7 +1377,8 @@
         "sponsor_name": "Quaerere Academy Trust, (Q3 Academy - Eric and Grace Payne)",
         "urns": [
             135449,
-            141698
+            141698,
+            146383
         ],
         "trusts": [
             {
@@ -2263,7 +2262,8 @@
             139007,
             140530,
             140731,
-            144479
+            144479,
+            146379
         ],
         "trusts": [
             {
@@ -2336,10 +2336,7 @@
             135941,
             137582,
             139072,
-            139708,
-            139832,
-            139949,
-            140410
+            139832
         ],
         "trusts": [
             {
@@ -2605,7 +2602,7 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "Trinity Academy Halifax (TAH)",
+        "sponsor_name": "Trinity Multi Academy Trust",
         "urns": [
             136094,
             139433,
@@ -2620,7 +2617,7 @@
                 "trust_name": "TRINITY MULTI ACADEMY TRUST"
             }
         ],
-        "sponsor_name_simple": "Trinity Academy Halifax (TAH)",
+        "sponsor_name_simple": "Trinity Multi Academy Trust",
         "sponsor_code": 15703,
         "group_type": "School sponsor"
     },
@@ -2639,7 +2636,8 @@
             144588,
             144627,
             144632,
-            145306
+            145306,
+            145752
         ],
         "trusts": [
             {
@@ -2732,11 +2730,11 @@
             141530,
             141531,
             142817,
-            144497,
             144581,
             144582,
             145659,
-            146135
+            146135,
+            146624
         ],
         "trusts": [
             {
@@ -3064,8 +3062,7 @@
         "sponsor_name": "University of Plymouth",
         "urns": [
             136166,
-            139604,
-            139710
+            139604
         ],
         "trusts": [
             {
@@ -3073,12 +3070,6 @@
                 "companies_house_number": "07194412",
                 "companies_house_url": "https://beta.companieshouse.gov.uk/company/07194412",
                 "trust_name": "MARINE ACADEMY PLYMOUTH"
-            },
-            {
-                "trust_code": 4893,
-                "companies_house_number": "08562954",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08562954",
-                "trust_name": "TALENT & ENTERPRISE TRUST"
             }
         ],
         "sponsor_name_simple": "University of Plymouth",
@@ -3482,6 +3473,7 @@
             137606,
             138070,
             138443,
+            138482,
             138628,
             140071,
             140548,
@@ -3490,7 +3482,9 @@
             142043,
             145327,
             145500,
-            146211
+            146211,
+            146562,
+            146564
         ],
         "trusts": [
             {
@@ -7801,44 +7795,9 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "Link Education Trust",
-        "urns": [
-            137813,
-            141223,
-            142565
-        ],
-        "trusts": [
-            {
-                "trust_code": 3977,
-                "companies_house_number": "07842369",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/07842369",
-                "trust_name": "LINK EDUCATION TRUST"
-            }
-        ],
-        "sponsor_name_simple": "Link Education Trust",
-        "sponsor_code": 3976,
-        "group_type": "School sponsor"
-    },
-    {
-        "sponsor_name": "Weatherhead High School",
-        "urns": [
-            137815
-        ],
-        "trusts": [
-            {
-                "trust_code": 16837,
-                "companies_house_number": "07847190",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/07847190",
-                "trust_name": "PENINSULA MULTI ACADEMY TRUST"
-            }
-        ],
-        "sponsor_name_simple": "Weatherhead High School",
-        "sponsor_code": 16835,
-        "group_type": "School sponsor"
-    },
-    {
         "sponsor_name": "Lionheart Academies Trust",
         "urns": [
+            137799,
             137828,
             139624,
             140725,
@@ -7857,6 +7816,23 @@
         ],
         "sponsor_name_simple": "Lionheart Academies Trust",
         "sponsor_code": 4934,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "Weatherhead High School",
+        "urns": [
+            137815
+        ],
+        "trusts": [
+            {
+                "trust_code": 16837,
+                "companies_house_number": "07847190",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/07847190",
+                "trust_name": "PENINSULA MULTI ACADEMY TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Weatherhead High School",
+        "sponsor_code": 16835,
         "group_type": "School sponsor"
     },
     {
@@ -8209,7 +8185,7 @@
                 "trust_code": 4336,
                 "companies_house_number": "07967402",
                 "companies_house_url": "https://beta.companieshouse.gov.uk/company/07967402",
-                "trust_name": "REDDITCH WEST SCHOOL TRUST"
+                "trust_name": "ENDEAVOUR SCHOOLS TRUST LTD"
             }
         ],
         "sponsor_name_simple": "The Vaynor First School",
@@ -9240,15 +9216,16 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "Diocese of Birmingham Education Trust",
+        "sponsor_name": "Birmingham Diocese Academies Trust",
         "urns": [
             138432,
             138433,
-            138883,
             139126,
             139127,
             139267,
-            139269
+            139269,
+            146107,
+            146171
         ],
         "trusts": [
             {
@@ -9256,16 +9233,10 @@
                 "companies_house_number": "10729883",
                 "companies_house_url": "https://beta.companieshouse.gov.uk/company/10729883",
                 "trust_name": "BIRMINGHAM DIOCESAN ACADEMIES TRUST"
-            },
-            {
-                "trust_code": 15906,
-                "companies_house_number": "08255653",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08255653",
-                "trust_name": "ALL SAINTS MULTI ACADEMY TRUST, BIRMINGHAM"
             }
         ],
-        "sponsor_name_simple": "Diocese of Birmingham Education Trust",
-        "sponsor_code": 2891,
+        "sponsor_name_simple": "Birmingham Diocese Academies Trust",
+        "sponsor_code": 17076,
         "group_type": "School sponsor"
     },
     {
@@ -9339,23 +9310,6 @@
         ],
         "sponsor_name_simple": "Waldegrave School for Girls",
         "sponsor_code": 5198,
-        "group_type": "School sponsor"
-    },
-    {
-        "sponsor_name": "Trent Academies Group",
-        "urns": [
-            138482
-        ],
-        "trusts": [
-            {
-                "trust_code": 5454,
-                "companies_house_number": "08128513",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08128513",
-                "trust_name": "TRENT ACADEMIES GROUP"
-            }
-        ],
-        "sponsor_name_simple": "Trent Academies Group",
-        "sponsor_code": 5103,
         "group_type": "School sponsor"
     },
     {
@@ -9790,6 +9744,7 @@
             140335,
             140391,
             140857,
+            144501,
             145041
         ],
         "trusts": [
@@ -10287,6 +10242,23 @@
         "group_type": "School sponsor"
     },
     {
+        "sponsor_name": "Diocese of Birmingham Education Trust",
+        "urns": [
+            138883
+        ],
+        "trusts": [
+            {
+                "trust_code": 15906,
+                "companies_house_number": "08255653",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08255653",
+                "trust_name": "ALL SAINTS MULTI ACADEMY TRUST, BIRMINGHAM"
+            }
+        ],
+        "sponsor_name_simple": "Diocese of Birmingham Education Trust",
+        "sponsor_code": 2891,
+        "group_type": "School sponsor"
+    },
+    {
         "sponsor_name": "Acorn Education Trust",
         "urns": [
             138885,
@@ -10540,7 +10512,6 @@
         "urns": [
             139002,
             139011,
-            139328,
             139637,
             141245
         ],
@@ -10621,7 +10592,6 @@
             141379,
             141380,
             141381,
-            141743,
             144823,
             145557
         ],
@@ -10800,7 +10770,8 @@
         "sponsor_name": "Tyne Coast Academy Trust",
         "urns": [
             139124,
-            145528
+            145528,
+            145900
         ],
         "trusts": [
             {
@@ -10870,7 +10841,8 @@
         "urns": [
             139155,
             142540,
-            144895
+            144895,
+            146567
         ],
         "trusts": [
             {
@@ -11870,6 +11842,27 @@
         "group_type": "School sponsor"
     },
     {
+        "sponsor_name": "Learning Academies Trust",
+        "urns": [
+            139710,
+            145653,
+            145656,
+            145658,
+            146097
+        ],
+        "trusts": [
+            {
+                "trust_code": 16439,
+                "companies_house_number": "10285015",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/10285015",
+                "trust_name": "LEARNING ACADEMIES TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Learning Academies Trust",
+        "sponsor_code": 16984,
+        "group_type": "School sponsor"
+    },
+    {
         "sponsor_name": "The Good Shepherd Trust",
         "urns": [
             139721,
@@ -12236,7 +12229,7 @@
                 "trust_code": 2893,
                 "companies_house_number": "08610377",
                 "companies_house_url": "https://beta.companieshouse.gov.uk/company/08610377",
-                "trust_name": "DIOCESE OF BRENTWOOD MULTI ACADEMY TRUST"
+                "trust_name": "CHRISTUS CATHOLIC TRUST"
             }
         ],
         "sponsor_name_simple": "Catholic Diocese of Brentwood",
@@ -12587,6 +12580,49 @@
         ],
         "sponsor_name_simple": "Wardle Academy Trust",
         "sponsor_code": 5217,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "Exceed Academies Trust",
+        "urns": [
+            140076,
+            145173,
+            145303
+        ],
+        "trusts": [
+            {
+                "trust_code": 16492,
+                "companies_house_number": "10050238",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/10050238",
+                "trust_name": "EXCEED ACADEMIES TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Exceed Academies Trust",
+        "sponsor_code": 16832,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "The Aspire Educational Trust",
+        "urns": [
+            140083,
+            140444,
+            141653,
+            141809,
+            143153,
+            143156,
+            145248,
+            145439
+        ],
+        "trusts": [
+            {
+                "trust_code": 5594,
+                "companies_house_number": "08689696",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08689696",
+                "trust_name": "THE ASPIRE EDUCATIONAL TRUST"
+            }
+        ],
+        "sponsor_name_simple": "The Aspire Educational Trust",
+        "sponsor_code": 5498,
         "group_type": "School sponsor"
     },
     {
@@ -13353,29 +13389,6 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "The Aspire Educational Trust",
-        "urns": [
-            140444,
-            141653,
-            141809,
-            143153,
-            143156,
-            145248,
-            145439
-        ],
-        "trusts": [
-            {
-                "trust_code": 5594,
-                "companies_house_number": "08689696",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08689696",
-                "trust_name": "THE ASPIRE EDUCATIONAL TRUST"
-            }
-        ],
-        "sponsor_name_simple": "The Aspire Educational Trust",
-        "sponsor_code": 5498,
-        "group_type": "School sponsor"
-    },
-    {
         "sponsor_name": "Huish Primary School, Yeovil",
         "urns": [
             140455,
@@ -13481,7 +13494,7 @@
                 "trust_code": 3566,
                 "companies_house_number": "08706247",
                 "companies_house_url": "https://beta.companieshouse.gov.uk/company/08706247",
-                "trust_name": "JOHN PAUL II MULTI-ACADEMY"
+                "trust_name": "ST. JOHN PAUL II MULTI ACADEMY COMPANY"
             }
         ],
         "sponsor_name_simple": "The John Paul II MAC (Sutton Coldfield)",
@@ -13835,7 +13848,8 @@
             144841,
             144858,
             145635,
-            145636
+            145636,
+            146566
         ],
         "trusts": [
             {
@@ -14707,23 +14721,6 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "Wakefield City Academies Trust",
-        "urns": [
-            141354
-        ],
-        "trusts": [
-            {
-                "trust_code": 5195,
-                "companies_house_number": "07462885",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/07462885",
-                "trust_name": "WAKEFIELD CITY ACADEMIES TRUST"
-            }
-        ],
-        "sponsor_name_simple": "Wakefield City Academies Trust",
-        "sponsor_code": 5194,
-        "group_type": "School sponsor"
-    },
-    {
         "sponsor_name": "Evolution Academy Trust",
         "urns": [
             141356,
@@ -15011,25 +15008,6 @@
         ],
         "sponsor_name_simple": "Diocese of Chichester Academy Trust",
         "sponsor_code": 5492,
-        "group_type": "School sponsor"
-    },
-    {
-        "sponsor_name": "The SCHOOLSCOMPANY Trust",
-        "urns": [
-            141675,
-            141676,
-            141677
-        ],
-        "trusts": [
-            {
-                "trust_code": 5522,
-                "companies_house_number": "08304460",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08304460",
-                "trust_name": "THE SCHOOLSCOMPANY TRUST"
-            }
-        ],
-        "sponsor_name_simple": "The SCHOOLSCOMPANY Trust",
-        "sponsor_code": 5583,
         "group_type": "School sponsor"
     },
     {
@@ -15827,7 +15805,8 @@
             142352,
             142354,
             145198,
-            146386
+            146386,
+            146560
         ],
         "trusts": [
             {
@@ -15929,6 +15908,23 @@
         ],
         "sponsor_name_simple": "The Blue Kite Academy Trust",
         "sponsor_code": 16017,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "Link Education Trust",
+        "urns": [
+            142565
+        ],
+        "trusts": [
+            {
+                "trust_code": 3977,
+                "companies_house_number": "07842369",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/07842369",
+                "trust_name": "LINK EDUCATION TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Link Education Trust",
+        "sponsor_code": 3976,
         "group_type": "School sponsor"
     },
     {
@@ -16119,23 +16115,6 @@
         ],
         "sponsor_name_simple": "Ashmole Academy",
         "sponsor_code": 2179,
-        "group_type": "School sponsor"
-    },
-    {
-        "sponsor_name": "Education Excellence 4 All (EE4A)",
-        "urns": [
-            142783
-        ],
-        "trusts": [
-            {
-                "trust_code": 16270,
-                "companies_house_number": "08355539",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08355539",
-                "trust_name": "EDUCATION EXCELLENCE FOR ALL TRUST"
-            }
-        ],
-        "sponsor_name_simple": "Education Excellence 4 All (EE4A)",
-        "sponsor_code": 16274,
         "group_type": "School sponsor"
     },
     {
@@ -18145,24 +18124,6 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "Exceed Academies Trust",
-        "urns": [
-            145173,
-            145303
-        ],
-        "trusts": [
-            {
-                "trust_code": 16492,
-                "companies_house_number": "10050238",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/10050238",
-                "trust_name": "EXCEED ACADEMIES TRUST"
-            }
-        ],
-        "sponsor_name_simple": "Exceed Academies Trust",
-        "sponsor_code": 16832,
-        "group_type": "School sponsor"
-    },
-    {
         "sponsor_name": "Minerva Learning Trust",
         "urns": [
             145191,
@@ -18521,26 +18482,6 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "Learning Academies Trust",
-        "urns": [
-            145653,
-            145656,
-            145658,
-            146097
-        ],
-        "trusts": [
-            {
-                "trust_code": 16439,
-                "companies_house_number": "10285015",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/10285015",
-                "trust_name": "LEARNING ACADEMIES TRUST"
-            }
-        ],
-        "sponsor_name_simple": "Learning Academies Trust",
-        "sponsor_code": 16984,
-        "group_type": "School sponsor"
-    },
-    {
         "sponsor_name": "Christ the King MAC (North Staffordshire)",
         "urns": [
             145687
@@ -18762,24 +18703,6 @@
         ],
         "sponsor_name_simple": "Esteem Multi-Academy Trust",
         "sponsor_code": 17051,
-        "group_type": "School sponsor"
-    },
-    {
-        "sponsor_name": "Birmingham Diocese Academies Trust",
-        "urns": [
-            146107,
-            146171
-        ],
-        "trusts": [
-            {
-                "trust_code": 16828,
-                "companies_house_number": "10729883",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/10729883",
-                "trust_name": "BIRMINGHAM DIOCESAN ACADEMIES TRUST"
-            }
-        ],
-        "sponsor_name_simple": "Birmingham Diocese Academies Trust",
-        "sponsor_code": 17076,
         "group_type": "School sponsor"
     },
     {
