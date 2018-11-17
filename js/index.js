@@ -30,9 +30,6 @@ $(function () {
       dataSrc: "" // handle the fact we're passing in a JSON array rather than a JSON object i.e. not {data: [{...},...]}
     },
 		dom: '<"tableTop"f>t<"tableBottom"ilp>',
-		fixedHeader: {
-        headerOffset: $('#mainNav').outerHeight()
-    },
 		deferRender: true,
 		drawCallback: function(settings) {
         initialiseTooltips()
@@ -50,16 +47,16 @@ $(function () {
       },
       {
         data: "pupil_numbers",
-				render: function(data, type, row, meta) {		// XXX
+				render: function(data, type, row, meta) {
 					if (row.no_pupil_numbers_schools>0){
 						var tooltipText='Pupil numbers are only available for ' + row.pupil_numbers_schools + ' out of ' + row.school_count +' schools'
 						return '<span class="pupilNumbersFlagged" data-toggle="tooltip" title="' + tooltipText + '">' + data.toLocaleString('en-GB') + '</span>';
 					}
 					else {
-						return data
+						return data.toLocaleString('en-GB')
 					}
 				},
-        orderSequence: ["desc", "asc"],
+        orderSequence: ["desc", "asc"]
       },
       {
         data: "estab_phase_count.primary",
