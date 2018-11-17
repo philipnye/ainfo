@@ -21,3 +21,52 @@ td span.pupilNumbersFlagged {
   text-decoration-line: underline;
   text-decoration-style: dotted;
 }
+
+/* Tables */
+th.rotate{
+  height: 160px;
+  width: 40px;
+	padding: 0px;
+	padding-right: 0px !important;
+}
+
+th.rotate div{
+  position: relative;
+  top: 0px;
+  left: 70px;
+  height: 100%;
+  transform:skew(-45deg,0deg);
+	border-left: 1px solid;
+}
+
+th.rotate span {
+  transform:
+		skew(45deg,0deg)
+		rotate(-45deg);
+  position: absolute;
+  bottom: 15px;
+  display: inline-block;
+	width: 100%;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table th {
+	border-top: none;
+}
+
+th.rotate:before {
+  left: calc(150px - 0.35em);
+}
+
+th.rotate:after {
+  left: 150px;
+}
+
+th:not(.rotate):before {
+  left: 0.5em;
+}
+
+th:not(.rotate):after {
+  left: 0.85em;
+}
