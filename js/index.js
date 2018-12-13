@@ -30,6 +30,7 @@ $(function () {
       dataSrc: "" // handle the fact we're passing in a JSON array rather than a JSON object i.e. not {data: [{...},...]}
     },
 		dom: '<"tableTop"f>t<"tableBottom"ilp>',
+		scrollX: true,
 		deferRender: true,
 		drawCallback: function(settings) {
         initialiseTooltips()
@@ -39,6 +40,7 @@ $(function () {
 				render: function(data, type, row, meta) {
 	        return '<a href="' + row.group_page_url + '">' + data + '</a>';
 	      },
+				width: "480px",
         orderSequence: ["asc", "desc"]
       },
       {
