@@ -66,6 +66,7 @@
             144398,
             145545,
             145852,
+            146275,
             146343,
             146344,
             146345,
@@ -737,7 +738,8 @@
             142904,
             144515,
             144961,
-            145724
+            145724,
+            146474
         ],
         "trusts": [
             {
@@ -787,6 +789,12 @@
                 "companies_house_number": "09010445",
                 "companies_house_url": "https://beta.companieshouse.gov.uk/company/09010445",
                 "trust_name": "ST JEROME CHURCH OF ENGLAND BILINGUAL PRIMARY SCHOOL"
+            },
+            {
+                "trust_code": 16633,
+                "companies_house_number": "10447269",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/10447269",
+                "trust_name": "LDBS ACADEMIES TRUST 2"
             }
         ],
         "sponsor_name_simple": "Diocese of London",
@@ -1557,8 +1565,7 @@
             135598,
             141037,
             141387,
-            141719,
-            141720
+            141719
         ],
         "trusts": [
             {
@@ -1566,12 +1573,6 @@
                 "companies_house_number": "06544825",
                 "companies_house_url": "https://beta.companieshouse.gov.uk/company/06544825",
                 "trust_name": "SENTAMU ACADEMY LEARNING TRUST"
-            },
-            {
-                "trust_code": 3502,
-                "companies_house_number": "08542806",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08542806",
-                "trust_name": "HULL COLLABORATIVE ACADEMY TRUST"
             }
         ],
         "sponsor_name_simple": "Diocese of York Educational Trust",
@@ -1657,7 +1658,6 @@
             141918,
             141932,
             142395,
-            142459,
             142465,
             142466,
             142467,
@@ -1704,6 +1704,7 @@
             143455,
             143800,
             143801,
+            143974,
             145275,
             145300,
             145672,
@@ -1732,10 +1733,12 @@
             139580,
             139650,
             139819,
+            139961,
             141331,
             141344,
             143522,
-            145952
+            145952,
+            146539
         ],
         "trusts": [
             {
@@ -2331,26 +2334,6 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "University of Chester Academies Trust",
-        "urns": [
-            135941,
-            137582,
-            139072,
-            139832
-        ],
-        "trusts": [
-            {
-                "trust_code": 5152,
-                "companies_house_number": "06929486",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/06929486",
-                "trust_name": "UNIVERSITY OF CHESTER ACADEMIES TRUST"
-            }
-        ],
-        "sponsor_name_simple": "University of Chester Academies Trust",
-        "sponsor_code": 5139,
-        "group_type": "School sponsor"
-    },
-    {
         "sponsor_name": "Delta Academies Trust",
         "urns": [
             135942,
@@ -2380,7 +2363,8 @@
             142464,
             145929,
             145930,
-            146320
+            146320,
+            146639
         ],
         "trusts": [
             {
@@ -2637,7 +2621,8 @@
             144627,
             144632,
             145306,
-            145752
+            145752,
+            146227
         ],
         "trusts": [
             {
@@ -3212,7 +3197,6 @@
         "sponsor_name": "Bright Tribe Trust",
         "urns": [
             136195,
-            140406,
             141236,
             141372,
             141373
@@ -3482,6 +3466,7 @@
             142043,
             145327,
             145500,
+            146079,
             146211,
             146562,
             146564
@@ -3554,7 +3539,7 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "John Taylor High School",
+        "sponsor_name": "John Taylor MAT",
         "urns": [
             136323,
             138899,
@@ -3574,7 +3559,7 @@
                 "trust_name": "JOHN TAYLOR MAT"
             }
         ],
-        "sponsor_name_simple": "John Taylor High School",
+        "sponsor_name_simple": "John Taylor MAT",
         "sponsor_code": 3569,
         "group_type": "School sponsor"
     },
@@ -3630,7 +3615,8 @@
             144830,
             145021,
             146069,
-            146409
+            146409,
+            146447
         ],
         "trusts": [
             {
@@ -3937,7 +3923,7 @@
                 "trust_code": 4004,
                 "companies_house_number": "07348167",
                 "companies_house_url": "https://beta.companieshouse.gov.uk/company/07348167",
-                "trust_name": "NINESTILES ACADEMY TRUST LIMITED"
+                "trust_name": "SUMMIT LEARNING TRUST"
             }
         ],
         "sponsor_name_simple": "Ninestiles Academy Trust Limited",
@@ -4294,7 +4280,9 @@
             144180,
             145412,
             146372,
-            146373
+            146373,
+            146544,
+            146545
         ],
         "trusts": [
             {
@@ -5418,6 +5406,27 @@
         "group_type": "School sponsor"
     },
     {
+        "sponsor_name": "Bridgwater College Trust",
+        "urns": [
+            136791,
+            138375,
+            139655,
+            139717,
+            146243
+        ],
+        "trusts": [
+            {
+                "trust_code": 2434,
+                "companies_house_number": "08098956",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08098956",
+                "trust_name": "BRIDGWATER COLLEGE TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Bridgwater College Trust",
+        "sponsor_code": 2433,
+        "group_type": "School sponsor"
+    },
+    {
         "sponsor_name": "Inspiring Futures Through Learning",
         "urns": [
             136792,
@@ -5797,13 +5806,13 @@
         "sponsor_name": "The Redstart Learning Partnership",
         "urns": [
             136926,
-            139388,
             141695,
             141740,
             143143,
             144985,
             145199,
-            145842
+            145842,
+            146747
         ],
         "trusts": [
             {
@@ -5895,7 +5904,7 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "The Arthur Terry School",
+        "sponsor_name": "The Arthur Terry Learning Partnership",
         "urns": [
             136986,
             138136,
@@ -5905,7 +5914,8 @@
             139465,
             139520,
             145538,
-            146130
+            146130,
+            146457
         ],
         "trusts": [
             {
@@ -5915,7 +5925,7 @@
                 "trust_name": "THE ARTHUR TERRY LEARNING PARTNERSHIP"
             }
         ],
-        "sponsor_name_simple": "The Arthur Terry School",
+        "sponsor_name_simple": "The Arthur Terry Learning Partnership",
         "sponsor_code": 4933,
         "group_type": "School sponsor"
     },
@@ -6083,7 +6093,10 @@
             145068,
             145222,
             145456,
-            145457
+            145457,
+            146475,
+            146490,
+            146496
         ],
         "trusts": [
             {
@@ -6861,7 +6874,9 @@
             137352,
             141688,
             141904,
-            142574
+            142574,
+            146327,
+            146365
         ],
         "trusts": [
             {
@@ -7214,7 +7229,7 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "The Partnership Trust",
+        "sponsor_name": "Bath and Mendip Partnership Trust",
         "urns": [
             137493,
             139945,
@@ -7235,7 +7250,7 @@
                 "trust_name": "THE BATH AND MENDIP PARTNERSHIP TRUST"
             }
         ],
-        "sponsor_name_simple": "The Partnership Trust",
+        "sponsor_name_simple": "Bath and Mendip Partnership Trust",
         "sponsor_code": 3125,
         "group_type": "School sponsor"
     },
@@ -7265,6 +7280,29 @@
         "group_type": "School sponsor"
     },
     {
+        "sponsor_name": "Parallel Learning Trust",
+        "urns": [
+            137507,
+            140907,
+            140908,
+            141005,
+            142612,
+            142938,
+            142940
+        ],
+        "trusts": [
+            {
+                "trust_code": 4132,
+                "companies_house_number": "08605705",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08605705",
+                "trust_name": "PARALLEL LEARNING TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Parallel Learning Trust",
+        "sponsor_code": 15989,
+        "group_type": "School sponsor"
+    },
+    {
         "sponsor_name": "Wellsway Multi Academy Trust",
         "urns": [
             137523,
@@ -7276,7 +7314,8 @@
             143083,
             144038,
             144283,
-            144986
+            144986,
+            146572
         ],
         "trusts": [
             {
@@ -7345,6 +7384,27 @@
         ],
         "sponsor_name_simple": "Brook Learning Trust",
         "sponsor_code": 2467,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "North West Academies Trust",
+        "urns": [
+            137582,
+            139377,
+            140664,
+            143326,
+            146642
+        ],
+        "trusts": [
+            {
+                "trust_code": 4029,
+                "companies_house_number": "08852553",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08852553",
+                "trust_name": "NORTH WEST ACADEMIES TRUST LIMITED"
+            }
+        ],
+        "sponsor_name_simple": "North West Academies Trust",
+        "sponsor_code": 4028,
         "group_type": "School sponsor"
     },
     {
@@ -7507,7 +7567,7 @@
                 "trust_code": 3243,
                 "companies_house_number": "07965316",
                 "companies_house_url": "https://beta.companieshouse.gov.uk/company/07965316",
-                "trust_name": "THE GREENACRE ACADEMY TRUST"
+                "trust_name": "SKILLS FOR LIFE TRUST"
             }
         ],
         "sponsor_name_simple": "Greenacre Academy Trust",
@@ -8291,7 +8351,7 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "Nottingham Roman Catholic Diocesan Education Service (NRCDES)",
+        "sponsor_name": "St Therese of Lisieux Catholic Multi Academy Trust",
         "urns": [
             138014,
             138015,
@@ -8325,7 +8385,7 @@
                 "trust_name": "ST THERESE OF LISIEUX CATHOLIC MULTI ACADEMY TRUST"
             }
         ],
-        "sponsor_name_simple": "Nottingham Roman Catholic Diocesan Education Service (NRCDES)",
+        "sponsor_name_simple": "St Therese of Lisieux Catholic Multi Academy Trust",
         "sponsor_code": 4056,
         "group_type": "School sponsor"
     },
@@ -8961,7 +9021,12 @@
             138304,
             141883,
             145026,
-            146213
+            146213,
+            146215,
+            146218,
+            146219,
+            146233,
+            146247
         ],
         "trusts": [
             {
@@ -9056,26 +9121,6 @@
         ],
         "sponsor_name_simple": "The Griffin Schools Trust",
         "sponsor_code": 4972,
-        "group_type": "School sponsor"
-    },
-    {
-        "sponsor_name": "Bridgwater College Trust",
-        "urns": [
-            138375,
-            139655,
-            139717,
-            146243
-        ],
-        "trusts": [
-            {
-                "trust_code": 2434,
-                "companies_house_number": "08098956",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08098956",
-                "trust_name": "BRIDGWATER COLLEGE TRUST"
-            }
-        ],
-        "sponsor_name_simple": "Bridgwater College Trust",
-        "sponsor_code": 2433,
         "group_type": "School sponsor"
     },
     {
@@ -9363,7 +9408,8 @@
         "urns": [
             138507,
             144909,
-            144959
+            144959,
+            146123
         ],
         "trusts": [
             {
@@ -9462,8 +9508,7 @@
             138526,
             138530,
             138718,
-            141345,
-            142331
+            141345
         ],
         "trusts": [
             {
@@ -9510,6 +9555,23 @@
         ],
         "sponsor_name_simple": "Attain Academy Partnership",
         "sponsor_code": 16907,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "Acer Learning Trust",
+        "urns": [
+            138534
+        ],
+        "trusts": [
+            {
+                "trust_code": 17127,
+                "companies_house_number": "08158718",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08158718",
+                "trust_name": "ACER LEARNING TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Acer Learning Trust",
+        "sponsor_code": 17152,
         "group_type": "School sponsor"
     },
     {
@@ -9757,6 +9819,26 @@
         ],
         "sponsor_name_simple": "The Park Federation Academy Trust",
         "sponsor_code": 5001,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "Aquinas Church of England Education Trust Ltd",
+        "urns": [
+            138624,
+            140648,
+            141352,
+            141807
+        ],
+        "trusts": [
+            {
+                "trust_code": 2143,
+                "companies_house_number": "07525735",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/07525735",
+                "trust_name": "AQUINAS CHURCH OF ENGLAND EDUCATION TRUST LIMITED"
+            }
+        ],
+        "sponsor_name_simple": "Aquinas Church of England Education Trust Ltd",
+        "sponsor_code": 2144,
         "group_type": "School sponsor"
     },
     {
@@ -10189,7 +10271,8 @@
         "urns": [
             138851,
             141673,
-            145751
+            145751,
+            146535
         ],
         "trusts": [
             {
@@ -10331,7 +10414,9 @@
             145072,
             145220,
             145225,
-            146049
+            146049,
+            146512,
+            146536
         ],
         "trusts": [
             {
@@ -10525,6 +10610,24 @@
         ],
         "sponsor_name_simple": "Education Central Multi Academy Trust",
         "sponsor_code": 3011,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "Jigsaw Learning Trust",
+        "urns": [
+            139026,
+            144658
+        ],
+        "trusts": [
+            {
+                "trust_code": 16943,
+                "companies_house_number": "08277622",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08277622",
+                "trust_name": "JIGSAW LEARNING TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Jigsaw Learning Trust",
+        "sponsor_code": 17170,
         "group_type": "School sponsor"
     },
     {
@@ -10822,7 +10925,10 @@
             143107,
             143227,
             144016,
-            145879
+            145879,
+            146499,
+            146505,
+            146542
         ],
         "trusts": [
             {
@@ -11109,6 +11215,27 @@
         "group_type": "School sponsor"
     },
     {
+        "sponsor_name": "Community Inclusive Trust",
+        "urns": [
+            139316,
+            141100,
+            144594,
+            145489,
+            145902
+        ],
+        "trusts": [
+            {
+                "trust_code": 2758,
+                "companies_house_number": "09071623",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/09071623",
+                "trust_name": "COMMUNITY INCLUSIVE TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Community Inclusive Trust",
+        "sponsor_code": 2759,
+        "group_type": "School sponsor"
+    },
+    {
         "sponsor_name": "Tall Oaks Academies Trust",
         "urns": [
             139332,
@@ -11193,25 +11320,6 @@
         ],
         "sponsor_name_simple": "Wade Deacon Trust",
         "sponsor_code": 3529,
-        "group_type": "School sponsor"
-    },
-    {
-        "sponsor_name": "North West Academies Trust",
-        "urns": [
-            139377,
-            140664,
-            143326
-        ],
-        "trusts": [
-            {
-                "trust_code": 4029,
-                "companies_house_number": "08852553",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08852553",
-                "trust_name": "NORTH WEST ACADEMIES TRUST LIMITED"
-            }
-        ],
-        "sponsor_name_simple": "North West Academies Trust",
-        "sponsor_code": 4028,
         "group_type": "School sponsor"
     },
     {
@@ -11381,23 +11489,6 @@
         ],
         "sponsor_name_simple": "Plymouth CAST",
         "sponsor_code": 4213,
-        "group_type": "School sponsor"
-    },
-    {
-        "sponsor_name": "East Anglia Schools Trust",
-        "urns": [
-            139400
-        ],
-        "trusts": [
-            {
-                "trust_code": 2722,
-                "companies_house_number": "08432486",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08432486",
-                "trust_name": "EAST ANGLIA SCHOOLS TRUST"
-            }
-        ],
-        "sponsor_name_simple": "East Anglia Schools Trust",
-        "sponsor_code": 2721,
         "group_type": "School sponsor"
     },
     {
@@ -11623,6 +11714,7 @@
             139886,
             140245,
             140830,
+            141720,
             141933,
             142391,
             142440,
@@ -11903,7 +11995,8 @@
             144852,
             145383,
             145384,
-            145394
+            145394,
+            145741
         ],
         "trusts": [
             {
@@ -11933,6 +12026,32 @@
         ],
         "sponsor_name_simple": "National Autistic Society",
         "sponsor_code": 5563,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "WAVE Multi-Academy Trust",
+        "urns": [
+            139740,
+            139741,
+            139745,
+            139758,
+            139759,
+            139760,
+            139761,
+            146732,
+            146734,
+            146735
+        ],
+        "trusts": [
+            {
+                "trust_code": 2067,
+                "companies_house_number": "08418341",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08418341",
+                "trust_name": "WAVE MULTI ACADEMY TRUST"
+            }
+        ],
+        "sponsor_name_simple": "WAVE Multi-Academy Trust",
+        "sponsor_code": 17142,
         "group_type": "School sponsor"
     },
     {
@@ -12109,7 +12228,8 @@
             145302,
             145719,
             146154,
-            146357
+            146357,
+            146469
         ],
         "trusts": [
             {
@@ -12148,7 +12268,8 @@
         "sponsor_name": "Learning Together Trust",
         "urns": [
             139883,
-            142028
+            142028,
+            146511
         ],
         "trusts": [
             {
@@ -12326,23 +12447,6 @@
         ],
         "sponsor_name_simple": "Bourne Education Trust",
         "sponsor_code": 2385,
-        "group_type": "School sponsor"
-    },
-    {
-        "sponsor_name": "The Education Fellowship Trust",
-        "urns": [
-            139961
-        ],
-        "trusts": [
-            {
-                "trust_code": 3013,
-                "companies_house_number": "07848783",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/07848783",
-                "trust_name": "THE EDUCATION FELLOWSHIP TRUST"
-            }
-        ],
-        "sponsor_name_simple": "The Education Fellowship Trust",
-        "sponsor_code": 4960,
         "group_type": "School sponsor"
     },
     {
@@ -12605,6 +12709,7 @@
         "sponsor_name": "The Aspire Educational Trust",
         "urns": [
             140083,
+            140438,
             140444,
             141653,
             141809,
@@ -12711,7 +12816,10 @@
             143848,
             145098,
             146087,
-            146110
+            146110,
+            146529,
+            146635,
+            146636
         ],
         "trusts": [
             {
@@ -13354,7 +13462,9 @@
         "urns": [
             140427,
             140428,
-            145706
+            145706,
+            146456,
+            146480
         ],
         "trusts": [
             {
@@ -13487,7 +13597,8 @@
             140524,
             140525,
             140528,
-            140529
+            140529,
+            146268
         ],
         "trusts": [
             {
@@ -13655,24 +13766,6 @@
         ],
         "sponsor_name_simple": "Chilford Hundred Education Trust",
         "sponsor_code": 3756,
-        "group_type": "School sponsor"
-    },
-    {
-        "sponsor_name": "Aquinas Church of England Education Trust Ltd",
-        "urns": [
-            140648,
-            141352
-        ],
-        "trusts": [
-            {
-                "trust_code": 2143,
-                "companies_house_number": "07525735",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/07525735",
-                "trust_name": "AQUINAS CHURCH OF ENGLAND EDUCATION TRUST LIMITED"
-            }
-        ],
-        "sponsor_name_simple": "Aquinas Church of England Education Trust Ltd",
-        "sponsor_code": 2144,
         "group_type": "School sponsor"
     },
     {
@@ -13949,7 +14042,8 @@
             144383,
             144467,
             144468,
-            145233
+            145233,
+            146502
         ],
         "trusts": [
             {
@@ -14050,28 +14144,6 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "Parallel Learning Trust",
-        "urns": [
-            140907,
-            140908,
-            141005,
-            142612,
-            142938,
-            142940
-        ],
-        "trusts": [
-            {
-                "trust_code": 4132,
-                "companies_house_number": "08605705",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/08605705",
-                "trust_name": "PARALLEL LEARNING TRUST"
-            }
-        ],
-        "sponsor_name_simple": "Parallel Learning Trust",
-        "sponsor_code": 15989,
-        "group_type": "School sponsor"
-    },
-    {
         "sponsor_name": "The Black Pear Academy Trust",
         "urns": [
             140933,
@@ -14124,26 +14196,6 @@
         ],
         "sponsor_name_simple": "Our Lady of Lourdes MAC (North Worcs)",
         "sponsor_code": 15925,
-        "group_type": "School sponsor"
-    },
-    {
-        "sponsor_name": "Community Inclusive Trust",
-        "urns": [
-            141100,
-            144594,
-            145489,
-            145902
-        ],
-        "trusts": [
-            {
-                "trust_code": 2758,
-                "companies_house_number": "09071623",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/09071623",
-                "trust_name": "COMMUNITY INCLUSIVE TRUST"
-            }
-        ],
-        "sponsor_name_simple": "Community Inclusive Trust",
-        "sponsor_code": 2759,
         "group_type": "School sponsor"
     },
     {
@@ -14676,7 +14728,8 @@
         "urns": [
             141330,
             141582,
-            145735
+            145735,
+            146313
         ],
         "trusts": [
             {
@@ -14704,6 +14757,7 @@
             145453,
             145454,
             145458,
+            145713,
             146399,
             146412,
             146429
@@ -15911,23 +15965,6 @@
         "group_type": "School sponsor"
     },
     {
-        "sponsor_name": "Link Education Trust",
-        "urns": [
-            142565
-        ],
-        "trusts": [
-            {
-                "trust_code": 3977,
-                "companies_house_number": "07842369",
-                "companies_house_url": "https://beta.companieshouse.gov.uk/company/07842369",
-                "trust_name": "LINK EDUCATION TRUST"
-            }
-        ],
-        "sponsor_name_simple": "Link Education Trust",
-        "sponsor_code": 3976,
-        "group_type": "School sponsor"
-    },
-    {
         "sponsor_name": "Cygnus Academies Trust",
         "urns": [
             142613,
@@ -16123,7 +16160,8 @@
             142802,
             142803,
             145103,
-            145104
+            145104,
+            146534
         ],
         "trusts": [
             {
@@ -16708,7 +16746,8 @@
             143567,
             143569,
             143571,
-            144050
+            144050,
+            146435
         ],
         "trusts": [
             {
@@ -17103,7 +17142,8 @@
             144144,
             144145,
             144146,
-            145301
+            145301,
+            146479
         ],
         "trusts": [
             {
@@ -18186,7 +18226,8 @@
             145581,
             145641,
             145644,
-            145786
+            145786,
+            145827
         ],
         "trusts": [
             {
@@ -18252,6 +18293,25 @@
         ],
         "sponsor_name_simple": "The Violet Way Academy",
         "sponsor_code": 5042,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "Ethos Academy Trust",
+        "urns": [
+            145432,
+            145433,
+            145434
+        ],
+        "trusts": [
+            {
+                "trust_code": 17070,
+                "companies_house_number": "10745840",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/10745840",
+                "trust_name": "ETHOS ACADEMY TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Ethos Academy Trust",
+        "sponsor_code": 17168,
         "group_type": "School sponsor"
     },
     {
@@ -18330,7 +18390,8 @@
         "sponsor_name": "Owlcotes Multi- Academy Trust",
         "urns": [
             145525,
-            145526
+            145526,
+            146540
         ],
         "trusts": [
             {
@@ -18648,6 +18709,23 @@
         "group_type": "School sponsor"
     },
     {
+        "sponsor_name": "St Bede C of E Primary Academy",
+        "urns": [
+            145854
+        ],
+        "trusts": [
+            {
+                "trust_code": 17140,
+                "companies_house_number": "07628909",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/07628909",
+                "trust_name": "ST BEDE CHURCH OF ENGLAND PRIMARY ACADEMY"
+            }
+        ],
+        "sponsor_name_simple": "St Bede C of E Primary Academy",
+        "sponsor_code": 17137,
+        "group_type": "School sponsor"
+    },
+    {
         "sponsor_name": "Folio Education Trust",
         "urns": [
             145875
@@ -18896,6 +18974,110 @@
         ],
         "sponsor_name_simple": "Odyssey Trust For Education",
         "sponsor_code": 17089,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "Create Partnership Trust",
+        "urns": [
+            146437
+        ],
+        "trusts": [
+            {
+                "trust_code": 16326,
+                "companies_house_number": "10318212",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/10318212",
+                "trust_name": "CREATE PARTNERSHIP TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Create Partnership Trust",
+        "sponsor_code": 17136,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "Tees Valley Collaborative Trust",
+        "urns": [
+            146486
+        ],
+        "trusts": [
+            {
+                "trust_code": 16864,
+                "companies_house_number": "10743632",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/10743632",
+                "trust_name": "TEES VALLEY COLLABORATIVE TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Tees Valley Collaborative Trust",
+        "sponsor_code": 17138,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "Orwell Multi Academy Trust",
+        "urns": [
+            146532
+        ],
+        "trusts": [
+            {
+                "trust_code": 16641,
+                "companies_house_number": "10650092",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/10650092",
+                "trust_name": "ORWELL MULTI ACADEMY TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Orwell Multi Academy Trust",
+        "sponsor_code": 17139,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "Barnton Community Nursery and Primary School",
+        "urns": [
+            146538
+        ],
+        "trusts": [
+            {
+                "trust_code": 16620,
+                "companies_house_number": "10605768",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/10605768",
+                "trust_name": "WEAVER TRUST LIMITED"
+            }
+        ],
+        "sponsor_name_simple": "Barnton Community Nursery and Primary School",
+        "sponsor_code": 17135,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "Healing Science Academy Ltd",
+        "urns": [
+            146559,
+            146561,
+            146762
+        ],
+        "trusts": [
+            {
+                "trust_code": 3364,
+                "companies_house_number": "07345756",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/07345756",
+                "trust_name": "HEALING MULTI ACADEMY TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Healing Science Academy Ltd",
+        "sponsor_code": 3365,
+        "group_type": "School sponsor"
+    },
+    {
+        "sponsor_name": "Atlas Academy Trust",
+        "urns": [
+            146731
+        ],
+        "trusts": [
+            {
+                "trust_code": 17143,
+                "companies_house_number": "07947806",
+                "companies_house_url": "https://beta.companieshouse.gov.uk/company/07947806",
+                "trust_name": "TITAN EDUCATION TRUST"
+            }
+        ],
+        "sponsor_name_simple": "Atlas Academy Trust",
+        "sponsor_code": 17141,
         "group_type": "School sponsor"
     }
 ]
