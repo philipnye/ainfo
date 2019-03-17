@@ -1,11 +1,11 @@
 $(function () {
 	function initialiseTooltips() {
-			$('[data-toggle="tooltip"]').tooltip()
+		$('[data-toggle="tooltip"]').tooltip()
 	}
 
 	function setValues(json) {
-    let len=json.length
-    if(len>0){
+	    let len=json.length
+	    if(len>0){
 			var line=json.shift()
 			document.getElementById('acadCount').innerHTML=line.school_count.toLocaleString('en', {useGrouping:true})+document.getElementById('acadCount').innerHTML
 			document.getElementById('sponAcadCount').innerHTML=line.estab_type_count.sponsored_academy.toLocaleString('en', {useGrouping:true})+document.getElementById('sponAcadCount').innerHTML
@@ -25,92 +25,96 @@ $(function () {
 	$.getJSON('data/totals.json', setValues)		// async callback
 
 	$('#groupsTable').DataTable({
-    ajax: {
-      url: 'data/groups.json',
-      dataSrc: "" // handle the fact we're passing in a JSON array rather than a JSON object i.e. not {data: [{...},...]}
-    },
+	    ajax: {
+			url: 'data/groups.json',
+			dataSrc: ""		// handle the fact we're passing in a JSON array rather than a JSON object i.e. not {data: [{...},...]}
+	    },
 		dom: '<"tableTop"f>t<"tableBottom"ilp>',
 		scrollX: true,
 		deferRender: true,
 		drawCallback: function(settings) {
-        initialiseTooltips()
-    },
-    columns: [{
-        data: "group_name",
-				render: function(data, type, row, meta) {
-	        return '<a href="' + row.group_page_url + '">' + data + '</a>';
-	      },
-				width: "480px",
-        orderSequence: ["asc", "desc"]
-      },
-      {
-        data: "school_count",
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "pupil_numbers",
-				render: function(data, type, row, meta) {
-					if (row.no_pupil_numbers_schools>0){
-						var tooltipText='Pupil numbers are only available for ' + row.pupil_numbers_schools + ' out of ' + row.school_count +' schools'
-						return '<span class="pupilNumbersFlagged" data-toggle="tooltip" title="' + tooltipText + '">' + data.toLocaleString('en-GB') + '</span>';
-					}
-					else {
-						return data.toLocaleString('en-GB')
-					}
-				},
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "estab_phase_count.primary",
-				render: $.fn.dataTable.render.number( ','),
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "estab_phase_count.secondary",
-				render: $.fn.dataTable.render.number( ','),
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "estab_phase_count.all_through",
-				render: $.fn.dataTable.render.number( ','),
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "estab_phase_count.alternative_provision",
-				render: $.fn.dataTable.render.number( ','),
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "estab_phase_count.special",
-				render: $.fn.dataTable.render.number( ','),
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "estab_phase_count.post_16",
-				render: $.fn.dataTable.render.number( ','),
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "estab_type_count.sponsored_academy",
-				render: $.fn.dataTable.render.number( ','),
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "estab_type_count.converter_academy",
-				render: $.fn.dataTable.render.number( ','),
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "estab_type_count.free_school",
-				render: $.fn.dataTable.render.number( ','),
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "estab_type_count.utc_studio_school",
-				render: $.fn.dataTable.render.number( ','),
-        orderSequence: ["desc", "asc"]
-      }
-    ],
-    "order": [1, 'desc']
-  });
+	    	initialiseTooltips()
+	    },
+	    columns: [{
+	        data: "group_name",
+			render: function(data, type, row, meta) {
+		        return '<a href="' + row.group_page_url + '">' + data + '</a>';
+			},
+			width: "480px",
+	        orderSequence: ["asc", "desc"]
+		},
+		{
+	        data: "school_count",
+	        orderSequence: ["desc", "asc"],
+			className: "left-border"
+		},
+		{
+	        data: "pupil_numbers",
+			render: function(data, type, row, meta) {
+				if (row.no_pupil_numbers_schools>0){
+					var tooltipText='Pupil numbers are only available for ' + row.pupil_numbers_schools + ' out of ' + row.school_count +' schools'
+					return '<span class="pupilNumbersFlagged" data-toggle="tooltip" title="' + tooltipText + '">' + data.toLocaleString('en-GB') + '</span>';
+				}
+				else {
+					return data.toLocaleString('en-GB')
+				}
+			},
+	        orderSequence: ["desc", "asc"],
+			className: "left-border"
+		},
+		{
+	        data: "estab_phase_count.primary",
+			render: $.fn.dataTable.render.number( ','),
+	        orderSequence: ["desc", "asc"],
+			className: "left-border"
+		},
+		{
+	        data: "estab_phase_count.secondary",
+			render: $.fn.dataTable.render.number( ','),
+	        orderSequence: ["desc", "asc"]
+		},
+		{
+	        data: "estab_phase_count.all_through",
+			render: $.fn.dataTable.render.number( ','),
+	        orderSequence: ["desc", "asc"]
+		},
+		{
+	        data: "estab_phase_count.alternative_provision",
+			render: $.fn.dataTable.render.number( ','),
+	        orderSequence: ["desc", "asc"]
+		},
+		{
+	        data: "estab_phase_count.special",
+			render: $.fn.dataTable.render.number( ','),
+	        orderSequence: ["desc", "asc"]
+		},
+		{
+	        data: "estab_phase_count.post_16",
+			render: $.fn.dataTable.render.number( ','),
+	        orderSequence: ["desc", "asc"]
+		},
+		{
+	        data: "estab_type_count.sponsored_academy",
+			render: $.fn.dataTable.render.number( ','),
+	        orderSequence: ["desc", "asc"],
+			className: "left-border"
+		},
+		{
+	        data: "estab_type_count.converter_academy",
+			render: $.fn.dataTable.render.number( ','),
+	        orderSequence: ["desc", "asc"]
+		},
+		{
+	        data: "estab_type_count.free_school",
+			render: $.fn.dataTable.render.number( ','),
+	        orderSequence: ["desc", "asc"]
+		},
+		{
+	        data: "estab_type_count.utc_studio_school",
+			render: $.fn.dataTable.render.number( ','),
+	        orderSequence: ["desc", "asc"]
+		}
+	    ],
+	    "order": [1, 'desc']
+	});
 });

@@ -7,15 +7,15 @@ else if (window.location.href.split('/')[2]=='philipnye.github.io') {		// XXX Wi
 
 $(function () {
 	function initialiseTooltips() {
-			$('[data-toggle="tooltip"]').tooltip()
+		$('[data-toggle="tooltip"]').tooltip()
 	}
 
 	function setValuesAndTooltips(json) {
-    let len=json.length
-    if(len>0){
-      for(let i=0; i<len; i++){
-        var line=json.shift()
-        if (line.group_code==group_code){
+	    let len=json.length
+	    if(len>0){
+	    	for(let i=0; i<len; i++){
+	        	var line=json.shift()
+	        	if (line.group_code==group_code){
 					document.getElementById('acadCount').innerHTML=line.school_count.toLocaleString('en', {useGrouping:true})+document.getElementById('acadCount').innerHTML
 					document.getElementById('sponAcadCount').innerHTML=line.estab_type_count.sponsored_academy.toLocaleString('en', {useGrouping:true})+document.getElementById('sponAcadCount').innerHTML
 					document.getElementById('convAcadCount').innerHTML=line.estab_type_count.converter_academy.toLocaleString('en', {useGrouping:true})+document.getElementById('convAcadCount').innerHTML

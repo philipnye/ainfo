@@ -1,76 +1,96 @@
 html {
-  position: relative;
-  min-height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 
 body {
-  padding-top: 5rem;
-  margin-bottom: 60px; /* Margin bottom by footer height */
+	padding-top: 5rem;
+	margin-bottom: 60px; /* Margin bottom by footer height */
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px; /* Set the fixed height of the footer here */
+	line-height: 60px; /* Vertically center the text there */
+	background-color: #f5f5f5;
 }
 
-td span.pupilNumbersFlagged {
-  text-decoration-line: underline;
-  text-decoration-style: dotted;
-}
-
-/* Tables */
+/* TABLES */
 table {
 	width: 100px;
 }
 
-th.rotate{
-  height: 160px;
-  width: 40px;
-	padding: 0px;
-	padding-right: 0px !important;
+.table td {
+	text-align: center;
 }
 
-th.rotate div{
-  position: relative;
-  top: 0px;
-  left: 70px;
-  height: 100%;
-  transform:skew(-45deg,0deg);
+.table td:first-child {
+	text-align: inherit;
+}
+
+.table th.rotate{
+	height: 160px;
+	min-width: 40px;
+	padding: 0px;
+	padding-right: 0px !important;		/* XXX */
+}
+
+.table th.rotate div {
+	position: relative;
+	top: 0px;
+	left: 80px;		/* XXX done by eye - find on desktop, but probably not fine for other screen sizes*/
+	height: 100%;
+	transform: skew(-45deg,0deg);
 	border-left: 1px solid;
 }
 
-th.rotate span {
-  transform:
+.table th.rotate span {
+	transform:
 		skew(45deg,0deg)
 		rotate(-45deg);
-  position: absolute;
-  bottom: 15px;
-  display: inline-block;
+	position: absolute;
+	bottom: 15px;
+	display: inline-block;
 	width: 100%;
-  text-align: left;
-  white-space: nowrap;
+	text-align: left;
+	white-space: nowrap;
 }
 
+/* Sort arrows (before = up; after = down)*/
+.table th:before {
+	left: 0.5em;
+}
+
+.table th:after {
+	left: 0.85em;
+}
+
+.table th.rotate:before {
+	left: calc(160px - 0.35em);		/* 160px here is the th heigh (and width of the corresponding right-angled triangle) */
+}
+
+.table th.rotate:after {
+	left: 160px;
+}
+
+/* Borders */
 .table th {
 	border-top: none;
 }
 
-th.rotate:before {
-  left: calc(150px - 0.35em);
+.table td {
+	border-top: none;
+	border-bottom: none;
 }
 
-th.rotate:after {
-  left: 150px;
+.table td.left-border {
+	border-left: 1px rgb(33,37,41) solid;		/* picked to match existing table styles */
 }
 
-th:not(.rotate):before {
-  left: 0.5em;
-}
-
-th:not(.rotate):after {
-  left: 0.85em;
+/* Special styling */
+.table td span.pupilNumbersFlagged {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
 }
