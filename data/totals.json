@@ -1,20 +1,20 @@
 [
     {
         "estab_type_count": {
-            "converter_academy": 5544,
-            "utc_studio_school": 83,
-            "free_school": 441,
-            "sponsored_academy": 2207
+            "converter_academy": 5578,
+            "utc_studio_school": 84,
+            "free_school": 442,
+            "sponsored_academy": 2233
         },
         "estab_phase_count": {
             "all_through": 132,
             "post_16": 49,
-            "alternative_provision": 126,
-            "primary": 5251,
-            "special": 325,
-            "secondary": 2385
+            "alternative_provision": 127,
+            "primary": 5297,
+            "special": 328,
+            "secondary": 2397
         },
-        "group_count": 2759,
-        "school_count": 5518
+        "group_count": 2755,
+        "school_count": 2755
     }
 ]
