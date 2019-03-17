@@ -404,10 +404,10 @@ for group in group_list:
 os.chdir(os.path.dirname( __file__ ))
 os.chdir('..')
 
-with open('index.html') as read_file:
-	html=read_file.read()
-soup=BeautifulSoup(html, 'html.parser')
-soup.find(id='gias_date').string='GIAS date: '+grouplinks_file_date
-soup=soup.prettify()
-with open('index.html', 'w') as write_file:
-	 write_file.write(str(soup))
+# with open('index.html') as read_file:
+# 	html=read_file.read()
+# soup=BeautifulSoup(html, 'html.parser')
+# soup.find(id='gias_date').string='GIAS date: '+grouplinks_file_date
+# soup=soup.prettify()
+# with open('index.html', 'w') as write_file:
+# 	 write_file.write(str(soup))

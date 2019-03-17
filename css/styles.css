@@ -18,10 +18,6 @@ body {
 }
 
 /* TABLES */
-table {
-	width: 100px;
-}
-
 .table td {
 	text-align: center;
 }
@@ -34,7 +30,10 @@ table {
 	height: 160px;
 	min-width: 40px;
 	padding: 0px;
-	padding-right: 0px !important;		/* XXX */
+}
+
+table.dataTable.table-sm>thead>tr>th {		/* needed to beat a highly specific line in Datatables Bootstrap CSS */
+    padding-right: 0px;
 }
 
 .table th.rotate div {
@@ -58,7 +57,7 @@ table {
 	white-space: nowrap;
 }
 
-/* Sort arrows (before = up; after = down)*/
+/* Sort arrows (before = up; after = down) */
 .table th:before {
 	left: 0.5em;
 }
