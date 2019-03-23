@@ -328,7 +328,7 @@ estab_phase_count = dict.fromkeys(estab_phase_count, 0)
 estab_type_count = dict.fromkeys(estab_type_count, 0)
 
 for group in group_list:		# XXX: in creating totals using grouplinks file, misses out a small number of academies - those in GIAS data with no trust and TrustSchoolFlag (name) status of 'Not supported by a trust'
-	school_count+=trust['school_count']
+	school_count+=group['school_count']
 	group_count+=1
 	estab_phase_count['primary']+=group['estab_phase_count']['primary']
 	estab_phase_count['secondary']+=group['estab_phase_count']['secondary']

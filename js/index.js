@@ -22,7 +22,7 @@ $(function () {
 		}
 	};
 
-	$.getJSON('data/totals_demo.json', setValues)		// async callback
+	$.getJSON('data/totals.json', setValues)		// async callback
 
 	$('#groupsTable').DataTable({
 	    ajax: {
