@@ -26,6 +26,10 @@ body {
 	text-align: inherit;
 }
 
+.table thead th {
+	border-bottom: none;
+}
+
 .table th.rotate{
 	height: 160px;
 	min-width: 40px;
@@ -88,8 +92,35 @@ table.dataTable.table-sm>thead>tr>th {		/* needed to beat a highly specific line
 	border-left: 1px rgb(33,37,41) solid;		/* picked to match existing table styles */
 }
 
-/* Special styling */
+/* Special cell styling */
 .table td span.pupilNumbersFlagged {
-  text-decoration-line: underline;
-  text-decoration-style: dotted;
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+}
+
+/* Table top section */
+div.tableTop div.dataTables_filter {
+	display: flex;
+	justify-content: flex-end;
+}
+
+/* Table bottom section*/
+div.tableBottom {
+	padding-top: 0.5em;
+}
+
+div.tableBottom .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+div.tableBottom div.dataTables_length {
+	display: flex;
+	justify-content: flex-start;
+}
+
+div.tableBottom div.dataTables_info {
+	padding-top: 0;		/* removing default Datatables Bootstrap padding */
+	display: flex;
+	justify-content: flex-end;
 }
