@@ -22,11 +22,11 @@ $(function () {
 		}
 	};
 
-	$.getJSON('data/totals.json', setValues)		// async callback
+	$.getJSON('data/totals_demo.json', setValues)		// async callback
 
 	$('#groupsTable').DataTable({
 	    ajax: {
-			url: 'data/groups.json',
+			url: 'data/groups_demo.json',
 			dataSrc: ""		// handle the fact we're passing in a JSON array rather than a JSON object i.e. not {data: [{...},...]}
 	    },
 		dom: '<"tableTop"f>t<"tableBottom"ilp>',

@@ -1,0 +1,20 @@
+[
+    {
+        "estab_type_count": {
+            "converter_academy": 5673,
+            "utc_studio_school": 84,
+            "free_school": 443,
+            "sponsored_academy": 2254
+        },
+        "estab_phase_count": {
+            "alternative_provision": 130,
+            "post_16": 51,
+            "all_through": 141,
+            "primary": 5391,
+            "special": 333,
+            "secondary": 2401
+        },
+        "group_count": 2746,
+        "school_count": 2746
+    }
+]
