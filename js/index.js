@@ -26,7 +26,7 @@ $(function () {
 
 	$('#groupsTable').DataTable({
 	    ajax: {
-			url: 'data/groups_demo.json',
+			url: 'data/groups.json',
 			dataSrc: ""		// handle the fact we're passing in a JSON array rather than a JSON object i.e. not {data: [{...},...]}
 	    },
 		dom: '<"row tableTop"<"col-sm-12"f>>' + 't' + '<"tableBottom"<"row"<"col-sm-6"l><"col-sm-6"i>><"row"<"col-sm-12"p>>>',

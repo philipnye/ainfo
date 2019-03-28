@@ -43,9 +43,9 @@ table.dataTable.table-sm>thead>tr>th {		/* needed to beat a highly specific line
 .table th.rotate div {
 	position: relative;
 	top: 0px;
-	left: 80px;		/* XXX done by eye - find on desktop, but probably not fine for other screen sizes*/
-	height: 100%;
 	transform: skew(-45deg,0deg);
+	left: 80px;
+	height: 100%;
 	border-left: 1px solid;
 }
 
@@ -61,6 +61,19 @@ table.dataTable.table-sm>thead>tr>th {		/* needed to beat a highly specific line
 	white-space: nowrap;
 }
 
+.table thead th:last-of-type {
+	width: 200px;
+}
+
+.table thead th:last-of-type span {
+	bottom: 60px;		/* done by eye */
+	left: -60px;		/* done by eye */
+}
+
+.table tr td:last-of-type {
+	text-align: left;
+}
+
 /* Sort arrows (before = up; after = down) */
 .table th:before {
 	left: 0.5em;
@@ -70,12 +83,14 @@ table.dataTable.table-sm>thead>tr>th {		/* needed to beat a highly specific line
 	left: 0.85em;
 }
 
-.table th.rotate:before {
-	left: calc(160px - 0.35em);		/* 160px here is the th heigh (and width of the corresponding right-angled triangle) */
+.table th.rotate:before {		/* 160px here is the the height (and width of the corresponding right-angled triangle) */
+	left: calc(160px - 0.35em);
+	/* left: calc((160px + ((59px - 40px)/2)) - 0.35em); */
 }
 
 .table th.rotate:after {
 	left: 160px;
+	/* left: calc(160px + ((59px - 40px)/2)); */
 }
 
 /* Borders */
