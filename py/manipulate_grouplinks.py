@@ -288,7 +288,6 @@ for trust in trust_list:		# group values are built in this way from trust-level 
 				group['estab_type_count']['converter_academy']+=trust['estab_type_count']['converter_academy']
 				group['estab_type_count']['free_school']+=trust['estab_type_count']['free_school']
 				group['estab_type_count']['utc_studio_school']+=trust['estab_type_count']['utc_studio_school']
-				group['estab_type_count']['utc_studio_school']+=trust['estab_type_count']['utc_studio_school']
 				group['pupil_numbers']+=trust['pupil_numbers']
 				group['pupil_numbers_schools']+=trust['pupil_numbers_schools']
 				group['no_pupil_numbers_schools']+=trust['no_pupil_numbers_schools']
