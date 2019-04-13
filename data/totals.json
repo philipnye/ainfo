@@ -9,12 +9,20 @@
         "estab_phase_count": {
             "alternative_provision": 130,
             "post_16": 51,
-            "all_through": 141,
             "primary": 5391,
+            "all_through": 141,
             "special": 333,
             "secondary": 2401
         },
         "group_count": 2746,
-        "school_count": 8447
+        "school_count": 8447,
+        "region_count": {
+            "alternative_provision": 130,
+            "post_16": 51,
+            "primary": 5391,
+            "all_through": 141,
+            "special": 333,
+            "secondary": 2401
+        }
     }
 ]

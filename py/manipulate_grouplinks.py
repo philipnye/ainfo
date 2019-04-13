@@ -8,6 +8,7 @@ import datetime
 import json
 import requests
 import unicodedata
+from num2words import num2words
 from shutil import copy
 from bs4 import BeautifulSoup
 from bs4 import NavigableString
@@ -39,6 +40,18 @@ estab_type_count={
 	'converter_academy':None,
 	'free_school':None,
 	'utc_studio_school':None
+}
+
+region_count={
+	'east_midlands':None,
+	'east_of_england':None,
+	'london':None,
+	'north_east':None,
+	'north_west':None,
+	'south_east':None,
+	'south_west':None,
+	'west_midlands':None,
+	'yorkshire_and_the_humber':None,
 }
 
 html=requests.get(github_url).text
@@ -89,7 +102,7 @@ def group_estab_phases(estab_phase, estab_type):
 
 def count_grouped_estab_phases(estab_phase):
 	estab_phase_string=estab_phase.lower()
-	estab_phase_string=re.sub(' ', '_', estab_phase_string)
+	estab_phase_string=replace_spaces_slashes_hypens(estab_phase_string)
 	estab_phase_count[estab_phase_string]=1
 	return estab_phase_count
 
@@ -106,10 +119,15 @@ def group_estab_types(estab_type):
 
 def count_grouped_estab_types(estab_type):
 	estab_type_string=estab_type.lower()
-	estab_type_string=re.sub(' ', '_', estab_type_string)
-	estab_type_string=re.sub('/', '_', estab_type_string)
+	estab_type_string=replace_spaces_slashes_hypens(estab_type_string)
 	estab_type_count[estab_type_string]=1
 	return estab_type_count
+
+def count_regions(region):
+	region_string=region.lower()
+	region_string=replace_spaces_slashes_hypens(region_string)
+	region_count[region_string]=1
+	return region_count
 
 def produce_group_page_url(object_name_simple,object_code):
 	group_name_url=re.sub('[^a-zA-Z0-9\']', '-', object_name_simple.lower())
@@ -118,6 +136,63 @@ def produce_group_page_url(object_name_simple,object_code):
 	group_name_url=re.sub('-$', '', group_name_url)
 	group_page_url='web/'+str(object_code)+'/'+group_name_url+'.html'
 	return group_name_url, group_page_url
+
+def replace_spaces_slashes_hypens(word):
+	word=re.sub(' ', '_', word)
+	word=re.sub('/', '_', word)
+	word=re.sub('-','_', word)
+	return word
+
+def reformat_region_names(word):
+	word=re.sub('_',' ',word)
+	word=re.sub('england','England',word)
+	word=re.sub('london','London',word)
+	word=re.sub('midlands','Midlands',word)
+	word=re.sub('yorkshire','Yorkshire',word)
+	word=re.sub('humber','Humber',word)
+	return word
+
+def write_group_description(group):
+	if group['school_count']<=5:
+		group_desc_size='small'
+	elif group['school_count']<=10:
+		group_desc_size='medium-sized'
+	else:
+		group_desc_size='large'
+	region_tally=0
+	region_list=[]
+	for region in group['region_count']:
+		if group['region_count'][region]>0:
+			region_tally+=1
+			region_list.append(region)
+	if region_tally==1 and region_list[0].lower()=='london':
+		group_desc_regions=reformat_region_names(region_list[0]) + ' only'
+	elif region_tally==1 and region_list[0].lower()!='london':
+		group_desc_regions='the ' + reformat_region_names(region_list[0]) + ' only'
+	else:
+		group_desc_regions=num2words(region_tally).decode('windows-1252').encode('utf-8') + ' regions'
+	if group['school_count']<10:
+		group_desc_school_count=num2words(group['school_count']).decode('windows-1252').encode('utf-8')
+	else:
+		group_desc_school_count=str(group['school_count'])
+	phase_tally=0
+	phase_list=[]
+	for phase in group['estab_phase_count']:
+		if group['estab_phase_count'][phase]>0:
+			phase_tally+=1
+			phase_list.append(phase)
+	if phase_tally==1:
+		group_desc_phase_1=phase_list[0] + ' '
+	else:
+		group_desc_phase_1=''
+	if phase_tally==1:
+		group_desc_phase_2=''
+	elif phase_tally==2:
+		group_desc_phase_2=' across two different phases'
+	else:
+		group_desc_phase_2=' across a mix of phases'
+	group['description']=group['group_name'] + ' is a ' + group_desc_size + ' group which operates in ' + group_desc_regions + '. The group runs ' + group_desc_school_count + ' ' + group_desc_phase_1 + 'academies' + group_desc_phase_2 + '.'
+	return
 
 # Build trust_list and sponsor_list
 for row in grouplinks_reader:
@@ -130,20 +205,14 @@ for row in grouplinks_reader:
 		estab_type=group_estab_types(row['TypeOfEstablishment (name)'])
 		estab_type_count=dict.fromkeys(estab_type_count, 0)
 		count_grouped_estab_types(estab_type)
+		region_count=dict.fromkeys(region_count, 0)
 		if any(trust['trust_code']==trust_code for trust in trust_list)==True:
 			for trust in trust_list:
 				if trust['trust_code']==trust_code:
 					trust['school_count']+=1
-					trust['estab_phase_count']['primary']+=estab_phase_count['primary']
-					trust['estab_phase_count']['secondary']+=estab_phase_count['secondary']
-					trust['estab_phase_count']['all_through']+=estab_phase_count['all_through']
-					trust['estab_phase_count']['alternative_provision']+=estab_phase_count['alternative_provision']
-					trust['estab_phase_count']['special']+=estab_phase_count['special']
-					trust['estab_phase_count']['post_16']+=estab_phase_count['post_16']
-					trust['estab_type_count']['sponsored_academy']+=estab_type_count['sponsored_academy']
-					trust['estab_type_count']['converter_academy']+=estab_type_count['converter_academy']
-					trust['estab_type_count']['free_school']+=estab_type_count['free_school']
-					trust['estab_type_count']['utc_studio_school']+=estab_type_count['utc_studio_school']
+					trust['estab_phase_count']={ k: trust['estab_phase_count'].get(k, 0) + estab_phase_count.get(k, 0) for k in set(trust['estab_phase_count']) & set(estab_phase_count) }
+					trust['estab_type_count']={ k: trust['estab_type_count'].get(k, 0) + estab_type_count.get(k, 0) for k in set(trust['estab_type_count']) & set(estab_type_count) }
+					trust['region_count']={ k: trust['region_count'].get(k, 0) + region_count.get(k, 0) for k in set(trust['region_count']) & set(region_count) }
 					trust['urns'].append(urn)
 					break
 		else:
@@ -157,6 +226,7 @@ for row in grouplinks_reader:
 				'school_count':1,
 				'estab_type_count':estab_type_count.copy(),		# done to ensure a separate dictionary is created for each trust
 				'estab_phase_count':estab_phase_count.copy(),		#	"	"
+				'region_count':region_count.copy(),
 				'pupil_numbers':0,
 				'pupil_numbers_schools':0,
 				'no_pupil_numbers_schools':0,
@@ -197,7 +267,7 @@ for trust in trust_list:
 						'companies_house_number':trust['companies_house_number'],
 						'companies_house_url':trust['companies_house_url']
 					})
-				break
+					break
 				break
 
 # Create school-level data
@@ -252,11 +322,15 @@ for row in edubasealldata_reader:
 				else:
 					trust['pupil_numbers']+=int(pupils)
 					trust['pupil_numbers_schools']+=1
+				region_count=dict.fromkeys(region_count, 0)
+				count_regions(region)
+				trust['region_count']={ k: trust['region_count'].get(k, 0) + region_count.get(k, 0) for k in set(trust['region_count']) & set(region_count) }		# addition of two dictionaries with matching keys
 				break
 
 # Build group_list
 estab_phase_count=dict.fromkeys(estab_phase_count, 0)
 estab_type_count=dict.fromkeys(estab_type_count, 0)
+region_count=dict.fromkeys(region_count, 0)
 
 for sponsor in sponsor_list:
 	if len(sponsor['trusts'])>1:
@@ -267,6 +341,7 @@ for sponsor in sponsor_list:
 		group_list[-1]['school_count']=0
 		group_list[-1]['estab_phase_count']=estab_phase_count.copy()		#	"	"
 		group_list[-1]['estab_type_count']=estab_type_count.copy()		#	"	"
+		group_list[-1]['region_count']=region_count.copy()		#	"	"
 		group_list[-1]['pupil_numbers']=0
 		group_list[-1]['pupil_numbers_schools']=0
 		group_list[-1]['no_pupil_numbers_schools']=0
@@ -278,16 +353,9 @@ for trust in trust_list:		# group values are built in this way from trust-level 
 			if any(group_trust['trust_code']==trust['trust_code'] for group_trust in group['trusts'])==True:
 				group_present=True
 				group['school_count']+=trust['school_count']
-				group['estab_phase_count']['primary']+=trust['estab_phase_count']['primary']
-				group['estab_phase_count']['secondary']+=trust['estab_phase_count']['secondary']
-				group['estab_phase_count']['all_through']+=trust['estab_phase_count']['all_through']
-				group['estab_phase_count']['alternative_provision']+=trust['estab_phase_count']['alternative_provision']
-				group['estab_phase_count']['special']+=trust['estab_phase_count']['special']
-				group['estab_phase_count']['post_16']+=trust['estab_phase_count']['post_16']
-				group['estab_type_count']['sponsored_academy']+=trust['estab_type_count']['sponsored_academy']
-				group['estab_type_count']['converter_academy']+=trust['estab_type_count']['converter_academy']
-				group['estab_type_count']['free_school']+=trust['estab_type_count']['free_school']
-				group['estab_type_count']['utc_studio_school']+=trust['estab_type_count']['utc_studio_school']
+				group['estab_phase_count']={ k: group['estab_phase_count'].get(k, 0) + trust['estab_phase_count'].get(k, 0) for k in set(group['estab_phase_count']) & set(trust['estab_phase_count']) }
+				group['estab_type_count']={ k: group['estab_type_count'].get(k, 0) + trust['estab_type_count'].get(k, 0) for k in set(group['estab_type_count']) & set(trust['estab_type_count']) }
+				group['region_count']={ k: group['region_count'].get(k, 0) + trust['region_count'].get(k, 0) for k in set(group['region_count']) & set(trust['region_count']) }
 				group['pupil_numbers']+=trust['pupil_numbers']
 				group['pupil_numbers_schools']+=trust['pupil_numbers_schools']
 				group['no_pupil_numbers_schools']+=trust['no_pupil_numbers_schools']
@@ -308,6 +376,7 @@ for group in group_list:
 				renamed_key=re.sub('trust', 'group', key)
 			group[renamed_key]=group[key]
 			group.pop(key)
+	write_group_description(group)
 
 # Set the group_code against which schools should be reported in school_list
 for school in school_list:
@@ -325,26 +394,21 @@ for school in school_list:
 school_count=group_count=0
 estab_phase_count = dict.fromkeys(estab_phase_count, 0)
 estab_type_count = dict.fromkeys(estab_type_count, 0)
+region_count = dict.fromkeys(estab_type_count, 0)
 
 for group in group_list:		# XXX: in creating totals using grouplinks file, misses out a small number of academies - those in GIAS data with no trust and TrustSchoolFlag (name) status of 'Not supported by a trust'
 	school_count+=group['school_count']
 	group_count+=1
-	estab_phase_count['primary']+=group['estab_phase_count']['primary']
-	estab_phase_count['secondary']+=group['estab_phase_count']['secondary']
-	estab_phase_count['all_through']+=group['estab_phase_count']['all_through']
-	estab_phase_count['alternative_provision']+=group['estab_phase_count']['alternative_provision']
-	estab_phase_count['special']+=group['estab_phase_count']['special']
-	estab_phase_count['post_16']+=group['estab_phase_count']['post_16']
-	estab_type_count['sponsored_academy']+=group['estab_type_count']['sponsored_academy']
-	estab_type_count['converter_academy']+=group['estab_type_count']['converter_academy']
-	estab_type_count['free_school']+=group['estab_type_count']['free_school']
-	estab_type_count['utc_studio_school']+=group['estab_type_count']['utc_studio_school']
+	estab_phase_count={ k: estab_phase_count.get(k, 0) + group['estab_phase_count'].get(k, 0) for k in set(estab_phase_count) & set(group['estab_phase_count']) }
+	estab_type_count={ k: estab_type_count.get(k, 0) + group['estab_type_count'].get(k, 0) for k in set(estab_type_count) & set(group['estab_type_count']) }
+	region_count={ k: region_count.get(k, 0) + group['region_count'].get(k, 0) for k in set(region_count) & set(group['region_count']) }
 
 total_list.append({
 	'school_count':school_count,
 	'group_count': group_count,
 	'estab_type_count':estab_type_count,
-	'estab_phase_count':estab_phase_count
+	'estab_phase_count':estab_phase_count,
+	'region_count':estab_phase_count,
 })
 
 # Save data to json files
