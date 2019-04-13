@@ -84,7 +84,7 @@ def group_estab_phases(estab_phase, estab_type):
 	elif estab_phase==('Not applicable') and estab_type in ('Academy special converter','Academy special sponsor led','Free schools special'):
 		estab_phase='Special'
 	elif estab_phase in ('16 plus'):
-		estab_phase='Post_16'
+		estab_phase='Post-16'
 	return estab_phase
 
 def count_grouped_estab_phases(estab_phase):
