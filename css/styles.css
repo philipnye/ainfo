@@ -5,15 +5,15 @@ html {
 
 body {
 	padding-top: 5rem;
-	margin-bottom: 60px; /* Margin bottom by footer height */
+	margin-bottom: 60px;		/* Margin bottom by footer height */
 }
 
 .footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 60px; /* Set the fixed height of the footer here */
-	line-height: 60px; /* Vertically center the text there */
+	height: 60px;		/* Set the fixed height of the footer here */
+	line-height: 60px;		/* Vertically center the text there */
 	background-color: #f5f5f5;
 }
 
@@ -48,6 +48,7 @@ table.dataTable.table-sm>thead>tr>th {		/* needed to beat a highly specific line
 	left: 80px;
 	height: 100%;
 	border-left: 1px solid;
+	cursor: pointer;
 }
 
 .table th.rotate span {
@@ -86,12 +87,10 @@ table.dataTable.table-sm>thead>tr>th {		/* needed to beat a highly specific line
 
 .table th.rotate:before {		/* 160px here is the the height (and width of the corresponding right-angled triangle) */
 	left: calc(160px - 0.35em);
-	/* left: calc((160px + ((59px - 40px)/2)) - 0.35em); */
 }
 
 .table th.rotate:after {
 	left: 160px;
-	/* left: calc(160px + ((59px - 40px)/2)); */
 }
 
 /* Borders */

@@ -46,12 +46,10 @@ $(function () {
 		        return '<a href="' + row.group_page_url + '">' + data + '</a>';
 			},
 			width: "480px",
-	        orderSequence: ["asc", "desc"],
-	        orderable: false,
+	        orderable: true,
 		},
 		{
 	        data: "school_count",
-	        orderSequence: ["desc", "asc"],
 	        orderable: false,
 			className: "left-border"
 		},
