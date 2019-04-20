@@ -1,3 +1,8 @@
+var table,
+	newSortCol,
+	currentSortCol=1,
+	currentSortDirection='desc'
+
 $(function () {
 	function initialiseTooltips() {
 		$('[data-toggle="tooltip"]').tooltip()
@@ -24,9 +29,9 @@ $(function () {
 
 	$.getJSON('data/totals.json', setValues)		// async callback
 
-	$('#groupsTable').DataTable({
+	table = $('#groupsTable').DataTable({
 	    ajax: {
-			url: 'data/groups.json',
+			url: 'data/groups_demo.json',
 			dataSrc: ""		// handle the fact we're passing in a JSON array rather than a JSON object i.e. not {data: [{...},...]}
 	    },
 		dom: '<"row tableTop"<"col-sm-12"f>>' + 't' + '<"tableBottom"<"row"<"col-sm-6"l><"col-sm-6"i>><"row"<"col-sm-12"p>>>',
@@ -41,11 +46,13 @@ $(function () {
 		        return '<a href="' + row.group_page_url + '">' + data + '</a>';
 			},
 			width: "480px",
-	        orderSequence: ["asc", "desc"]
+	        orderSequence: ["asc", "desc"],
+	        orderable: false,
 		},
 		{
 	        data: "school_count",
 	        orderSequence: ["desc", "asc"],
+	        orderable: false,
 			className: "left-border"
 		},
 		{
@@ -60,61 +67,91 @@ $(function () {
 				}
 			},
 	        orderSequence: ["desc", "asc"],
+	        orderable: false,
 			className: "left-border"
 		},
 		{
 	        data: "estab_phase_count.primary",
 			render: $.fn.dataTable.render.number( ','),
 	        orderSequence: ["desc", "asc"],
+	        orderable: false,
 			className: "left-border"
 		},
 		{
 	        data: "estab_phase_count.secondary",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"]
+	        orderSequence: ["desc", "asc"],
+	        orderable: false
 		},
 		{
 	        data: "estab_phase_count.all_through",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"]
+	        orderSequence: ["desc", "asc"],
+	        orderable: false
 		},
 		{
 	        data: "estab_phase_count.alternative_provision",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"]
+	        orderSequence: ["desc", "asc"],
+	        orderable: false
 		},
 		{
 	        data: "estab_phase_count.special",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"]
+	        orderSequence: ["desc", "asc"],
+	        orderable: false
 		},
 		{
 	        data: "estab_phase_count.post_16",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"]
+	        orderSequence: ["desc", "asc"],
+	        orderable: false
 		},
 		{
 	        data: "estab_type_count.sponsored_academy",
 			render: $.fn.dataTable.render.number( ','),
 	        orderSequence: ["desc", "asc"],
+	        orderable: false,
 			className: "left-border"
 		},
 		{
 	        data: "estab_type_count.converter_academy",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"]
+	        orderSequence: ["desc", "asc"],
+	        orderable: false
 		},
 		{
 	        data: "estab_type_count.free_school",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"]
+	        orderSequence: ["desc", "asc"],
+	        orderable: false
 		},
 		{
 	        data: "estab_type_count.utc_studio_school",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"]
-		}
-	    ],
+	        orderSequence: ["desc", "asc"],
+	        orderable: false
+		}],
 	    "order": [1, 'desc']
 	});
+});
+
+// Sorting upon clicking on table column names
+$("#groupsTable").find("thead").on('click', 'div', function(){
+    newSortCol =  table.column(this.parentElement).index();		// parentElement, as we need the containing th, rather than the div
+	if (newSortCol==currentSortCol) {
+		if ($('#groupsTable').DataTable().order()[0][1]) {		// on first clicking the default-sorted column, .order seems to not return an array. Hence, we only try to read the array where it exists. Where it doesn't, initial value for currentSortDirection should make sure on-click action should work correctly
+			currentSortDirection=$('#groupsTable').DataTable().order()[0][1]
+		}
+		if (currentSortDirection=='desc') {
+			$('#groupsTable').DataTable().order([newSortCol, 'asc']).draw()
+		}
+		else {
+			$('#groupsTable').DataTable().order([newSortCol, 'desc']).draw()
+		}
+	}
+	else {
+		$('#groupsTable').DataTable().order([newSortCol, 'desc']).draw()
+	}
+	currentSortCol=newSortCol
 });
