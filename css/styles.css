@@ -22,7 +22,7 @@ body {
 	text-align: center;
 }
 
-.table td:first-child {
+.table td:first-child:not(.dataTables_empty) {
 	text-align: inherit;
 	text-transform: uppercase;
 }
