@@ -64,71 +64,66 @@ $(function () {
 					return data.toLocaleString('en-GB')
 				}
 			},
-	        orderSequence: ["desc", "asc"],
 	        orderable: false,
 			className: "left-border"
 		},
 		{
 	        data: "estab_phase_count.primary",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"],
 	        orderable: false,
 			className: "left-border"
 		},
 		{
 	        data: "estab_phase_count.secondary",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"],
 	        orderable: false
 		},
 		{
 	        data: "estab_phase_count.all_through",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"],
 	        orderable: false
 		},
 		{
 	        data: "estab_phase_count.alternative_provision",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"],
 	        orderable: false
 		},
 		{
 	        data: "estab_phase_count.special",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"],
 	        orderable: false
 		},
 		{
 	        data: "estab_phase_count.post_16",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"],
 	        orderable: false
 		},
 		{
 	        data: "estab_type_count.sponsored_academy",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"],
 	        orderable: false,
 			className: "left-border"
 		},
 		{
 	        data: "estab_type_count.converter_academy",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"],
 	        orderable: false
 		},
 		{
 	        data: "estab_type_count.free_school",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"],
 	        orderable: false
 		},
 		{
 	        data: "estab_type_count.utc_studio_school",
 			render: $.fn.dataTable.render.number( ','),
-	        orderSequence: ["desc", "asc"],
 	        orderable: false
+		},
+		{
+			data: null,
+			defaultContent: "",
+			width: "160px",		// to match 'length' of column headers
+			orderable: false
 		}],
 	    "order": [1, 'desc']
 	});

@@ -51,6 +51,10 @@ table.dataTable.table-sm>thead>tr>th {		/* needed to beat a highly specific line
 	cursor: pointer;
 }
 
+.table th.rotate:last-child div {
+	cursor: default;
+}
+
 .table th.rotate span {
 	transform:
 		skew(45deg,0deg)
@@ -63,17 +67,12 @@ table.dataTable.table-sm>thead>tr>th {		/* needed to beat a highly specific line
 	white-space: nowrap;
 }
 
-.table thead th:last-of-type {
-	width: 200px;
+.table thead tr th.rotate:nth-child(3) span {
+	bottom: 20px;		/* done by eye. Thrown out by column width */
 }
 
-.table thead th:last-of-type span {
-	bottom: 60px;		/* done by eye */
-	left: -60px;		/* done by eye */
-}
-
-.table tr td:last-of-type {
-	text-align: left;
+.table tr:hover td:last-child {		/* blank column added for column header spacing */
+	background-color: white;
 }
 
 /* Sort arrows (before = up; after = down) */
