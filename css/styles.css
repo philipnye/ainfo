@@ -24,6 +24,7 @@ body {
 
 .table td:first-child {
 	text-align: inherit;
+	text-transform: uppercase;
 }
 
 .table thead th {
