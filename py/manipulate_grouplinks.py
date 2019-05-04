@@ -455,22 +455,9 @@ for group in group_list:
 		file_path=os.path.join(group_page_path, file_name)		# done outside the if not statement, as we want a fresh copy of the template in each case
 		copy(template_path, file_path)
 		soup=BeautifulSoup(html, 'html.parser')
-		new_h1=soup.new_tag('h1')
-		new_h1.string=group['group_name_simple']
-		soup.find(id='group_name').append(new_h1)
-		soup.find(id='gias_date').append(grouplinks_file_date)
-		soup=soup.prettify()
 		with open(file_path, 'w') as write_file:
 			write_file.write(str(soup))
 
 # Update ainfo index.html
 os.chdir(os.path.dirname( __file__ ))
 os.chdir('..')
-
-# with open('index.html') as read_file:
-# 	html=read_file.read()
-# soup=BeautifulSoup(html, 'html.parser')
-# soup.find(id='gias_date').string='GIAS date: '+grouplinks_file_date
-# soup=soup.prettify()
-# with open('index.html', 'w') as write_file:
-# 	 write_file.write(str(soup))

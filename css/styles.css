@@ -17,6 +17,21 @@ body {
 	background-color: #f5f5f5;
 }
 
+/* Tabbed content */
+.tabbed-content .tab-pane.active {
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-bottom: 1px solid;
+    border-color: #dee2e6;
+}
+
+.tabbed-content .nav-link,
+.tabbed-content .nav-link.active {
+	padding-right: 0.75rem;
+	padding-left: 0.75rem;
+	color: inherit;
+}
+
 /* TABLES */
 .table td {
 	text-align: center;
