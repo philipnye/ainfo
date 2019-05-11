@@ -14,8 +14,32 @@
 		},
 		"group_name_url": "archdiocese-of-southwark",
 		"group_name_simple": "Archdiocese of Southwark",
-		"school_count": 2,
+		"school_count": 1,
+		"school_count_ts": {
+      		"201701": 1,
+			"201704": 1,
+			"201707": 1,
+			"201710": 1,
+			"201801": 1,
+			"201804": 1,
+			"201807": 1,
+			"201810": 1,
+			"201901": 1,
+			"201904": 1,
+			"201905": 1
+		},
 		"group_code": 2150,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -104,7 +128,41 @@
 		"group_name_url": "harris-federation",
 		"group_name_simple": "Harris Federation",
 		"school_count": 47,
+		"school_count_ts": {
+		  	"201701": 47,
+		  	"201704": 47,
+		  	"201707": 47,
+		  	"201710": 47,
+			"201801": 22,
+			"201804": 22,
+			"201807": 22,
+			"201810": 22,
+			"201901": 22,
+			"201904": 22,
+			"201905": 22
+		},
 		"group_code": 3319,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},"region_count": {
+    "south_east": 0,
+    "east_of_england": 0,
+    "west_midlands": 0,
+    "north_east": 0,
+    "east_midlands": 0,
+    "south_west": 0,
+    "london": 2,
+    "yorkshire_and_the_humber": 0,
+    "north_west": 0
+},
 		"no_pupil_numbers_schools": 3,
 		"trusts": [
 			{
@@ -195,7 +253,31 @@
 		"group_name_url": "academies-enterprise-trust-aet",
 		"group_name_simple": "Academies Enterprise Trust (AET)",
 		"school_count": 62,
+		"school_count_ts": {
+      		"201701": 56,
+			"201704": 56,
+			"201707": 56,
+			"201710": 57,
+			"201801": 58,
+			"201804": 60,
+			"201807": 64,
+			"201810": 64,
+			"201901": 63,
+			"201904": 62,
+			"201905": 62
+		},
 		"group_code": 2054,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 1,
 		"trusts": [
 			{
@@ -252,7 +334,31 @@
 		"group_name_url": "city-of-london-academies-trust",
 		"group_name_simple": "City of London Academies Trust",
 		"school_count": 10,
+		"school_count_ts": {
+      		"201701": 10,
+			"201704": 10,
+			"201707": 10,
+			"201710": 10,
+			"201801": 10,
+			"201804": 10,
+			"201807": 10,
+			"201810": 10,
+			"201901": 10,
+			"201904": 10,
+			"201905": 10
+		},
 		"group_code": 2707,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 1,
 		"trusts": [
 			{
@@ -320,7 +426,31 @@
 		"group_name_url": "diocese-of-london",
 		"group_name_simple": "Diocese of London",
 		"school_count": 22,
+		"school_count_ts": {
+      		"201701": 22,
+			"201704": 22,
+			"201707": 22,
+			"201710": 22,
+			"201801": 22,
+			"201804": 22,
+			"201807": 22,
+			"201810": 22,
+			"201901": 22,
+			"201904": 22,
+			"201905": 22
+		},
 		"group_code": 2914,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 2,
 		"trusts": [
 			{
@@ -409,7 +539,31 @@
 		"group_name_url": "david-meller",
 		"group_name_simple": "David Meller",
 		"school_count": 5,
+		"school_count_ts": {
+      		"201701": 5,
+			"201704": 5,
+			"201707": 5,
+			"201710": 5,
+			"201801": 5,
+			"201804": 5,
+			"201807": 5,
+			"201810": 5,
+			"201901": 5,
+			"201904": 5,
+			"201905": 5
+		},
 		"group_code": 2852,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -468,7 +622,31 @@
 		"group_name_url": "the-haberdashers-livery-company",
 		"group_name_simple": "The Haberdashers' Livery Company",
 		"school_count": 6,
+		"school_count_ts": {
+      		"201701": 6,
+			"201704": 6,
+			"201707": 6,
+			"201710": 6,
+			"201801": 6,
+			"201804": 6,
+			"201807": 6,
+			"201810": 6,
+			"201901": 6,
+			"201904": 6,
+			"201905": 6
+		},
 		"group_code": 3278,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -547,7 +725,31 @@
 		"group_name_url": "ormiston-academies-trust",
 		"group_name_simple": "Ormiston Academies Trust",
 		"school_count": 38,
+		"school_count_ts": {
+      		"201701": 38,
+			"201704": 38,
+			"201707": 38,
+			"201710": 38,
+			"201801": 38,
+			"201804": 38,
+			"201807": 38,
+			"201810": 38,
+			"201901": 38,
+			"201904": 38,
+			"201905": 38
+		},
 		"group_code": 4105,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 3,
 		"trusts": [
 			{
@@ -594,7 +796,31 @@
 		"group_name_url": "the-skinners-company",
 		"group_name_simple": "The Skinners' Company",
 		"school_count": 5,
+		"school_count_ts": {
+      		"201701": 5,
+			"201704": 5,
+			"201707": 5,
+			"201710": 5,
+			"201801": 5,
+			"201804": 5,
+			"201807": 5,
+			"201810": 5,
+			"201901": 5,
+			"201904": 5,
+			"201905": 5
+		},
 		"group_code": 5029,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -650,7 +876,31 @@
 		"group_name_url": "diocese-of-durham",
 		"group_name_simple": "Diocese of Durham",
 		"school_count": 2,
+		"school_count_ts": {
+      		"201701": 2,
+			"201704": 2,
+			"201707": 2,
+			"201710": 2,
+			"201801": 2,
+			"201804": 2,
+			"201807": 2,
+			"201810": 2,
+			"201901": 2,
+			"201904": 2,
+			"201905": 2
+		},
 		"group_code": 2903,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -701,7 +951,31 @@
 		"group_name_url": "aldridge-education",
 		"group_name_simple": "Aldridge Education",
 		"school_count": 10,
+		"school_count_ts": {
+      		"201701": 10,
+			"201704": 10,
+			"201707": 10,
+			"201710": 10,
+			"201801": 10,
+			"201804": 10,
+			"201807": 10,
+			"201810": 10,
+			"201901": 10,
+			"201904": 10,
+			"201905": 10
+		},
 		"group_code": 4927,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 1,
 		"trusts": [
 			{
@@ -785,7 +1059,31 @@
 		"group_name_url": "the-diocese-of-norwich-education-and-academies-trust",
 		"group_name_simple": "The Diocese of Norwich Education and Academies Trust",
 		"school_count": 39,
+		"school_count_ts": {
+      		"201701": 39,
+			"201704": 39,
+			"201707": 39,
+			"201710": 39,
+			"201801": 39,
+			"201804": 39,
+			"201807": 39,
+			"201810": 39,
+			"201901": 39,
+			"201904": 39,
+			"201905": 39
+		},
 		"group_code": 2917,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 10,
 		"trusts": [
 			{
@@ -843,7 +1141,31 @@
 		"group_name_url": "diocese-of-lincoln",
 		"group_name_simple": "Diocese of Lincoln",
 		"school_count": 16,
+		"school_count_ts": {
+      		"201701": 16,
+			"201704": 16,
+			"201707": 16,
+			"201710": 16,
+			"201801": 16,
+			"201804": 16,
+			"201807": 16,
+			"201810": 16,
+			"201901": 16,
+			"201904": 16,
+			"201905": 16
+		},
 		"group_code": 3745,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 2,
 		"trusts": [
 			{
@@ -927,7 +1249,31 @@
 		"group_name_url": "diocese-of-oxford",
 		"group_name_simple": "Diocese of Oxford",
 		"school_count": 42,
+		"school_count_ts": {
+      		"201701": 42,
+			"201704": 42,
+			"201707": 42,
+			"201710": 42,
+			"201801": 42,
+			"201804": 42,
+			"201807": 42,
+			"201810": 42,
+			"201901": 42,
+			"201904": 42,
+			"201905": 42
+		},
 		"group_code": 2919,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 6,
 		"trusts": [
 			{
@@ -992,7 +1338,31 @@
 		"group_name_url": "bohunt-education-trust",
 		"group_name_simple": "Bohunt Education Trust",
 		"school_count": 7,
+		"school_count_ts": {
+      		"201701": 7,
+			"201704": 7,
+			"201707": 7,
+			"201710": 7,
+			"201801": 7,
+			"201804": 7,
+			"201807": 7,
+			"201810": 7,
+			"201901": 7,
+			"201904": 7,
+			"201905": 7
+		},
 		"group_code": 2369,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -1042,7 +1412,31 @@
 		"group_name_url": "diocese-of-st-albans",
 		"group_name_simple": "Diocese of St Albans",
 		"school_count": 8,
+		"school_count_ts": {
+      		"201701": 8,
+			"201704": 8,
+			"201707": 8,
+			"201710": 8,
+			"201801": 8,
+			"201804": 8,
+			"201807": 8,
+			"201810": 8,
+			"201901": 8,
+			"201904": 8,
+			"201905": 8
+		},
 		"group_code": 2926,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 2,
 		"trusts": [
 			{
@@ -1089,7 +1483,31 @@
 		"group_name_url": "portsmouth-and-winchester-diocesan-academies-trust",
 		"group_name_simple": "Portsmouth and Winchester Diocesan Academies Trust",
 		"school_count": 5,
+		"school_count_ts": {
+      		"201701": 5,
+			"201704": 5,
+			"201707": 5,
+			"201710": 5,
+			"201801": 5,
+			"201804": 5,
+			"201807": 5,
+			"201810": 5,
+			"201901": 5,
+			"201904": 5,
+			"201905": 5
+		},
 		"group_code": 4229,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -1149,7 +1567,31 @@
 		"group_name_url": "exeter-diocesan-education-network-eden",
 		"group_name_simple": "Exeter Diocesan Education Network (EDEN)",
 		"school_count": 18,
+		"school_count_ts": {
+      		"201701": 18,
+			"201704": 18,
+			"201707": 18,
+			"201710": 18,
+			"201801": 18,
+			"201804": 18,
+			"201807": 18,
+			"201810": 18,
+			"201901": 18,
+			"201904": 18,
+			"201905": 18
+		},
 		"group_code": 4658,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -1208,7 +1650,31 @@
 		"group_name_url": "the-diocese-of-canterbury-academies-company-limited",
 		"group_name_simple": "The Diocese of Canterbury Academies Company Limited",
 		"school_count": 14,
+		"school_count_ts": {
+      		"201701": 14,
+			"201704": 14,
+			"201707": 14,
+			"201710": 14,
+			"201801": 14,
+			"201804": 14,
+			"201807": 14,
+			"201810": 14,
+			"201901": 14,
+			"201904": 14,
+			"201905": 14
+		},
 		"group_code": 2896,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -1285,7 +1751,31 @@
 		"group_name_url": "truro-penwith-college",
 		"group_name_simple": "Truro & Penwith College",
 		"school_count": 26,
+		"school_count_ts": {
+      		"201701": 26,
+			"201704": 26,
+			"201707": 26,
+			"201710": 26,
+			"201801": 26,
+			"201804": 26,
+			"201807": 26,
+			"201810": 26,
+			"201901": 26,
+			"201904": 26,
+			"201905": 26
+		},
 		"group_code": 5120,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 4,
 		"trusts": [
 			{
@@ -1329,7 +1819,31 @@
 		"group_name_url": "penair-school",
 		"group_name_simple": "Penair School",
 		"school_count": 2,
+		"school_count_ts": {
+      		"201701": 2,
+			"201704": 2,
+			"201707": 2,
+			"201710": 2,
+			"201801": 2,
+			"201804": 2,
+			"201807": 2,
+			"201810": 2,
+			"201901": 2,
+			"201904": 2,
+			"201905": 2
+		},
 		"group_code": 4171,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -1376,7 +1890,31 @@
 		"group_name_url": "russell-education-trust",
 		"group_name_simple": "Russell Education Trust",
 		"school_count": 5,
+		"school_count_ts": {
+      		"201701": 5,
+			"201704": 5,
+			"201707": 5,
+			"201710": 5,
+			"201801": 5,
+			"201804": 5,
+			"201807": 5,
+			"201810": 5,
+			"201901": 5,
+			"201904": 5,
+			"201905": 5
+		},
 		"group_code": 4420,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -1429,7 +1967,31 @@
 		"group_name_url": "diverse-academies-trust",
 		"group_name_simple": "Diverse Academies Trust",
 		"school_count": 14,
+		"school_count_ts": {
+      		"201701": 14,
+			"201704": 14,
+			"201707": 14,
+			"201710": 14,
+			"201801": 14,
+			"201804": 14,
+			"201807": 14,
+			"201810": 14,
+			"201901": 14,
+			"201904": 14,
+			"201905": 14
+		},
 		"group_code": 2935,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -1473,7 +2035,31 @@
 		"group_name_url": "university-college-london-ucl",
 		"group_name_simple": "University College London (UCL)",
 		"school_count": 2,
+		"school_count_ts": {
+      		"201701": 2,
+			"201704": 2,
+			"201707": 2,
+			"201710": 2,
+			"201801": 2,
+			"201804": 2,
+			"201807": 2,
+			"201810": 2,
+			"201901": 2,
+			"201904": 2,
+			"201905": 2
+		},
 		"group_code": 5147,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -1520,7 +2106,31 @@
 		"group_name_url": "transforming-education-in-norfolk-the-ten-group",
 		"group_name_simple": "Transforming Education in Norfolk (the TEN Group)",
 		"school_count": 5,
+		"school_count_ts": {
+      		"201701": 5,
+			"201704": 5,
+			"201707": 5,
+			"201710": 5,
+			"201801": 5,
+			"201804": 5,
+			"201807": 5,
+			"201810": 5,
+			"201901": 5,
+			"201904": 5,
+			"201905": 5
+		},
 		"group_code": 5099,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -1571,7 +2181,31 @@
 		"group_name_url": "lion-academy-trust",
 		"group_name_simple": "Lion Academy Trust",
 		"school_count": 9,
+		"school_count_ts": {
+      		"201701": 9,
+			"201704": 9,
+			"201707": 9,
+			"201710": 9,
+			"201801": 9,
+			"201804": 9,
+			"201807": 9,
+			"201810": 9,
+			"201901": 9,
+			"201904": 9,
+			"201905": 9
+		},
 		"group_code": 3757,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 3,
 		"trusts": [
 			{
@@ -1631,7 +2265,31 @@
 		"group_name_url": "askel-veur-diocese-of-truro",
 		"group_name_simple": "Askel Veur - Diocese of Truro",
 		"school_count": 18,
+		"school_count_ts": {
+      		"201701": 18,
+			"201704": 18,
+			"201707": 18,
+			"201710": 18,
+			"201801": 18,
+			"201804": 18,
+			"201807": 18,
+			"201810": 18,
+			"201901": 18,
+			"201904": 18,
+			"201905": 18
+		},
 		"group_code": 2184,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -1692,7 +2350,31 @@
 		"group_name_url": "diocese-of-coventry",
 		"group_name_simple": "Diocese of Coventry",
 		"school_count": 19,
+		"school_count_ts": {
+      		"201701": 19,
+			"201704": 19,
+			"201707": 19,
+			"201710": 19,
+			"201801": 19,
+			"201804": 19,
+			"201807": 19,
+			"201810": 19,
+			"201901": 19,
+			"201904": 19,
+			"201905": 19
+		},
 		"group_code": 2900,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 5,
 		"trusts": [
 			{
@@ -1748,7 +2430,31 @@
 		"group_name_url": "derby-diocesan-academy-trust",
 		"group_name_simple": "Derby Diocesan Academy Trust",
 		"school_count": 23,
+		"school_count_ts": {
+      		"201701": 23,
+			"201704": 23,
+			"201707": 23,
+			"201710": 23,
+			"201801": 23,
+			"201804": 23,
+			"201807": 23,
+			"201810": 23,
+			"201901": 23,
+			"201904": 23,
+			"201905": 23
+		},
 		"group_code": 2902,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 5,
 		"trusts": [
 			{
@@ -1793,7 +2499,31 @@
 		"group_name_url": "inspirational-futures-trust",
 		"group_name_simple": "Inspirational Futures Trust",
 		"school_count": 9,
+		"school_count_ts": {
+      		"201701": 9,
+			"201704": 9,
+			"201707": 9,
+			"201710": 9,
+			"201801": 9,
+			"201804": 9,
+			"201807": 9,
+			"201810": 9,
+			"201901": 9,
+			"201904": 9,
+			"201905": 9
+		},
 		"group_code": 5298,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"no_pupil_numbers_schools": 0,
 		"trusts": [
 			{
@@ -1835,6 +2565,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 2105,
 		"group_code": 3211,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "GRACE ACADEMY",
 		"urns": [
 			129342,
@@ -1852,6 +2593,19 @@
 		"pupil_numbers_schools": 3,
 		"group_name_simple": "GRACE ACADEMY",
 		"school_count": 3,
+		"school_count_ts": {
+      		"201701": 3,
+			"201704": 3,
+			"201707": 3,
+			"201710": 3,
+			"201801": 3,
+			"201804": 3,
+			"201807": 3,
+			"201810": 3,
+			"201901": 3,
+			"201904": 3,
+			"201905": 3
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "grace-academy"
 	},
@@ -1869,6 +2623,17 @@
 		"no_pupil_numbers_schools": 10,
 		"pupil_numbers": 8779,
 		"group_code": 5315,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THE WHITE HORSE FEDERATION",
 		"urns": [
 			130247,
@@ -1914,6 +2679,19 @@
 		"pupil_numbers_schools": 21,
 		"group_name_simple": "THE WHITE HORSE FEDERATION",
 		"school_count": 31,
+		"school_count_ts": {
+      		"201701": 31,
+			"201704": 31,
+			"201707": 31,
+			"201710": 31,
+			"201801": 31,
+			"201804": 31,
+			"201807": 31,
+			"201810": 31,
+			"201901": 31,
+			"201904": 31,
+			"201905": 31
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "the-white-horse-federation"
 	},
@@ -1931,6 +2709,17 @@
 		"no_pupil_numbers_schools": 1,
 		"pupil_numbers": 1512,
 		"group_code": 16930,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "ENDEAVOUR ACADEMIES TRUST",
 		"urns": [
 			130908,
@@ -1947,6 +2736,19 @@
 		"pupil_numbers_schools": 1,
 		"group_name_simple": "ENDEAVOUR ACADEMIES TRUST",
 		"school_count": 2,
+		"school_count_ts": {
+      		"201701": 2,
+			"201704": 2,
+			"201707": 2,
+			"201710": 2,
+			"201801": 2,
+			"201804": 2,
+			"201807": 2,
+			"201810": 2,
+			"201901": 2,
+			"201904": 2,
+			"201905": 2
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "endeavour-academies-trust"
 	},
@@ -1964,6 +2766,17 @@
 		"no_pupil_numbers_schools": 2,
 		"pupil_numbers": 6039,
 		"group_code": 2939,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "DIXONS ACADEMIES CHARITABLE TRUST LTD",
 		"urns": [
 			130909,
@@ -1989,6 +2802,19 @@
 		"pupil_numbers_schools": 9,
 		"group_name_simple": "DIXONS ACADEMIES CHARITABLE TRUST LTD",
 		"school_count": 11,
+		"school_count_ts": {
+      		"201701": 11,
+			"201704": 11,
+			"201707": 11,
+			"201710": 11,
+			"201801": 11,
+			"201804": 11,
+			"201807": 11,
+			"201810": 11,
+			"201901": 11,
+			"201904": 11,
+			"201905": 11
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "dixons-academies-charitable-trust-ltd"
 	},
@@ -2006,6 +2832,17 @@
 		"no_pupil_numbers_schools": 6,
 		"pupil_numbers": 36704,
 		"group_code": 5143,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "UNITED LEARNING TRUST",
 		"urns": [
 			130912,
@@ -2079,6 +2916,19 @@
 		"pupil_numbers_schools": 53,
 		"group_name_simple": "UNITED LEARNING TRUST",
 		"school_count": 59,
+		"school_count_ts": {
+      		"201701": 59,
+			"201704": 59,
+			"201707": 59,
+			"201710": 59,
+			"201801": 59,
+			"201804": 59,
+			"201807": 59,
+			"201810": 59,
+			"201901": 59,
+			"201904": 59,
+			"201905": 59
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "united-learning-trust"
 	},
@@ -2096,6 +2946,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 1052,
 		"group_code": 4190,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "PETCHEY ACADEMY",
 		"urns": [
 			131062
@@ -2111,6 +2972,19 @@
 		"pupil_numbers_schools": 1,
 		"group_name_simple": "PETCHEY ACADEMY",
 		"school_count": 1,
+		"school_count_ts": {
+      		"201701": 1,
+			"201704": 1,
+			"201707": 1,
+			"201710": 1,
+			"201801": 1,
+			"201804": 1,
+			"201807": 1,
+			"201810": 1,
+			"201901": 1,
+			"201904": 1,
+			"201905": 1
+		},
 		"group_type": "Single-academy trust",
 		"group_name_url": "petchey-academy"
 	},
@@ -2128,6 +3002,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 2201,
 		"group_code": 4041,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "NORTHERN SCHOOLS TRUST",
 		"urns": [
 			131065,
@@ -2146,6 +3031,19 @@
 		"pupil_numbers_schools": 4,
 		"group_name_simple": "NORTHERN SCHOOLS TRUST",
 		"school_count": 4,
+		"school_count_ts": {
+      		"201701": 4,
+			"201704": 4,
+			"201707": 4,
+			"201710": 4,
+			"201801": 4,
+			"201804": 4,
+			"201807": 4,
+			"201810": 4,
+			"201901": 4,
+			"201904": 4,
+			"201905": 4
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "northern-schools-trust"
 	},
@@ -2163,6 +3061,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 1091,
 		"group_code": 5295,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THE WESTMINSTER ACADEMY (WESTBOURNE GREEN)",
 		"urns": [
 			131262
@@ -2178,6 +3087,19 @@
 		"pupil_numbers_schools": 1,
 		"group_name_simple": "THE WESTMINSTER ACADEMY (WESTBOURNE GREEN)",
 		"school_count": 1,
+		"school_count_ts": {
+      		"201701": 1,
+			"201704": 1,
+			"201707": 1,
+			"201710": 1,
+			"201801": 1,
+			"201804": 1,
+			"201807": 1,
+			"201810": 1,
+			"201901": 1,
+			"201904": 1,
+			"201905": 1
+		},
 		"group_type": "Single-academy trust",
 		"group_name_url": "the-westminster-academy-westbourne-green"
 	},
@@ -2195,6 +3117,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 1107,
 		"group_code": 2428,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THE BRIDGE ACADEMY, HACKNEY",
 		"urns": [
 			131609
@@ -2210,6 +3143,19 @@
 		"pupil_numbers_schools": 1,
 		"group_name_simple": "THE BRIDGE ACADEMY, HACKNEY",
 		"school_count": 1,
+		"school_count_ts": {
+      		"201701": 1,
+			"201704": 1,
+			"201707": 1,
+			"201710": 1,
+			"201801": 1,
+			"201804": 1,
+			"201807": 1,
+			"201810": 1,
+			"201901": 1,
+			"201904": 1,
+			"201905": 1
+		},
 		"group_type": "Single-academy trust",
 		"group_name_url": "the-bridge-academy-hackney"
 	},
@@ -2227,6 +3173,17 @@
 		"no_pupil_numbers_schools": 2,
 		"pupil_numbers": 23793,
 		"group_code": 2157,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "ARK SCHOOLS",
 		"urns": [
 			131752,
@@ -2279,6 +3236,19 @@
 		"pupil_numbers_schools": 36,
 		"group_name_simple": "ARK SCHOOLS",
 		"school_count": 38,
+		"school_count_ts": {
+      		"201701": 38,
+			"201704": 38,
+			"201707": 38,
+			"201710": 38,
+			"201801": 38,
+			"201804": 38,
+			"201807": 38,
+			"201810": 38,
+			"201901": 38,
+			"201904": 38,
+			"201905": 38
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "ark-schools"
 	},
@@ -2296,6 +3266,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 2971,
 		"group_code": 3163,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "GATEWAY LEARNING COMMUNITY",
 		"urns": [
 			133114,
@@ -2315,6 +3296,19 @@
 		"pupil_numbers_schools": 5,
 		"group_name_simple": "GATEWAY LEARNING COMMUNITY",
 		"school_count": 5,
+		"school_count_ts": {
+      		"201701": 5,
+			"201704": 5,
+			"201707": 5,
+			"201710": 5,
+			"201801": 5,
+			"201804": 5,
+			"201807": 5,
+			"201810": 5,
+			"201901": 5,
+			"201904": 5,
+			"201905": 5
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "gateway-learning-community"
 	},
@@ -2332,6 +3326,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 1106,
 		"group_code": 3255,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "GREIG CITY ACADEMY",
 		"urns": [
 			133386
@@ -2347,6 +3352,19 @@
 		"pupil_numbers_schools": 1,
 		"group_name_simple": "GREIG CITY ACADEMY",
 		"school_count": 1,
+		"school_count_ts": {
+      		"201701": 1,
+			"201704": 1,
+			"201707": 1,
+			"201710": 1,
+			"201801": 1,
+			"201804": 1,
+			"201807": 1,
+			"201810": 1,
+			"201901": 1,
+			"201904": 1,
+			"201905": 1
+		},
 		"group_type": "Single-academy trust",
 		"group_name_url": "greig-city-academy"
 	},
@@ -2364,6 +3382,17 @@
 		"no_pupil_numbers_schools": 1,
 		"pupil_numbers": 3586,
 		"group_code": 16830,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THOMAS TELFORD MULTI ACADEMY TRUST",
 		"urns": [
 			133697,
@@ -2382,6 +3411,19 @@
 		"pupil_numbers_schools": 3,
 		"group_name_simple": "THOMAS TELFORD MULTI ACADEMY TRUST",
 		"school_count": 4,
+		"school_count_ts": {
+      		"201701": 4,
+			"201704": 4,
+			"201707": 4,
+			"201710": 4,
+			"201801": 4,
+			"201804": 4,
+			"201807": 4,
+			"201810": 4,
+			"201901": 4,
+			"201904": 4,
+			"201905": 4
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "thomas-telford-multi-academy-trust"
 	},
@@ -2399,6 +3441,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 8088,
 		"group_code": 2597,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "CFBT SCHOOLS TRUST",
 		"urns": [
 			134003,
@@ -2429,6 +3482,19 @@
 		"pupil_numbers_schools": 16,
 		"group_name_simple": "CFBT SCHOOLS TRUST",
 		"school_count": 16,
+		"school_count_ts": {
+      		"201701": 16,
+			"201704": 16,
+			"201707": 16,
+			"201710": 16,
+			"201801": 16,
+			"201804": 16,
+			"201807": 16,
+			"201810": 16,
+			"201901": 16,
+			"201904": 16,
+			"201905": 16
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "cfbt-schools-trust"
 	},
@@ -2446,6 +3512,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 4212,
 		"group_code": 16552,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "EMMANUEL SCHOOLS FOUNDATION",
 		"urns": [
 			134223,
@@ -2463,6 +3540,19 @@
 		"pupil_numbers_schools": 3,
 		"group_name_simple": "EMMANUEL SCHOOLS FOUNDATION",
 		"school_count": 3,
+		"school_count_ts": {
+      		"201701": 3,
+			"201704": 3,
+			"201707": 3,
+			"201710": 3,
+			"201801": 3,
+			"201804": 3,
+			"201807": 3,
+			"201810": 3,
+			"201901": 3,
+			"201904": 3,
+			"201905": 3
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "emmanuel-schools-foundation"
 	},
@@ -2480,6 +3570,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 1153,
 		"group_code": 2542,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THE CAPITAL CITY ACADEMY TRUST",
 		"urns": [
 			134226
@@ -2495,6 +3596,19 @@
 		"pupil_numbers_schools": 1,
 		"group_name_simple": "THE CAPITAL CITY ACADEMY TRUST",
 		"school_count": 1,
+		"school_count_ts": {
+      		"201701": 1,
+			"201704": 1,
+			"201707": 1,
+			"201710": 1,
+			"201801": 1,
+			"201804": 1,
+			"201807": 1,
+			"201810": 1,
+			"201901": 1,
+			"201904": 1,
+			"201905": 1
+		},
 		"group_type": "Single-academy trust",
 		"group_name_url": "the-capital-city-academy-trust"
 	},
@@ -2512,6 +3626,17 @@
 		"no_pupil_numbers_schools": 3,
 		"pupil_numbers": 2059,
 		"group_code": 2941,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "DJANOGLY LEARNING TRUST",
 		"urns": [
 			134253,
@@ -2533,6 +3658,19 @@
 		"pupil_numbers_schools": 4,
 		"group_name_simple": "DJANOGLY LEARNING TRUST",
 		"school_count": 7,
+		"school_count_ts": {
+      		"201701": 7,
+			"201704": 7,
+			"201707": 7,
+			"201710": 7,
+			"201801": 7,
+			"201804": 7,
+			"201807": 7,
+			"201810": 7,
+			"201901": 7,
+			"201904": 7,
+			"201905": 7
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "djanogly-learning-trust"
 	},
@@ -2550,6 +3688,17 @@
 		"no_pupil_numbers_schools": 4,
 		"pupil_numbers": 25815,
 		"group_code": 4076,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "OASIS COMMUNITY LEARNING",
 		"urns": [
 			134311,
@@ -2616,6 +3765,19 @@
 		"pupil_numbers_schools": 48,
 		"group_name_simple": "OASIS COMMUNITY LEARNING",
 		"school_count": 52,
+		"school_count_ts": {
+      		"201701": 52,
+			"201704": 52,
+			"201707": 52,
+			"201710": 52,
+			"201801": 52,
+			"201804": 52,
+			"201807": 52,
+			"201810": 52,
+			"201901": 52,
+			"201904": 52,
+			"201905": 52
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "oasis-community-learning"
 	},
@@ -2633,6 +3795,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 1513,
 		"group_code": 2099,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THE ALEC REED ACADEMY",
 		"urns": [
 			134369
@@ -2648,6 +3821,19 @@
 		"pupil_numbers_schools": 1,
 		"group_name_simple": "THE ALEC REED ACADEMY",
 		"school_count": 1,
+		"school_count_ts": {
+      		"201701": 1,
+			"201704": 1,
+			"201707": 1,
+			"201710": 1,
+			"201801": 1,
+			"201804": 1,
+			"201807": 1,
+			"201810": 1,
+			"201901": 1,
+			"201904": 1,
+			"201905": 1
+		},
 		"group_type": "Single-academy trust",
 		"group_name_url": "the-alec-reed-academy"
 	},
@@ -2665,6 +3851,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 2514,
 		"group_code": 3939,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THE MOSSBOURNE FEDERATION",
 		"urns": [
 			134693,
@@ -2683,6 +3880,19 @@
 		"pupil_numbers_schools": 4,
 		"group_name_simple": "THE MOSSBOURNE FEDERATION",
 		"school_count": 4,
+		"school_count_ts": {
+      		"201701": 4,
+			"201704": 4,
+			"201707": 4,
+			"201710": 4,
+			"201801": 4,
+			"201804": 4,
+			"201807": 4,
+			"201810": 4,
+			"201901": 4,
+			"201904": 4,
+			"201905": 4
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "the-mossbourne-federation"
 	},
@@ -2700,6 +3910,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 1842,
 		"group_code": 2232,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "AIM ACADEMIES TRUST",
 		"urns": [
 			134798,
@@ -2716,6 +3937,19 @@
 		"pupil_numbers_schools": 2,
 		"group_name_simple": "AIM ACADEMIES TRUST",
 		"school_count": 2,
+		"school_count_ts": {
+      		"201701": 2,
+			"201704": 2,
+			"201707": 2,
+			"201710": 2,
+			"201801": 2,
+			"201804": 2,
+			"201807": 2,
+			"201810": 2,
+			"201901": 2,
+			"201904": 2,
+			"201905": 2
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "aim-academies-trust"
 	},
@@ -2733,6 +3967,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 3664,
 		"group_code": 3684,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "LANDAU FORTE CHARITABLE TRUST",
 		"urns": [
 			135120,
@@ -2753,6 +3998,19 @@
 		"pupil_numbers_schools": 6,
 		"group_name_simple": "LANDAU FORTE CHARITABLE TRUST",
 		"school_count": 6,
+		"school_count_ts": {
+      		"201701": 6,
+			"201704": 6,
+			"201707": 6,
+			"201710": 6,
+			"201801": 6,
+			"201804": 6,
+			"201807": 6,
+			"201810": 6,
+			"201901": 6,
+			"201904": 6,
+			"201905": 6
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "landau-forte-charitable-trust"
 	},
@@ -2770,6 +4028,17 @@
 		"no_pupil_numbers_schools": 1,
 		"pupil_numbers": 2273,
 		"group_code": 2744,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "SHIRELAND COLLEGIATE ACADEMY TRUST",
 		"urns": [
 			135170,
@@ -2788,6 +4057,19 @@
 		"pupil_numbers_schools": 3,
 		"group_name_simple": "SHIRELAND COLLEGIATE ACADEMY TRUST",
 		"school_count": 4,
+		"school_count_ts": {
+      		"201701": 4,
+			"201704": 4,
+			"201707": 4,
+			"201710": 4,
+			"201801": 4,
+			"201804": 4,
+			"201807": 4,
+			"201810": 4,
+			"201901": 4,
+			"201904": 4,
+			"201905": 4
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "shireland-collegiate-academy-trust"
 	},
@@ -2805,6 +4087,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 2021,
 		"group_code": 3166,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "GDST ACADEMY TRUST",
 		"urns": [
 			135174,
@@ -2821,6 +4114,19 @@
 		"pupil_numbers_schools": 2,
 		"group_name_simple": "GDST ACADEMY TRUST",
 		"school_count": 2,
+		"school_count_ts": {
+      		"201701": 2,
+			"201704": 2,
+			"201707": 2,
+			"201710": 2,
+			"201801": 2,
+			"201804": 2,
+			"201807": 2,
+			"201810": 2,
+			"201901": 2,
+			"201904": 2,
+			"201905": 2
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "gdst-academy-trust"
 	},
@@ -2838,6 +4144,17 @@
 		"no_pupil_numbers_schools": 1,
 		"pupil_numbers": 3979,
 		"group_code": 16519,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THOMAS DEACON EDUCATION TRUST",
 		"urns": [
 			135263,
@@ -2856,6 +4173,19 @@
 		"pupil_numbers_schools": 3,
 		"group_name_simple": "THOMAS DEACON EDUCATION TRUST",
 		"school_count": 4,
+		"school_count_ts": {
+      		"201701": 4,
+			"201704": 4,
+			"201707": 4,
+			"201710": 4,
+			"201801": 4,
+			"201804": 4,
+			"201807": 4,
+			"201810": 4,
+			"201901": 4,
+			"201904": 4,
+			"201905": 4
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "thomas-deacon-education-trust"
 	},
@@ -2873,6 +4203,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 13169,
 		"group_code": 2854,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THE DAVID ROSS EDUCATION TRUST",
 		"urns": [
 			135294,
@@ -2921,6 +4262,19 @@
 		"pupil_numbers_schools": 34,
 		"group_name_simple": "THE DAVID ROSS EDUCATION TRUST",
 		"school_count": 34,
+		"school_count_ts": {
+      		"201701": 34,
+			"201704": 34,
+			"201707": 34,
+			"201710": 34,
+			"201801": 34,
+			"201804": 34,
+			"201807": 34,
+			"201810": 34,
+			"201901": 34,
+			"201904": 34,
+			"201905": 34
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "the-david-ross-education-trust"
 	},
@@ -2938,6 +4292,17 @@
 		"no_pupil_numbers_schools": 1,
 		"pupil_numbers": 8644,
 		"group_code": 2516,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "CABOT LEARNING FEDERATION",
 		"urns": [
 			135295,
@@ -2968,6 +4333,19 @@
 		"pupil_numbers_schools": 15,
 		"group_name_simple": "CABOT LEARNING FEDERATION",
 		"school_count": 16,
+		"school_count_ts": {
+      		"201701": 16,
+			"201704": 16,
+			"201707": 16,
+			"201710": 16,
+			"201801": 16,
+			"201804": 16,
+			"201807": 16,
+			"201810": 16,
+			"201901": 16,
+			"201904": 16,
+			"201905": 16
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "cabot-learning-federation"
 	},
@@ -2985,6 +4363,17 @@
 		"no_pupil_numbers_schools": 2,
 		"pupil_numbers": 13894,
 		"group_code": 3725,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "LEIGH ACADEMIES TRUST",
 		"urns": [
 			135297,
@@ -3022,6 +4411,19 @@
 		"pupil_numbers_schools": 21,
 		"group_name_simple": "LEIGH ACADEMIES TRUST",
 		"school_count": 23,
+		"school_count_ts": {
+      		"201701": 23,
+			"201704": 23,
+			"201707": 23,
+			"201710": 23,
+			"201801": 23,
+			"201804": 23,
+			"201807": 23,
+			"201810": 23,
+			"201901": 23,
+			"201904": 23,
+			"201905": 23
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "leigh-academies-trust"
 	},
@@ -3039,6 +4441,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 5130,
 		"group_code": 3015,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "EDUCATION FOR THE 21ST CENTURY",
 		"urns": [
 			135305,
@@ -3061,6 +4474,19 @@
 		"pupil_numbers_schools": 8,
 		"group_name_simple": "EDUCATION FOR THE 21ST CENTURY",
 		"school_count": 8,
+		"school_count_ts": {
+      		"201701": 8,
+			"201704": 8,
+			"201707": 8,
+			"201710": 8,
+			"201801": 8,
+			"201804": 8,
+			"201807": 8,
+			"201810": 8,
+			"201901": 8,
+			"201904": 8,
+			"201905": 8
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "education-for-the-21st-century"
 	},
@@ -3078,6 +4504,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 7111,
 		"group_code": 2471,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THE BROOKE WESTON TRUST",
 		"urns": [
 			135306,
@@ -3102,6 +4539,19 @@
 		"pupil_numbers_schools": 10,
 		"group_name_simple": "THE BROOKE WESTON TRUST",
 		"school_count": 10,
+		"school_count_ts": {
+      		"201701": 10,
+			"201704": 10,
+			"201707": 10,
+			"201710": 10,
+			"201801": 10,
+			"201804": 10,
+			"201807": 10,
+			"201810": 10,
+			"201901": 10,
+			"201904": 10,
+			"201905": 10
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "the-brooke-weston-trust"
 	},
@@ -3119,6 +4569,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 709,
 		"group_code": 3906,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "MIDDLETON ACADEMY LIMITED",
 		"urns": [
 			135313
@@ -3134,6 +4595,19 @@
 		"pupil_numbers_schools": 1,
 		"group_name_simple": "MIDDLETON ACADEMY LIMITED",
 		"school_count": 1,
+		"school_count_ts": {
+      		"201701": 1,
+			"201704": 1,
+			"201707": 1,
+			"201710": 1,
+			"201801": 1,
+			"201804": 1,
+			"201807": 1,
+			"201810": 1,
+			"201901": 1,
+			"201904": 1,
+			"201905": 1
+		},
 		"group_type": "Single-academy trust",
 		"group_name_url": "middleton-academy-limited"
 	},
@@ -3151,6 +4625,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 1254,
 		"group_code": 4258,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "PROSPECT EDUCATION (TECHNOLOGY) TRUST LIMITED",
 		"urns": [
 			135316
@@ -3166,6 +4651,19 @@
 		"pupil_numbers_schools": 1,
 		"group_name_simple": "PROSPECT EDUCATION (TECHNOLOGY) TRUST LIMITED",
 		"school_count": 1,
+		"school_count_ts": {
+      		"201701": 1,
+			"201704": 1,
+			"201707": 1,
+			"201710": 1,
+			"201801": 1,
+			"201804": 1,
+			"201807": 1,
+			"201810": 1,
+			"201901": 1,
+			"201904": 1,
+			"201905": 1
+		},
 		"group_type": "Single-academy trust",
 		"group_name_url": "prospect-education-technology-trust-limited"
 	},
@@ -3183,6 +4681,17 @@
 		"no_pupil_numbers_schools": 1,
 		"pupil_numbers": 3526,
 		"group_code": 2233,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THE SHARED LEARNING TRUST",
 		"urns": [
 			135337,
@@ -3202,6 +4711,19 @@
 		"pupil_numbers_schools": 4,
 		"group_name_simple": "THE SHARED LEARNING TRUST",
 		"school_count": 5,
+		"school_count_ts": {
+      		"201701": 5,
+			"201704": 5,
+			"201707": 5,
+			"201710": 5,
+			"201801": 5,
+			"201804": 5,
+			"201807": 5,
+			"201810": 5,
+			"201901": 5,
+			"201904": 5,
+			"201905": 5
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "the-shared-learning-trust"
 	},
@@ -3219,6 +4741,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 1897,
 		"group_code": 16566,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "BRADFORD ACADEMY TRUST",
 		"urns": [
 			135367
@@ -3234,6 +4767,19 @@
 		"pupil_numbers_schools": 1,
 		"group_name_simple": "BRADFORD ACADEMY TRUST",
 		"school_count": 1,
+		"school_count_ts": {
+      		"201701": 1,
+			"201704": 1,
+			"201707": 1,
+			"201710": 1,
+			"201801": 1,
+			"201804": 1,
+			"201807": 1,
+			"201810": 1,
+			"201901": 1,
+			"201904": 1,
+			"201905": 1
+		},
 		"group_type": "Single-academy trust",
 		"group_name_url": "bradford-academy-trust"
 	},
@@ -3251,6 +4797,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 2321,
 		"group_code": 3154,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "FUTURE SCHOOLS TRUST",
 		"urns": [
 			135371,
@@ -3268,6 +4825,19 @@
 		"pupil_numbers_schools": 3,
 		"group_name_simple": "FUTURE SCHOOLS TRUST",
 		"school_count": 3,
+		"school_count_ts": {
+      		"201701": 3,
+			"201704": 3,
+			"201707": 3,
+			"201710": 3,
+			"201801": 3,
+			"201804": 3,
+			"201807": 3,
+			"201810": 3,
+			"201901": 3,
+			"201904": 3,
+			"201905": 3
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "future-schools-trust"
 	},
@@ -3285,6 +4855,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 4260,
 		"group_code": 3677,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THE LAIDLAW SCHOOLS TRUST",
 		"urns": [
 			135423,
@@ -3305,6 +4886,19 @@
 		"pupil_numbers_schools": 6,
 		"group_name_simple": "THE LAIDLAW SCHOOLS TRUST",
 		"school_count": 6,
+		"school_count_ts": {
+      		"201701": 6,
+			"201704": 6,
+			"201707": 6,
+			"201710": 6,
+			"201801": 6,
+			"201804": 6,
+			"201807": 6,
+			"201810": 6,
+			"201901": 6,
+			"201904": 6,
+			"201905": 6
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "the-laidlaw-schools-trust"
 	},
@@ -3322,6 +4916,17 @@
 		"no_pupil_numbers_schools": 1,
 		"pupil_numbers": 1464,
 		"group_code": 16332,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "QUAERERE ACADEMIES TRUST",
 		"urns": [
 			135449,
@@ -3339,6 +4944,19 @@
 		"pupil_numbers_schools": 2,
 		"group_name_simple": "QUAERERE ACADEMIES TRUST",
 		"school_count": 3,
+		"school_count_ts": {
+      		"201701": 3,
+			"201704": 3,
+			"201707": 3,
+			"201710": 3,
+			"201801": 3,
+			"201804": 3,
+			"201807": 3,
+			"201810": 3,
+			"201901": 3,
+			"201904": 3,
+			"201905": 3
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "quaerere-academies-trust"
 	},
@@ -3356,6 +4974,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 1364,
 		"group_code": 5416,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "WREN ACADEMIES TRUST",
 		"urns": [
 			135507
@@ -3371,6 +5000,19 @@
 		"pupil_numbers_schools": 1,
 		"group_name_simple": "WREN ACADEMIES TRUST",
 		"school_count": 1,
+		"school_count_ts": {
+      		"201701": 1,
+			"201704": 1,
+			"201707": 1,
+			"201710": 1,
+			"201801": 1,
+			"201804": 1,
+			"201807": 1,
+			"201810": 1,
+			"201901": 1,
+			"201904": 1,
+			"201905": 1
+		},
 		"group_type": "Single-academy trust",
 		"group_name_url": "wren-academies-trust"
 	},
@@ -3388,6 +5030,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 3627,
 		"group_code": 3225,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "GREAT ACADEMIES EDUCATION TRUST",
 		"urns": [
 			135508,
@@ -3406,6 +5059,19 @@
 		"pupil_numbers_schools": 4,
 		"group_name_simple": "GREAT ACADEMIES EDUCATION TRUST",
 		"school_count": 4,
+		"school_count_ts": {
+      		"201701": 4,
+			"201704": 4,
+			"201707": 4,
+			"201710": 4,
+			"201801": 4,
+			"201804": 4,
+			"201807": 4,
+			"201810": 4,
+			"201901": 4,
+			"201904": 4,
+			"201905": 4
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "great-academies-education-trust"
 	},
@@ -3423,6 +5089,17 @@
 		"no_pupil_numbers_schools": 1,
 		"pupil_numbers": 6788,
 		"group_code": 4253,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THE PRIORY FEDERATION OF ACADEMIES",
 		"urns": [
 			135563,
@@ -3447,6 +5124,19 @@
 		"pupil_numbers_schools": 9,
 		"group_name_simple": "THE PRIORY FEDERATION OF ACADEMIES",
 		"school_count": 10,
+		"school_count_ts": {
+      		"201701": 10,
+			"201704": 10,
+			"201707": 10,
+			"201710": 10,
+			"201801": 10,
+			"201804": 10,
+			"201807": 10,
+			"201810": 10,
+			"201901": 10,
+			"201904": 10,
+			"201905": 10
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "the-priory-federation-of-academies"
 	},
@@ -3464,6 +5154,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 2878,
 		"group_code": 16026,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "CATHEDRAL SCHOOLS TRUST",
 		"urns": [
 			135575,
@@ -3483,6 +5184,19 @@
 		"pupil_numbers_schools": 5,
 		"group_name_simple": "CATHEDRAL SCHOOLS TRUST",
 		"school_count": 5,
+		"school_count_ts": {
+      		"201701": 5,
+			"201704": 5,
+			"201707": 5,
+			"201710": 5,
+			"201801": 5,
+			"201804": 5,
+			"201807": 5,
+			"201810": 5,
+			"201901": 5,
+			"201904": 5,
+			"201905": 5
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "cathedral-schools-trust"
 	},
@@ -3500,6 +5214,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 3316,
 		"group_code": 2748,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "VENTURERS TRUST",
 		"urns": [
 			135581,
@@ -3522,6 +5247,19 @@
 		"pupil_numbers_schools": 8,
 		"group_name_simple": "VENTURERS TRUST",
 		"school_count": 8,
+		"school_count_ts": {
+      		"201701": 8,
+			"201704": 8,
+			"201707": 8,
+			"201710": 8,
+			"201801": 8,
+			"201804": 8,
+			"201807": 8,
+			"201810": 8,
+			"201901": 8,
+			"201904": 8,
+			"201905": 8
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "venturers-trust"
 	},
@@ -3539,6 +5277,17 @@
 		"no_pupil_numbers_schools": 1,
 		"pupil_numbers": 3667,
 		"group_code": 2925,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "DIOCESE OF SOUTHWELL AND NOTTINGHAM MULTI-ACADEMY TRUST",
 		"urns": [
 			135583,
@@ -3564,6 +5313,19 @@
 		"pupil_numbers_schools": 10,
 		"group_name_simple": "DIOCESE OF SOUTHWELL AND NOTTINGHAM MULTI-ACADEMY TRUST",
 		"school_count": 11,
+		"school_count_ts": {
+      		"201701": 11,
+			"201704": 11,
+			"201707": 11,
+			"201710": 11,
+			"201801": 11,
+			"201804": 11,
+			"201807": 11,
+			"201810": 11,
+			"201901": 11,
+			"201904": 11,
+			"201905": 11
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "diocese-of-southwell-and-nottingham-multi-academy-trust"
 	},
@@ -3581,6 +5343,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 1965,
 		"group_code": 2147,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "SENTAMU ACADEMY LEARNING TRUST",
 		"urns": [
 			135598,
@@ -3599,6 +5372,19 @@
 		"pupil_numbers_schools": 4,
 		"group_name_simple": "SENTAMU ACADEMY LEARNING TRUST",
 		"school_count": 4,
+		"school_count_ts": {
+      		"201701": 4,
+			"201704": 4,
+			"201707": 4,
+			"201710": 4,
+			"201801": 4,
+			"201804": 4,
+			"201807": 4,
+			"201810": 4,
+			"201901": 4,
+			"201904": 4,
+			"201905": 4
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "sentamu-academy-learning-trust"
 	},
@@ -3616,6 +5402,17 @@
 		"no_pupil_numbers_schools": 1,
 		"pupil_numbers": 2893,
 		"group_code": 4335,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "CENTRAL RSA ACADEMIES TRUST",
 		"urns": [
 			135599,
@@ -3636,6 +5433,19 @@
 		"pupil_numbers_schools": 5,
 		"group_name_simple": "CENTRAL RSA ACADEMIES TRUST",
 		"school_count": 6,
+		"school_count_ts": {
+      		"201701": 6,
+			"201704": 6,
+			"201707": 6,
+			"201710": 6,
+			"201801": 6,
+			"201804": 6,
+			"201807": 6,
+			"201810": 6,
+			"201901": 6,
+			"201904": 6,
+			"201905": 6
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "central-rsa-academies-trust"
 	},
@@ -3653,6 +5463,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 2095,
 		"group_code": 3688,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THE LANGLEY ACADEMY TRUST",
 		"urns": [
 			135631,
@@ -3670,6 +5491,19 @@
 		"pupil_numbers_schools": 3,
 		"group_name_simple": "THE LANGLEY ACADEMY TRUST",
 		"school_count": 3,
+		"school_count_ts": {
+      		"201701": 3,
+			"201704": 3,
+			"201707": 3,
+			"201710": 3,
+			"201801": 3,
+			"201804": 3,
+			"201807": 3,
+			"201810": 3,
+			"201901": 3,
+			"201904": 3,
+			"201905": 3
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "the-langley-academy-trust"
 	},
@@ -3687,6 +5521,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 1198,
 		"group_code": 17034,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "WEST LAKES MULTI ACADEMY TRUST",
 		"urns": [
 			135632
@@ -3702,6 +5547,19 @@
 		"pupil_numbers_schools": 1,
 		"group_name_simple": "WEST LAKES MULTI ACADEMY TRUST",
 		"school_count": 1,
+		"school_count_ts": {
+      		"201701": 1,
+			"201704": 1,
+			"201707": 1,
+			"201710": 1,
+			"201801": 1,
+			"201804": 1,
+			"201807": 1,
+			"201810": 1,
+			"201901": 1,
+			"201904": 1,
+			"201905": 1
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "west-lakes-multi-academy-trust"
 	},
@@ -3719,6 +5577,17 @@
 		"no_pupil_numbers_schools": 3,
 		"pupil_numbers": 2945,
 		"group_code": 2326,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "THE BISHOP ANTHONY EDUCATIONAL TRUST",
 		"urns": [
 			135662,
@@ -3749,6 +5618,19 @@
 		"pupil_numbers_schools": 13,
 		"group_name_simple": "THE BISHOP ANTHONY EDUCATIONAL TRUST",
 		"school_count": 16,
+		"school_count_ts": {
+      		"201701": 16,
+			"201704": 16,
+			"201707": 16,
+			"201710": 16,
+			"201801": 16,
+			"201804": 16,
+			"201807": 16,
+			"201810": 16,
+			"201901": 16,
+			"201904": 16,
+			"201905": 16
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "the-bishop-anthony-educational-trust"
 	},
@@ -3766,6 +5648,17 @@
 		"no_pupil_numbers_schools": 2,
 		"pupil_numbers": 10813,
 		"group_code": 2816,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "CREATIVE EDUCATION TRUST",
 		"urns": [
 			135665,
@@ -3797,6 +5690,19 @@
 		"pupil_numbers_schools": 15,
 		"group_name_simple": "CREATIVE EDUCATION TRUST",
 		"school_count": 17,
+		"school_count_ts": {
+      		"201701": 17,
+			"201704": 17,
+			"201707": 17,
+			"201710": 17,
+			"201801": 17,
+			"201804": 17,
+			"201807": 17,
+			"201810": 17,
+			"201901": 17,
+			"201904": 17,
+			"201905": 17
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "creative-education-trust"
 	},
@@ -3814,6 +5720,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 330,
 		"group_code": 4832,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "STEINER ACADEMY, HEREFORD",
 		"urns": [
 			135672
@@ -3829,6 +5746,19 @@
 		"pupil_numbers_schools": 1,
 		"group_name_simple": "STEINER ACADEMY, HEREFORD",
 		"school_count": 1,
+		"school_count_ts": {
+      		"201701": 1,
+			"201704": 1,
+			"201707": 1,
+			"201710": 1,
+			"201801": 1,
+			"201804": 1,
+			"201807": 1,
+			"201810": 1,
+			"201901": 1,
+			"201904": 1,
+			"201905": 1
+		},
 		"group_type": "Single-academy trust",
 		"group_name_url": "steiner-academy-hereford"
 	},
@@ -3846,6 +5776,17 @@
 		"no_pupil_numbers_schools": 2,
 		"pupil_numbers": 2542,
 		"group_code": 3152,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "FUTURE ACADEMIES",
 		"urns": [
 			135676,
@@ -3867,6 +5808,19 @@
 		"pupil_numbers_schools": 5,
 		"group_name_simple": "FUTURE ACADEMIES",
 		"school_count": 7,
+		"school_count_ts": {
+      		"201701": 7,
+			"201704": 7,
+			"201707": 7,
+			"201710": 7,
+			"201801": 7,
+			"201804": 7,
+			"201807": 7,
+			"201810": 7,
+			"201901": 7,
+			"201904": 7,
+			"201905": 7
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "future-academies"
 	},
@@ -3884,6 +5838,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 6026,
 		"group_code": 5385,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "WOODARD ACADEMIES TRUST",
 		"urns": [
 			135744,
@@ -3904,6 +5869,19 @@
 		"pupil_numbers_schools": 6,
 		"group_name_simple": "WOODARD ACADEMIES TRUST",
 		"school_count": 6,
+		"school_count_ts": {
+      		"201701": 6,
+			"201704": 6,
+			"201707": 6,
+			"201710": 6,
+			"201801": 6,
+			"201804": 6,
+			"201807": 6,
+			"201810": 6,
+			"201901": 6,
+			"201904": 6,
+			"201905": 6
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "woodard-academies-trust"
 	},
@@ -3921,6 +5899,17 @@
 		"no_pupil_numbers_schools": 1,
 		"pupil_numbers": 7220,
 		"group_code": 5084,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "NOVA EDUCATION TRUST",
 		"urns": [
 			135761,
@@ -3950,6 +5939,19 @@
 		"pupil_numbers_schools": 14,
 		"group_name_simple": "NOVA EDUCATION TRUST",
 		"school_count": 15,
+		"school_count_ts": {
+      		"201701": 15,
+			"201704": 15,
+			"201707": 15,
+			"201710": 15,
+			"201801": 15,
+			"201804": 15,
+			"201807": 15,
+			"201810": 15,
+			"201901": 15,
+			"201904": 15,
+			"201905": 15
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "nova-education-trust"
 	},
@@ -3967,6 +5969,17 @@
 		"no_pupil_numbers_schools": 0,
 		"pupil_numbers": 1203,
 		"group_code": 3055,
+		"region_count": {
+			"south_east": 0,
+			"east_of_england": 0,
+			"west_midlands": 0,
+			"north_east": 0,
+			"east_midlands": 0,
+			"south_west": 0,
+			"london": 2,
+			"yorkshire_and_the_humber": 0,
+			"north_west": 0
+		},
 		"group_name": "ESSA FOUNDATION ACADEMIES TRUST",
 		"urns": [
 			135770,
@@ -3983,6 +5996,19 @@
 		"pupil_numbers_schools": 2,
 		"group_name_simple": "ESSA FOUNDATION ACADEMIES TRUST",
 		"school_count": 2,
+		"school_count_ts": {
+      		"201701": 2,
+			"201704": 2,
+			"201707": 2,
+			"201710": 2,
+			"201801": 2,
+			"201804": 2,
+			"201807": 2,
+			"201810": 2,
+			"201901": 2,
+			"201904": 2,
+			"201905": 2
+		},
 		"group_type": "Multi-academy trust",
 		"group_name_url": "essa-foundation-academies-trust"
 	}

@@ -5,9 +5,34 @@ else if (window.location.href.split('/')[2]=='philipnye.github.io') {		// XXX Wi
 	var group_code=window.location.href.split('/')[5]
 }
 
+var growthChartData
+
 $(function () {
 	function initialiseTooltips() {
 		$('[data-toggle="tooltip"]').tooltip()
+	}
+
+	function drawGrowthChart() {
+		Highcharts.chart('growth-chart', {
+			chart: {
+				type: 'line'
+			},
+		    legend: {
+				enabled: false
+			},
+			series: [{
+		        data: growthChartData,
+		        step: 'left',
+		    }],
+			title: {
+		        text: null
+		    },
+			yAxis: {
+				title: {
+					text: 'Number of schools'
+				}
+			}
+		});
 	}
 
 	function setValuesAndTooltips(json) {
@@ -15,6 +40,7 @@ $(function () {
 	    if(len>0){
 	    	for(let i=0; i<len; i++){
 	        	var line=json.shift()
+				var key=Math.max.apply(null,Object.keys(line.school_count_ts))
 	        	if (line.group_code==group_code){
 					document.getElementById('group-name').innerHTML=line.group_name
 					document.getElementById('group-description').innerHTML=line.description
@@ -41,13 +67,19 @@ $(function () {
 						var tooltipText='Pupil numbers are only available for ' + line.pupil_numbers_schools + ' out of ' + line.school_count +' schools'
 						document.getElementById('pupsCount').innerHTML=document.getElementById('pupsCount').innerHTML + '<sup><i class="fas fa-exclamation-circle" data-toggle="tooltip" title="' + tooltipText + '"></i></sup>'
 					}
+
+					growthChartData=Object.keys(line.school_count_ts).map(function(key) {		// convert key-value pairs object to array of arrays, as required by Highcharts, and using integers rather than strings
+  						return [Number(key), line.school_count_ts[key]];
+					});
+
 				}
 			}
 		}
 		initialiseTooltips()
+		drawGrowthChart()
 	}
 
-	$.getJSON('../../data/groups.json', setValuesAndTooltips)		// async callback
+	$.getJSON('../../data/groups_demo.json', setValuesAndTooltips)		// async callback
 
   $('#schoolsTable').DataTable({
     ajax: {
