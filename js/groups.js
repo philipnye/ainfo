@@ -5,7 +5,8 @@ else if (window.location.href.split('/')[2]=='philipnye.github.io') {		// XXX Wi
 	var group_code=window.location.href.split('/')[5]
 }
 
-var growthChartData
+var growthChartData,
+	groupTickInterval
 
 $(function () {
 	function initialiseTooltips() {
@@ -22,12 +23,24 @@ $(function () {
 			},
 			series: [{
 		        data: growthChartData,
-		        step: 'left',
+		        step: 'left'
 		    }],
 			title: {
 		        text: null
 		    },
+			tooltip: {
+				formatter: function () {
+		            return this.key + '<br>' + this.y;
+		        }
+			},
+			xAxis: {
+				tickInterval: groupTickInterval,
+				tickWidth: 1,
+				type: 'category'
+			},
 			yAxis: {
+				allowDecimals: false,
+				min: 0,
 				title: {
 					text: 'Number of schools'
 				}
@@ -37,11 +50,11 @@ $(function () {
 
 	function setValuesAndTooltips(json) {
 	    let len=json.length
-	    if(len>0){
-	    	for(let i=0; i<len; i++){
+	    if (len>0) {
+	    	for (let i=0; i<len; i++) {
 	        	var line=json.shift()
-				var key=Math.max.apply(null,Object.keys(line.school_count_ts))
 	        	if (line.group_code==group_code){
+					var key=Math.max.apply(null,Object.keys(line.school_count_ts))
 					document.getElementById('group-name').innerHTML=line.group_name
 					document.getElementById('group-description').innerHTML=line.description
 					if (line.school_count_ts[key]==1) {
@@ -79,6 +92,15 @@ $(function () {
 					growthChartData=Object.keys(line.school_count_ts).map(function(key) {		// convert key-value pairs object to array of arrays, as required by Highcharts, and using integers rather than strings
   						return [Number(key), line.school_count_ts[key]];
 					});
+					for (i in growthChartData) {
+						var yearPart=growthChartData[i][0].toString().substring(0,4)
+						var monthPart=growthChartData[i][0].toString().substring(4,6)
+						var date = "01/" + monthPart + "/"  + yearPart
+						growthChartData[i]=[date, growthChartData[i][1]]
+					}
+					groupTickInterval=growthChartData.length-1
+
+					break
 
 				}
 			}
