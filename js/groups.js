@@ -44,7 +44,12 @@ $(function () {
 	        	if (line.group_code==group_code){
 					document.getElementById('group-name').innerHTML=line.group_name
 					document.getElementById('group-description').innerHTML=line.description
-					document.getElementById('acadCount').innerHTML=line.school_count.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('acadCount').innerHTML
+					if (line.school_count_ts[key]==1) {
+						document.getElementById('acadCount').innerHTML=line.school_count_ts[key].toLocaleString('en', {useGrouping:true})+' '+document.getElementById('acadCount').innerHTML
+					}
+					else {
+						document.getElementById('acadCount').innerHTML=line.school_count_ts[key].toLocaleString('en', {useGrouping:true})+' academies'
+					}
 					document.getElementById('sponAcadCount').innerHTML=line.estab_type_count.sponsored_academy.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('sponAcadCount').innerHTML
 					document.getElementById('convAcadCount').innerHTML=line.estab_type_count.converter_academy.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('convAcadCount').innerHTML
 					document.getElementById('fsCount').innerHTML=line.estab_type_count.free_school.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('fsCount').innerHTML
@@ -56,15 +61,18 @@ $(function () {
 					document.getElementById('specCount').innerHTML=line.estab_phase_count.special.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('specCount').innerHTML
 					document.getElementById('post16Count').innerHTML=line.estab_phase_count.post_16.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('post16Count').innerHTML
 					var regionsCount = 0;
-					for(var j = 0; j < Object.keys(line.region_count).length; ++j){
+					for (var j = 0; j < Object.keys(line.region_count).length; ++j) {
 					    if (Object.values(line.region_count)[j] > 0) {
 					        regionsCount++;
 						}
 					}
 					document.getElementById('regionsCount').innerHTML=regionsCount.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('regionsCount').innerHTML
+					if (regionsCount>1) {
+						document.getElementById('regionsCount').innerHTML=document.getElementById('regionsCount').innerHTML + 's'
+					}
 					document.getElementById('pupsCount').innerHTML=line.pupil_numbers.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('pupsCount').innerHTML
 					if (line.no_pupil_numbers_schools>0){
-						var tooltipText='Pupil numbers are only available for ' + line.pupil_numbers_schools + ' out of ' + line.school_count +' schools'
+						var tooltipText='Pupil numbers are only available for ' + line.pupil_numbers_schools + ' out of ' + line.school_count_ts[key] +' schools'
 						document.getElementById('pupsCount').innerHTML=document.getElementById('pupsCount').innerHTML + '<sup><i class="fas fa-exclamation-circle" data-toggle="tooltip" title="' + tooltipText + '"></i></sup>'
 					}
 
@@ -81,76 +89,76 @@ $(function () {
 
 	$.getJSON('../../data/groups_demo.json', setValuesAndTooltips)		// async callback
 
-  $('#schoolsTable').DataTable({
-    ajax: {
-      url: '../../data/schools.json',
-      dataSrc: function (json) {
-        let data=[]
-        let len=json.length
-        if(len>0){
-          for(let i=0; i<len; i++){
-            var line=json.shift()
-            if (line.group_code==group_code){
-              data.push(line)
-            }
-          }
-        }
-      	return data;
-      }
-    },
+	$('#schoolsTable').DataTable({
+		ajax: {
+		  url: '../../data/schools.json',		// NB: non-demo version doesn't containt school_count_ts
+		  dataSrc: function (json) {
+		    let data=[]
+		    let len=json.length
+		    if(len>0){
+		      for(let i=0; i<len; i++){
+		        var line=json.shift()
+		        if (line.group_code==group_code){
+		          data.push(line)
+		        }
+		      }
+		    }
+		  	return data;
+		  }
+		},
 		dom: '<"tableTop"f>t<"tableBottom"ilp>',
-    deferRender: true,
-    columns: [{
-        data: "urn",
-        orderSequence: ["asc", "desc"]
-      },
-      {
-        data: "laestab",
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "estab_name",
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "pupils",
-				render: $.fn.dataTable.render.number(','),
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "percentage_fsm",
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "la",
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "region",
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "estab_phase",
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "estab_type",
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "open_date",
-				render: $.fn.dataTable.render.moment('DD-MM-YYYY','D MMMM YYYY'),
-        orderSequence: ["desc", "asc"],
-      },
-      {
-        data: "trust_name",
-        orderSequence: ["desc", "asc"]
-      },
-      {
-        data: "sponsor_name",
-        orderSequence: ["desc", "asc"]
-      }
-    ],
-    order: [2, 'asc']
-  });
+	    deferRender: true,
+	    columns: [{
+	        data: "urn",
+	        orderSequence: ["asc", "desc"]
+	      },
+	      {
+	        data: "laestab",
+	        orderSequence: ["desc", "asc"]
+	      },
+	      {
+	        data: "estab_name",
+	        orderSequence: ["desc", "asc"]
+	      },
+	      {
+	        data: "pupils",
+			render: $.fn.dataTable.render.number(','),
+	        orderSequence: ["desc", "asc"]
+	      },
+	      {
+	        data: "percentage_fsm",
+	        orderSequence: ["desc", "asc"]
+	      },
+	      {
+	        data: "la",
+	        orderSequence: ["desc", "asc"]
+	      },
+	      {
+	        data: "region",
+	        orderSequence: ["desc", "asc"]
+	      },
+	      {
+	        data: "estab_phase",
+	        orderSequence: ["desc", "asc"]
+	      },
+	      {
+	        data: "estab_type",
+	        orderSequence: ["desc", "asc"]
+	      },
+	      {
+	        data: "open_date",
+			render: $.fn.dataTable.render.moment('DD-MM-YYYY','D MMMM YYYY'),
+	        orderSequence: ["desc", "asc"],
+	      },
+	      {
+	        data: "trust_name",
+	        orderSequence: ["desc", "asc"]
+	      },
+	      {
+	        data: "sponsor_name",
+	        orderSequence: ["desc", "asc"]
+	      }
+	    ],
+	    order: [2, 'asc']
+	});
 })

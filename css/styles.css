@@ -33,15 +33,19 @@ body {
 }
 
 /* TABLES */
-.table td {
+/* Explore page */
+#groupsTable.table td {
 	text-align: center;
 }
 
-.table td:first-child:not(.dataTables_empty) {
+#groupsTable.table td:first-child:not(.dataTables_empty) {
 	text-align: inherit;
 	text-transform: uppercase;
 }
 
+/* Group page */
+
+/* All */
 .table thead th {
 	border-bottom: none;
 }

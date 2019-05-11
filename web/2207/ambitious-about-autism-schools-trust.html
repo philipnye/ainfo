@@ -13,6 +13,7 @@
 <script src="https://cdn.datatables.net/plug-ins/1.10.19/dataRender/datetime.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://code.highcharts.com/7/highcharts.js"></script>
 <title>ainfo</title>
 </link></link></link></link></meta></meta></head>
 <body>
@@ -24,7 +25,7 @@
 <div class="collapse navbar-collapse" id="mainNav">
 <ul class="navbar-nav mr-auto">
 <li class="nav-item active">
-<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+<a class="nav-link" href="/">Home<span class="sr-only"> (current)</span></a>
 </li>
 <li class="nav-item">
 <a class="nav-link" href="#">About</a>
@@ -63,9 +64,9 @@
 <div class="tab-content">
 <div aria-labelledby="tab-summary" class="tab-pane fade show active" id="tab-summary" role="tabpanel">
 <ul>
-<li id="acadCount">academies</li>
+<li id="acadCount">academy</li>
 <li id="pupsCount">pupils</li>
-<li id="regionsCount">regions</li>
+<li id="regionsCount">region</li>
 </ul>
 </div>
 <div aria-labelledby="tab-phases" class="tab-pane fade" id="tab-phases" role="tabpanel">
@@ -90,8 +91,8 @@
 							Map content here
 						</div>
 <div aria-labelledby="tab-growth" class="tab-pane fade" id="tab-growth" role="tabpanel">
-							Growth content here
-						</div>
+<div id="growth-chart"></div>
+</div>
 </div>
 </div>
 </div>
