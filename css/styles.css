@@ -18,6 +18,11 @@ body {
 }
 
 /* Tabbed content */
+.tabbed-content .tab-pane ul {
+	list-style-type: none;
+	padding-inline-start: 10px;
+}
+
 .tabbed-content .tab-pane.active {
 	border-left: 1px solid;
 	border-right: 1px solid;
@@ -34,16 +39,27 @@ body {
 
 /* TABLES */
 /* Explore page */
-#groupsTable.table td {
-	text-align: center;
-}
-
-#groupsTable.table td:first-child:not(.dataTables_empty) {
+#groupsTable.table td:first-child:not(.dataTables_empty) {		/* handles e.g. table where everything filtered out */
 	text-align: inherit;
 	text-transform: uppercase;
 }
 
+#groupsTable.table td {
+	text-align: center;
+}
+
+#groupsTable.table th.rotate:last-child div {
+	cursor: default;
+}
+
+#groupsTable.table tr:hover td:last-child {		/* blank column added for column header spacing */
+	background-color: white;
+}
+
 /* Group page */
+#schoolsTable.table .center {
+	text-align: center;
+}
 
 /* All */
 .table thead th {
@@ -70,10 +86,6 @@ table.dataTable.table-sm>thead>tr>th {		/* needed to beat a highly specific line
 	cursor: pointer;
 }
 
-.table th.rotate:last-child div {
-	cursor: default;
-}
-
 .table th.rotate span {
 	transform:
 		skew(45deg,0deg)
@@ -88,10 +100,6 @@ table.dataTable.table-sm>thead>tr>th {		/* needed to beat a highly specific line
 
 .table thead tr th.rotate:nth-child(3) span {
 	bottom: 20px;		/* done by eye. Thrown out by column width */
-}
-
-.table tr:hover td:last-child {		/* blank column added for column header spacing */
-	background-color: white;
 }
 
 /* Sort arrows (before = up; after = down) */

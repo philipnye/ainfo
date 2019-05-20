@@ -133,53 +133,55 @@ $(function () {
 	    columns: [{
 	        data: "urn",
 	        orderSequence: ["asc", "desc"]
-	      },
-	      {
-	        data: "laestab",
-	        orderSequence: ["desc", "asc"]
-	      },
-	      {
-	        data: "estab_name",
-	        orderSequence: ["desc", "asc"]
-	      },
-	      {
-	        data: "pupils",
+		},
+		{
+			data: "laestab",
+			orderSequence: ["desc", "asc"]
+		},
+		{
+			data: "estab_name",
+			orderSequence: ["desc", "asc"]
+		},
+		{
+			data: "estab_phase",
+			orderSequence: ["desc", "asc"]
+		},
+		{
+			data: "estab_type",
+			orderSequence: ["desc", "asc"]
+		},
+		{
+			data: "la",
+			orderSequence: ["desc", "asc"]
+		},
+		{
+			data: "region",
+			orderSequence: ["desc", "asc"]
+		},
+		{
+			data: "open_date",
+			render: $.fn.dataTable.render.moment('DD-MM-YYYY','DD/MM/YY'),
+			orderSequence: ["desc", "asc"],
+		},
+		{
+			data: "pupils",
 			render: $.fn.dataTable.render.number(','),
-	        orderSequence: ["desc", "asc"]
-	      },
-	      {
-	        data: "percentage_fsm",
-	        orderSequence: ["desc", "asc"]
-	      },
-	      {
-	        data: "la",
-	        orderSequence: ["desc", "asc"]
-	      },
-	      {
-	        data: "region",
-	        orderSequence: ["desc", "asc"]
-	      },
-	      {
-	        data: "estab_phase",
-	        orderSequence: ["desc", "asc"]
-	      },
-	      {
-	        data: "estab_type",
-	        orderSequence: ["desc", "asc"]
-	      },
-	      {
-	        data: "open_date",
-			render: $.fn.dataTable.render.moment('DD-MM-YYYY','D MMMM YYYY'),
-	        orderSequence: ["desc", "asc"],
-	      },
-	      {
-	        data: "trust_name",
-	        orderSequence: ["desc", "asc"]
-	      },
-	      {
-	        data: "sponsor_name",
-	        orderSequence: ["desc", "asc"]
-	      }
+			className: "center" ,
+			orderSequence: ["desc", "asc"]
+		},
+		{
+			data: "percentage_fsm",
+			className: "center" ,
+			orderSequence: ["desc", "asc"]
+		}
+		// {
+			//   data: "trust_name",
+			//   orderSequence: ["desc", "asc"]
+		// },
+		// {
+			//   data: "sponsor_name",
+			//   orderSequence: ["desc", "asc"]
+			// }
 	    ],
 	    order: [2, 'asc']
 	});
