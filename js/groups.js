@@ -42,11 +42,27 @@ $(function () {
 				allowDecimals: false,
 				min: 0,
 				title: {
-					text: 'Number of schools'
+					text: 'Schools'
 				}
 			}
 		});
 	}
+
+var tabs = document.getElementsByClassName("tabbed-content")[0].getElementsByClassName("nav-link")
+var tabsObj = {}
+
+for (let tab of tabs) {
+	tabsObj[tab.hash]=tab.textContent
+}
+
+$('.tabbed-content a').on('click', function (e) {
+	for (let tab of tabs) {
+		if ($(this)[0].hash!=tab.hash) {
+			tab.textContent='...'
+		}
+	}
+	$(this)[0].textContent=tabsObj[$(this)[0].hash]
+})
 
 	function setValuesAndTooltips(json) {
 	    let len=json.length
