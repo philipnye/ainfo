@@ -37,6 +37,20 @@ body {
 	color: inherit;
 }
 
+/* MAPS */
+#regions-map {
+	display: block;
+	margin: auto;
+}
+
+#regions-map .region {
+	fill: grey;
+}
+
+#regions-map .region.present {
+	fill: yellow;
+}
+
 /* TABLES */
 /* Explore page */
 #groupsTable.table td:first-child:not(.dataTables_empty) {		/* handles e.g. table where everything filtered out */

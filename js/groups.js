@@ -3,7 +3,8 @@ var group_code,
 	groupTickInterval,
 	mobileCheck,
 	tabs,
-	tabsObj
+	tabsObj,
+	regionObj
 
 window.mobilecheck=function() {
 	mobileCheck=false;
@@ -59,7 +60,9 @@ function setValuesAndTooltips(json) {
 				document.getElementById('specCount').innerHTML=line.estab_phase_count.special.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('specCount').innerHTML
 				document.getElementById('post16Count').innerHTML=line.estab_phase_count.post_16.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('post16Count').innerHTML
 				var regionsCount = 0;
+				regionObj = {}
 				for (var j = 0; j < Object.keys(line.region_count).length; ++j) {
+					regionObj[Object.keys(line.region_count)[j]]=Object.values(line.region_count)[j]
 				    if (Object.values(line.region_count)[j] > 0) {
 				        regionsCount++;
 					}
@@ -133,6 +136,60 @@ function drawGrowthChart() {
 	});
 }
 
+function drawMap() {
+	var width = 400,
+	    height = 400;
+
+	var svg = d3.select("#regions-map")
+	    .attr("width", width)
+	    .attr("height", height);
+
+	d3.json("../../data/map/regions.json", function(error, uk) {
+		if (error) return console.error(error);
+
+		var eers = topojson.feature(uk, uk.objects.eer);
+
+		var projection = d3.geo.albers()
+		    .center([0, 52.9])
+		    .rotate([1.9, 0])
+		    .parallels([50, 60])
+		    .scale(3500)
+		    .translate([width/2, height/2]);
+
+		var path = d3.geo.path()
+	    	.projection(projection);
+
+		svg.append("path")
+		    .datum(eers)
+		    .attr("d", path);
+
+
+
+		svg.selectAll(".region")
+		    .data(topojson.feature(uk, uk.objects.eer).features)
+		  	.enter()
+			.append("path")
+		    .attr("class", function(d) { return "region " + d.properties.EER13NM.toLowerCase().replace(/\ /g,'-'); })
+			.classed('present', function(d) {
+				for (var j = 0; j < Object.keys(regionObj).length; ++j) {
+					if (Object.keys(regionObj)[j]==d.properties.EER13NM.toLowerCase().replace(/\ /g,'_')) {		// NB: underscore rather than hyphen
+						return Object.values(regionObj)[j]>0;
+					}
+				}
+			})
+		    .attr("data-region", function(d) { return d.properties.EER13NM })
+		    .attr("data-count", function(d) {
+				for (var j = 0; j < Object.keys(regionObj).length; ++j) {
+					if (Object.keys(regionObj)[j]==d.properties.EER13NM.toLowerCase().replace(/\ /g,'_')) {		// NB: underscore rather than hyphen
+						return Object.values(regionObj)[j];
+					}
+				}
+			})
+		    .attr("d", path);
+
+	});
+}
+
 $(function () {
 	if (window.location.href.split('/')[2]=='127.0.0.1:8000'){
 		group_code=window.location.href.split('/')[4]
@@ -151,20 +208,20 @@ $(function () {
 
 	$('#schoolsTable').DataTable({
 		ajax: {
-		  url: '../../data/schools.json',		// NB: non-demo version doesn't containt school_count_ts
-		  dataSrc: function (json) {
-		    let data=[]
-		    let len=json.length
-		    if(len>0){
-		      for(let i=0; i<len; i++){
-		        var line=json.shift()
-		        if (line.group_code==group_code){
-		          data.push(line)
-		        }
-		      }
-		    }
+			url: '../../data/schools.json',		// NB: non-demo version doesn't containt school_count_ts
+			dataSrc: function (json) {
+			    let data=[]
+			    let len=json.length
+			    if(len>0){
+			    	for(let i=0; i<len; i++){
+			        	var line=json.shift()
+			        	if (line.group_code==group_code){
+			        		data.push(line)
+			        	}
+			    	}
+			    }
 		  	return data;
-		  }
+			}
 		},
 		dom: '<"tableTop"f>t<"tableBottom"ilp>',
 	    deferRender: true,
@@ -212,15 +269,10 @@ $(function () {
 			className: "center" ,
 			orderSequence: ["desc", "asc"]
 		}
-		// {
-			//   data: "trust_name",
-			//   orderSequence: ["desc", "asc"]
-		// },
-		// {
-			//   data: "sponsor_name",
-			//   orderSequence: ["desc", "asc"]
-			// }
 	    ],
 	    order: [2, 'asc']
 	});
+
+	drawMap()
+
 })

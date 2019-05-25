@@ -87,7 +87,7 @@
 							</ul>
 						</div>
 						<div aria-labelledby="tab-map" class="tab-pane fade" id="tab-map" role="tabpanel">
-							Map content here
+							<svg id="regions-map"></svg>
 						</div>
 						<div aria-labelledby="tab-growth" class="tab-pane fade" id="tab-growth" role="tabpanel">
 							<div id="growth-chart"></div>
@@ -149,16 +149,6 @@
 									<span>Free school meals %</span>
 								</div>
 							</th>
-							<!-- <th>
-								<div>
-									<span>Trust</span>
-								</div>
-							</th>
-							<th>
-								<div>
-									<span>Sponsor</span>
-								</div>
-							</th> -->
 						</tr>
 					</thead>
 				<tbody></tbody>
@@ -173,5 +163,7 @@
 		<script src="../../js/groups.js"></script>
 		<script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 		<script crossorigin="anonymous" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script src="https://d3js.org/topojson.v1.min.js"></script>
 	</body>
 </html>
