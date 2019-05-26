@@ -4,7 +4,7 @@ var group_code,
 	mobileCheck,
 	tabs,
 	tabsObj,
-	regionObj
+	regionObj = {}
 
 window.mobilecheck=function() {
 	mobileCheck=false;
@@ -60,7 +60,6 @@ function setValuesAndTooltips(json) {
 				document.getElementById('specCount').innerHTML=line.estab_phase_count.special.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('specCount').innerHTML
 				document.getElementById('post16Count').innerHTML=line.estab_phase_count.post_16.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('post16Count').innerHTML
 				var regionsCount = 0;
-				regionObj = {}
 				for (var j = 0; j < Object.keys(line.region_count).length; ++j) {
 					regionObj[Object.keys(line.region_count)[j]]=Object.values(line.region_count)[j]
 				    if (Object.values(line.region_count)[j] > 0) {
@@ -76,7 +75,6 @@ function setValuesAndTooltips(json) {
 					var tooltipText='Pupil numbers are only available for ' + line.pupil_numbers_schools + ' out of ' + line.school_count_ts[key] +' schools'
 					document.getElementById('pupsCount').innerHTML=document.getElementById('pupsCount').innerHTML + '<sup><i class="fas fa-exclamation-circle" data-toggle="tooltip" title="' + tooltipText + '"></i></sup>'
 				}
-
 				growthChartData=Object.keys(line.school_count_ts).map(function(key) {		// convert key-value pairs object to array of arrays, as required by Highcharts, and using integers rather than strings
 						return [Number(key), line.school_count_ts[key]];
 				});
@@ -147,7 +145,7 @@ function drawMap() {
 	d3.json("../../data/map/regions.json", function(error, uk) {
 		if (error) return console.error(error);
 
-		var eers = topojson.feature(uk, uk.objects.eer);
+		var regions = topojson.feature(uk, uk.objects.eer);
 
 		var projection = d3.geo.albers()
 		    .center([0, 52.9])
@@ -159,11 +157,24 @@ function drawMap() {
 		var path = d3.geo.path()
 	    	.projection(projection);
 
+		tip = d3.tip()
+			.attr('class', 'd3-tip')
+			.direction('n')
+			.html(function(d) {
+				if (getRegionData(d).values==1) {
+					var unit = 'academy'
+				}
+				else {
+					var unit = 'academies'
+				}
+				return '<p class="tip-title">' + reformatRegionNames(getRegionData(d).keys) + '</p><p>' + getRegionData(d).values + ' ' + unit + '</p>'
+			});
+
+		svg.call(tip)
+
 		svg.append("path")
-		    .datum(eers)
+		    .datum(regions)
 		    .attr("d", path);
-
-
 
 		svg.selectAll(".region")
 		    .data(topojson.feature(uk, uk.objects.eer).features)
@@ -171,23 +182,39 @@ function drawMap() {
 			.append("path")
 		    .attr("class", function(d) { return "region " + d.properties.EER13NM.toLowerCase().replace(/\ /g,'-'); })
 			.classed('present', function(d) {
-				for (var j = 0; j < Object.keys(regionObj).length; ++j) {
-					if (Object.keys(regionObj)[j]==d.properties.EER13NM.toLowerCase().replace(/\ /g,'_')) {		// NB: underscore rather than hyphen
-						return Object.values(regionObj)[j]>0;
-					}
-				}
+				return getRegionData(d).values>0;
 			})
 		    .attr("data-region", function(d) { return d.properties.EER13NM })
 		    .attr("data-count", function(d) {
-				for (var j = 0; j < Object.keys(regionObj).length; ++j) {
-					if (Object.keys(regionObj)[j]==d.properties.EER13NM.toLowerCase().replace(/\ /g,'_')) {		// NB: underscore rather than hyphen
-						return Object.values(regionObj)[j];
-					}
-				}
+				return getRegionData(d).values;
 			})
-		    .attr("d", path);
+		    .attr("d", path)
+			.on("mouseover", tip.show)
+			.on("mouseout", tip.hide)
 
 	});
+}
+
+function getRegionData(d) {
+	for (var j = 0; j < Object.keys(regionObj).length; ++j) {
+		if (Object.keys(regionObj)[j]==d.properties.EER13NM.toLowerCase().replace(/\ /g,'_')) {		// NB: underscore rather than hyphen
+			return {
+		        keys: Object.keys(regionObj)[j],
+		        values: Object.values(regionObj)[j]
+		    };
+		}
+	}
+}
+
+function reformatRegionNames(region) {
+	var region = region.replace(/\_/g,' ')
+	region = region.charAt(0).toUpperCase() + region.slice(1);
+	region = region.replace('england','England')
+	region = region.replace('london','London')
+	region = region.replace('midlands','Midlands')
+	region = region.replace('yorkshire','Yorkshire')
+	region = region.replace('humber','Humber')
+	return region
 }
 
 $(function () {

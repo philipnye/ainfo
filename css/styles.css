@@ -51,6 +51,24 @@ body {
 	fill: yellow;
 }
 
+.d3-tip {
+	line-height: 1;
+	padding: 12px;
+	background: rgba(0, 0, 0, 0.8);
+	color: white;
+	border-radius: 3px;
+	pointer-events: none;
+	/* opacity: 0.8 !important;		/* needed to prevent an unknown bit of JavaScript sometimes setting this to 0 */ */
+}
+
+.d3-tip .tip-title {
+	font-weight: bold;
+}
+
+.d3-tip p {
+	margin-bottom: 0.5rem;
+}
+
 /* TABLES */
 /* Explore page */
 #groupsTable.table td:first-child:not(.dataTables_empty) {		/* handles e.g. table where everything filtered out */
