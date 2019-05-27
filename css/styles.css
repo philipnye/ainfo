@@ -58,7 +58,6 @@ body {
 	color: white;
 	border-radius: 3px;
 	pointer-events: none;
-	/* opacity: 0.8 !important;		/* needed to prevent an unknown bit of JavaScript sometimes setting this to 0 */ */
 }
 
 .d3-tip .tip-title {

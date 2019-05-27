@@ -76,7 +76,7 @@ function setValuesAndTooltips(json) {
 					document.getElementById('pupsCount').innerHTML=document.getElementById('pupsCount').innerHTML + '<sup><i class="fas fa-exclamation-circle" data-toggle="tooltip" title="' + tooltipText + '"></i></sup>'
 				}
 				growthChartData=Object.keys(line.school_count_ts).map(function(key) {		// convert key-value pairs object to array of arrays, as required by Highcharts, and using integers rather than strings
-						return [Number(key), line.school_count_ts[key]];
+					return [Number(key), line.school_count_ts[key]];
 				});
 				for (i in growthChartData) {
 					var yearPart=growthChartData[i][0].toString().substring(0,4)
@@ -159,7 +159,35 @@ function drawMap() {
 
 		tip = d3.tip()
 			.attr('class', 'd3-tip')
-			.direction('n')
+			.direction(function(d) {
+				if (d.properties.EER13NM.toLowerCase() == 'north east') {
+					return 'w';
+				}
+				else if (d.properties.EER13NM.toLowerCase() == 'north west') {
+					return 'e';
+				}
+				else if (d.properties.EER13NM.toLowerCase() == 'yorkshire and the humber') {
+					return 'n';
+				}
+				else if (d.properties.EER13NM.toLowerCase() == 'east midlands') {
+					return 'n';
+				}
+				else if (d.properties.EER13NM.toLowerCase() == 'west midlands') {
+					return 'w';
+				}
+				else if (d.properties.EER13NM.toLowerCase() == 'east of england') {
+					return 'w';
+				}
+				else if (d.properties.EER13NM.toLowerCase() == 'london') {
+					return 'n';
+				}
+				else if (d.properties.EER13NM.toLowerCase() == 'south east') {
+					return 'n';
+				}
+				else if (d.properties.EER13NM.toLowerCase() == 'south west') {
+					return 'e';
+				}
+			})
 			.html(function(d) {
 				if (getRegionData(d).values==1) {
 					var unit = 'academy'
