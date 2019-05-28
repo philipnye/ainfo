@@ -12,19 +12,18 @@ window.mobilecheck=function() {
 };
 
 function abbreviateTabText() {
-	tabs=document.getElementsByClassName("tabbed-content")[0].getElementsByClassName("nav-link")
 	tabsObj={}
 
 	for (let tab of tabs) {
 		tabsObj[tab.hash]=tab.textContent		// stash initial tab text
-		if (1<tab.getAttribute("data-tab-order")) {		// display tab text for first two tabs
+		if (0<tab.getAttribute("data-tab-order")) {		// display tab text for first two tabs
 			tab.textContent='...'
 		}
 	}
 
 	$('.tabbed-content a').on('click', function (e) {
 		for (let tab of tabs) {
-			if (Number(tab.getAttribute("data-tab-order"))<Number($(this)[0].getAttribute("data-tab-order"))-1 || Number($(this)[0].getAttribute("data-tab-order"))+1<Number(tab.getAttribute("data-tab-order"))) {
+			if (Number(tab.getAttribute("data-tab-order")) != Number($(this)[0].getAttribute("data-tab-order"))) {
 				tab.textContent='...'
 			}
 			else {
@@ -245,6 +244,25 @@ function reformatRegionNames(region) {
 	return region
 }
 
+function roundUpTabbedContentWidth() {
+	var element = document.getElementsByClassName("tabbed-content")[0]
+	var computedStyle = getComputedStyle(element);
+	var tabbedContentWidth = element.clientWidth;
+	tabbedContentWidth -= parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
+
+	var tabsWidth = 0
+	for (let tab of tabs) {
+		tabsWidth += tab.clientWidth
+	}
+	var widthDiff = tabbedContentWidth-tabsWidth
+	if (widthDiff<50) {
+		widthDiff = widthDiff/5
+		for (let tab of tabs) {
+			tab.style.width = tab.clientWidth + widthDiff + "px"
+		}
+	}
+}
+
 $(function () {
 	if (window.location.href.split('/')[2]=='127.0.0.1:8000'){
 		group_code=window.location.href.split('/')[4]
@@ -254,6 +272,8 @@ $(function () {
 	}
 
 	window.mobilecheck()
+
+	tabs=document.getElementsByClassName("tabbed-content")[0].getElementsByClassName("nav-link")
 
 	if (mobileCheck==true) {
 		abbreviateTabText()
@@ -328,6 +348,7 @@ $(function () {
 	    order: [2, 'asc']
 	});
 
+	roundUpTabbedContentWidth()
 	drawMap()
 
 })

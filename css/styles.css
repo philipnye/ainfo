@@ -17,7 +17,18 @@ body {
 	background-color: #f5f5f5;
 }
 
+
 /* Tabbed content */
+.tabbed-content .nav-link {
+	padding-right: 0.75rem;
+	padding-left: 0.75rem;
+	color: inherit;
+}
+
+.tabbed-content .nav-link:not(.active) {
+    border-color: #dee2e6;
+}
+
 .tabbed-content .tab-pane ul {
 	list-style-type: none;
 	padding-inline-start: 10px;
@@ -30,12 +41,6 @@ body {
     border-color: #dee2e6;
 }
 
-.tabbed-content .nav-link,
-.tabbed-content .nav-link.active {
-	padding-right: 0.75rem;
-	padding-left: 0.75rem;
-	color: inherit;
-}
 
 /* MAPS */
 #regions-map {
@@ -67,6 +72,14 @@ body {
 .d3-tip p {
 	margin-bottom: 0.5rem;
 }
+
+
+/* CHARTS */
+#growth-chart {
+	max-width: 600px;
+	margin: auto;
+}
+
 
 /* TABLES */
 /* Explore page */
