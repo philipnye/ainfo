@@ -4,6 +4,7 @@ var group_code,
 	mobileCheck,
 	tabs,
 	tabsObj,
+	tabbedContentWidth,
 	regionObj = {}
 
 window.mobilecheck=function() {
@@ -134,8 +135,8 @@ function drawGrowthChart() {
 }
 
 function drawMap() {
-	var width = 400,
-	    height = 400;
+	var width = tabbedContentWidth,
+	    height = 400*tabbedContentWidth/445;		// 445px is default/max width of tabbed-content on a monitor
 
 	var svg = d3.select("#regions-map")
 	    .attr("width", width)
@@ -150,7 +151,7 @@ function drawMap() {
 		    .center([0, 52.9])
 		    .rotate([1.9, 0])
 		    .parallels([50, 60])
-		    .scale(3500)
+		    .scale(3500*tabbedContentWidth/445)
 		    .translate([width/2, height/2]);
 
 		var path = d3.geo.path()
@@ -245,11 +246,6 @@ function reformatRegionNames(region) {
 }
 
 function roundUpTabbedContentWidth() {
-	var element = document.getElementsByClassName("tabbed-content")[0]
-	var computedStyle = getComputedStyle(element);
-	var tabbedContentWidth = element.clientWidth;
-	tabbedContentWidth -= parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
-
 	var tabsWidth = 0
 	for (let tab of tabs) {
 		tabsWidth += tab.clientWidth
@@ -274,6 +270,11 @@ $(function () {
 	window.mobilecheck()
 
 	tabs=document.getElementsByClassName("tabbed-content")[0].getElementsByClassName("nav-link")
+
+	var element = document.getElementsByClassName("tabbed-content")[0]
+	var computedStyle = getComputedStyle(element);
+	tabbedContentWidth = element.clientWidth;
+	tabbedContentWidth -= parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
 
 	if (mobileCheck==true) {
 		abbreviateTabText()

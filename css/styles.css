@@ -18,7 +18,8 @@ body {
 }
 
 
-/* Tabbed content */
+/* TABBED CONTENT */
+/* All */
 .tabbed-content .nav-link {
 	padding-right: 0.75rem;
 	padding-left: 0.75rem;
@@ -39,6 +40,18 @@ body {
 	border-right: 1px solid;
 	border-bottom: 1px solid;
     border-color: #dee2e6;
+}
+
+
+/* Group page */
+.group-main .tabbed-content {
+	padding-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+	.group-main .tabbed-content {
+		padding-top: 20px;
+	}
 }
 
 
