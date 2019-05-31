@@ -282,7 +282,7 @@ $(function () {
 
 	$.getJSON('../../data/groups_demo.json', setValuesAndTooltips)		// async callback
 
-	$('#schoolsTable').DataTable({
+	var table = $('#schoolsTable').DataTable({
 		ajax: {
 			url: '../../data/schools.json',		// NB: non-demo version doesn't containt school_count_ts
 			dataSrc: function (json) {
@@ -301,7 +301,14 @@ $(function () {
 		},
 		dom: '<"tableTop"f>t<"tableBottom"ilp>',
 	    deferRender: true,
-	    columns: [{
+	    columns: [
+        {
+            data: null,
+            defaultContent: '<i class="fas fa-chevron-right"></i>',
+            className: 'details-control center',
+            orderable: false
+        },
+		{
 	        data: "urn",
 	        orderSequence: ["asc", "desc"]
 		},
@@ -348,6 +355,35 @@ $(function () {
 	    ],
 	    order: [2, 'asc']
 	});
+
+	function expand(d) {
+	    return '<table>' +
+	        '<tr>' +
+	            '<td>Trust:</td>' +
+	            '<td>' + d.trust_name + '</td>' +
+	        '</tr>' +
+	        '<tr>' +
+	            '<td>Sponsor:</td>' +
+	            '<td>' + d.sponsor_name + '</td>' +
+	        '</tr>' +
+	    '</table>'
+	}
+
+    $('#schoolsTable tbody').on('click', 'td.details-control', function () {
+        var tr = $(this).closest('tr');
+        var row = table.row(tr);
+
+        if ( row.child.isShown() ) {
+			$(this)[0].innerHTML = '<i class="fas fa-chevron-right"></i>'
+            row.child.hide();
+            tr.removeClass('shown');
+        }
+        else {
+			$(this)[0].innerHTML = '<i class="fas fa-chevron-down"></i>'
+            row.child( expand(row.data()) ).show();
+            tr.addClass('shown');
+        }
+    } );
 
 	roundUpTabbedContentWidth()
 	drawMap()

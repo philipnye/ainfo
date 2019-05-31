@@ -118,6 +118,19 @@ body {
 	text-align: center;
 }
 
+#schoolsTable.table th {
+	padding-top: 26px;
+}
+
+#schoolsTable.table td.details-control {
+    cursor: pointer;
+}
+
+#schoolsTable.table tr.shown + tr {
+	background-color: grey;
+}
+
+
 /* All */
 .table thead th {
 	border-bottom: none;
