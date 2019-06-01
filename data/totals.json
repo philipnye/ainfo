@@ -1,28 +1,28 @@
 [
     {
         "estab_type_count": {
-            "converter_academy": 5796,
+            "converter_academy": 5825,
             "utc_studio_school": 77,
             "free_school": 444,
-            "sponsored_academy": 2275
+            "sponsored_academy": 2279
         },
         "estab_phase_count": {
-            "all_through": 141,
-            "post_16": 52,
-            "primary": 5515,
             "alternative_provision": 133,
-            "special": 339,
-            "secondary": 2412
+            "post_16": 52,
+            "primary": 5544,
+            "all_through": 141,
+            "special": 340,
+            "secondary": 2415
         },
-        "group_count": 2741,
-        "school_count": 8592,
+        "group_count": 2739,
+        "school_count": 8625,
         "region_count": {
-            "all_through": 141,
-            "post_16": 52,
-            "primary": 5515,
             "alternative_provision": 133,
-            "special": 339,
-            "secondary": 2412
+            "post_16": 52,
+            "primary": 5544,
+            "all_through": 141,
+            "special": 340,
+            "secondary": 2415
         }
     }
 ]
