@@ -34,111 +34,115 @@
 				</ul>
 			</div>
 		</nav>
-		<main class="container" role="main">
-			<div class="container">
-				<div class="row">
-					<ul>
-						<li id="acadCount">academies</li>
-						<ul>
-							<li id="sponAcadCount">sponsored academies</li>
-							<li id="convAcadCount">converter academies</li>
-							<li id="fsCount">free schools</li>
-							<li id="utcssCount">university technical colleges/studio schools</li>
-						</ul>
+		<main class="container explore-main" role="main">
+			<h1 class="row">Explore</h1>
+			<div class="row">
+				<div class="tabbed-content">
+					<ul class="nav nav-tabs" role="tablist">
+						<li class="nav-item">
+							<a aria-controls="tab-summary" aria-selected="true" class="nav-link active" data-tab-order="0" data-toggle="tab" href="#tab-summary" role="tab">Summary</a>
+						</li>
+						<li class="nav-item">
+							<a aria-controls="tab-table" aria-selected="false" class="nav-link" data-tab-order="1" data-toggle="tab" href="#tab-table" role="tab">Explore</a>
+						</li>
 					</ul>
-					<ul>
-						<li id="primCount">primary</li>
-						<li id="secCount">secondary</li>
-						<li id="thruCount">all-through</li>
-						<li id="apCount">alternative provision</li>
-						<li id="specCount">special</li>
-						<li id="post16Count">post-16</li>
-					</ul>
+					<div class="tab-content">
+						<div aria-labelledby="tab-summary" class="tab-pane fade show active" id="tab-summary" role="tabpanel">
+							<ul>
+								<li id="acadCount">academy</li>
+								<li id="sponAcadCount">sponsored academies</li>
+								<li id="convAcadCount">converter academies</li>
+								<li id="fsCount">free schools</li>
+								<li id="utcssCount">university technical colleges/studio schools</li>
+								<li id="primCount">primary</li>
+								<li id="secCount">secondary</li>
+								<li id="thruCount">all-through</li>
+								<li id="apCount">alternative provision</li>
+								<li id="specCount">special</li>
+								<li id="post16Count">post-16</li>
+								<li id="groupCount">groups</li>
+							</ul>
+						</div>
+						<div aria-labelledby="tab-table" class="tab-pane fade" id="tab-table" role="tabpanel">
+							<div class="table-responsive" id="tableContainer">
+								<table class="table table-hover table-sm" id="groupsTable">
+									<thead>
+										<tr>
+											<th></th>
+											<th class="rotate">
+												<div>
+													<span>Academies</span>
+												</div>
+											</th>
+											<th class="rotate">
+												<div>
+													<span>Pupils
+														<sup>
+															<i class="fas fa-exclamation-circle" data-toggle="tooltip" title="Pupil numbers are not available for all schools."></i>
+														</sup>
+													</span>
+												</div>
+											</th>
+											<th class="rotate">
+												<div>
+													<span>Primary</span>
+												</div>
+											</th>
+											<th class="rotate">
+												<div>
+													<span>Secondary</span>
+												</div>
+											</th>
+											<th class="rotate">
+												<div>
+													<span>All-through</span>
+												</div>
+											</th>
+											<th class="rotate">
+												<div>
+													<span>Alternative provision</span>
+												</div>
+											</th>
+											<th class="rotate">
+												<div>
+													<span>Special</span>
+												</div>
+											</th>
+											<th class="rotate">
+												<div>
+													<span>Post-16</span>
+												</div>
+											</th>
+											<th class="rotate">
+												<div>
+													<span>Sponsored academies</span>
+												</div>
+											</th>
+											<th class="rotate">
+												<div>
+													<span>Converter academies</span>
+												</div>
+											</th>
+											<th class="rotate">
+												<div>
+													<span>Free schools</span>
+												</div>
+											</th>
+											<th class="rotate">
+												<div>
+													<span>UTCs/studio schools</span>
+												</div>
+											</th>
+											<th class="rotate">
+											</th>
+										</tr>
+									</thead>
+									<tbody></tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="row">
-					<ul>
-						<li id="groupCount">groups</li>
-					</ul>
-				</div>
-			</div>
-			<div class="table-responsive" id="tableContainer">
-				<table class="table table-hover table-sm" id="groupsTable">
-					<thead>
-						<tr>
-							<th></th>
-							<th class="rotate">
-								<div>
-									<span>Academies</span>
-								</div>
-							</th>
-							<th class="rotate">
-								<div>
-									<span>Pupils
-										<sup>
-											<i class="fas fa-exclamation-circle" data-toggle="tooltip" title="Pupil numbers are not available for all schools."></i>
-										</sup>
-									</span>
-								</div>
-							</th>
-							<th class="rotate">
-								<div>
-									<span>Primary</span>
-								</div>
-							</th>
-							<th class="rotate">
-								<div>
-									<span>Secondary</span>
-								</div>
-							</th>
-							<th class="rotate">
-								<div>
-									<span>All-through</span>
-								</div>
-							</th>
-							<th class="rotate">
-								<div>
-									<span>Alternative provision</span>
-								</div>
-							</th>
-							<th class="rotate">
-								<div>
-									<span>Special</span>
-								</div>
-							</th>
-							<th class="rotate">
-								<div>
-									<span>Post-16</span>
-								</div>
-							</th>
-							<th class="rotate">
-								<div>
-									<span>Sponsored academies</span>
-								</div>
-							</th>
-							<th class="rotate">
-								<div>
-									<span>Converter academies</span>
-								</div>
-							</th>
-							<th class="rotate">
-								<div>
-									<span>Free schools</span>
-								</div>
-							</th>
-							<th class="rotate">
-								<div>
-									<span>UTCs/studio schools</span>
-								</div>
-							</th>
-							<th class="rotate">
-								<div>
-									<span>blank</span>
-								</div>
-							</th>
-						</tr>
-					</thead>
-					<tbody></tbody>
-				</table>
 			</div>
 		</main>
 		<footer class="footer">

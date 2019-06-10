@@ -3,32 +3,30 @@ var table,
 	currentSortCol=1,
 	currentSortDirection='desc'
 
-$(function () {
-	function initialiseTooltips() {
-		$('[data-toggle="tooltip"]').tooltip()
+function initialiseTooltips() {
+	$('[data-toggle="tooltip"]').tooltip()
+}
+
+function setValues(json) {
+    let len=json.length
+    if(len>0){
+		var line=json.shift()
+		document.getElementById('acadCount').innerHTML=line.school_count.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('acadCount').innerHTML
+		document.getElementById('sponAcadCount').innerHTML=line.estab_type_count.sponsored_academy.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('sponAcadCount').innerHTML
+		document.getElementById('convAcadCount').innerHTML=line.estab_type_count.converter_academy.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('convAcadCount').innerHTML
+		document.getElementById('fsCount').innerHTML=line.estab_type_count.free_school.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('fsCount').innerHTML
+		document.getElementById('utcssCount').innerHTML=line.estab_type_count.utc_studio_school.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('utcssCount').innerHTML
+		document.getElementById('primCount').innerHTML=line.estab_phase_count.primary.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('primCount').innerHTML
+		document.getElementById('secCount').innerHTML=line.estab_phase_count.secondary.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('secCount').innerHTML
+		document.getElementById('thruCount').innerHTML=line.estab_phase_count.all_through.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('thruCount').innerHTML
+		document.getElementById('apCount').innerHTML=line.estab_phase_count.alternative_provision.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('apCount').innerHTML
+		document.getElementById('specCount').innerHTML=line.estab_phase_count.special.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('specCount').innerHTML
+		document.getElementById('post16Count').innerHTML=line.estab_phase_count.post_16.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('post16Count').innerHTML
+		document.getElementById('groupCount').innerHTML=line.group_count.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('groupCount').innerHTML
 	}
+};
 
-	function setValues(json) {
-	    let len=json.length
-	    if(len>0){
-			var line=json.shift()
-			document.getElementById('acadCount').innerHTML=line.school_count.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('acadCount').innerHTML
-			document.getElementById('sponAcadCount').innerHTML=line.estab_type_count.sponsored_academy.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('sponAcadCount').innerHTML
-			document.getElementById('convAcadCount').innerHTML=line.estab_type_count.converter_academy.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('convAcadCount').innerHTML
-			document.getElementById('fsCount').innerHTML=line.estab_type_count.free_school.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('fsCount').innerHTML
-			document.getElementById('utcssCount').innerHTML=line.estab_type_count.utc_studio_school.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('utcssCount').innerHTML
-			document.getElementById('primCount').innerHTML=line.estab_phase_count.primary.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('primCount').innerHTML
-			document.getElementById('secCount').innerHTML=line.estab_phase_count.secondary.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('secCount').innerHTML
-			document.getElementById('thruCount').innerHTML=line.estab_phase_count.all_through.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('thruCount').innerHTML
-			document.getElementById('apCount').innerHTML=line.estab_phase_count.alternative_provision.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('apCount').innerHTML
-			document.getElementById('specCount').innerHTML=line.estab_phase_count.special.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('specCount').innerHTML
-			document.getElementById('post16Count').innerHTML=line.estab_phase_count.post_16.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('post16Count').innerHTML
-			document.getElementById('groupCount').innerHTML=line.group_count.toLocaleString('en', {useGrouping:true})+' '+document.getElementById('groupCount').innerHTML
-		}
-	};
-
-	$.getJSON('data/totals.json', setValues)		// async callback
-
+function drawTable() {
 	table = $('#groupsTable').DataTable({
 	    ajax: {
 			url: 'data/groups_demo.json',
@@ -127,10 +125,20 @@ $(function () {
 		}],
 	    "order": [1, 'desc']
 	});
+}
+
+$(function () {
+	$.getJSON('data/totals.json', setValues)		// async callback
 });
 
-// Sorting upon clicking on table column names
-$("#groupsTable").find("thead").on('click', 'div', function(){
+$("a[href='#tab-table']").on('shown.bs.tab', function (e) {
+	if (table == null) {
+		drawTable()
+	}
+});
+
+
+$("#groupsTable").find("thead").on('click', 'div', function(){		// sorting upon clicking on table column names
     newSortCol =  table.column(this.parentElement).index();		// parentElement, as we need the containing th, rather than the div
 	if (newSortCol==currentSortCol) {
 		if ($('#groupsTable').DataTable().order()[0][1]) {		// on first clicking the default-sorted column, .order seems to not return an array. Hence, we only try to read the array where it exists. Where it doesn't, initial value for currentSortDirection should make sure on-click action should work correctly

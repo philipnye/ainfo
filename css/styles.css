@@ -26,10 +26,6 @@ body {
 	color: inherit;
 }
 
-.tabbed-content .nav-link:not(.active) {
-    border-color: #dee2e6;
-}
-
 .tabbed-content .tab-pane ul {
 	list-style-type: none;
 	padding-inline-start: 10px;
@@ -42,6 +38,16 @@ body {
     border-color: #dee2e6;
 }
 
+/* Explore page */
+.explore-main .tabbed-content {
+	width: 100%;
+}
+
+.explore-main .tabbed-content .tab-pane.active {
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+}
 
 /* Group page */
 .group-main .tabbed-content {
@@ -103,10 +109,6 @@ body {
 
 #groupsTable.table td {
 	text-align: center;
-}
-
-#groupsTable.table th.rotate:last-child div {
-	cursor: default;
 }
 
 #groupsTable.table tr:hover td:last-child {		/* blank column added for column header spacing */
