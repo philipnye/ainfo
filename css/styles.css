@@ -17,6 +17,54 @@ body {
 	background-color: #f5f5f5;
 }
 
+/* SEARCH */
+/* Index page */
+.md-form {
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.md-form.input-group .form-control {
+    margin: 0;
+    padding: .375rem .75rem;
+}
+
+.input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.md-form input[type=text] {
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+	outline: 0;
+	box-sizing: content-box;
+    background-color: transparent;
+}
+
+.md-form .form-control {
+    height: auto;
+}
+
+.amber.lighten-3 {
+    background-color: #ffe082;
+}
+
+.input-group.md-form.form-sm.form-1 input {
+    border: 1px solid #ffca28;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.input-group-text {
+	border: 1px solid #ffca28;
+	border-left: none;
+}
+
+.input-group input[type=text]:focus {
+	box-shadow: none;
+}
+
 
 /* TABBED CONTENT */
 /* All */
